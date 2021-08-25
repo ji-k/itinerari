@@ -23,10 +23,7 @@ const LoginForm = () => {
   const demoLogin = async (e) => {
     e.preventDefault();
     await dispatch(login('jikyung@gmail.com', 'hire_me'));
-    // const demoUser = await dispatch(login('jikyung@gmail.com', 'hire_me'))
-    // if (demoUser) {
-    //   setErrors(demoUser);
-    // }
+
     let path = `/itineraries`;
     history.push(path);
   }
