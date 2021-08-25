@@ -24,7 +24,7 @@ const LoginForm = () => {
     e.preventDefault();
     await dispatch(login('jikyung@gmail.com', 'hire_me'));
 
-    let path = `/itineraries`;
+    let path = `/dashboard`;
     history.push(path);
   }
 

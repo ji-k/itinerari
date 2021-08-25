@@ -6,7 +6,7 @@ const LandingPage = () => {
 
     const history = useHistory();
     const getStarted = () => {
-        let path = `/itineraries`;
+        let path = `/dashboard`;
         history.push(path);
     }
 
