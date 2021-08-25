@@ -26,6 +26,8 @@ const LoginForm = () => {
     // if (demoUser) {
     //   setErrors(demoUser);
     // }
+    let path = `/itineraries`;
+    history.push(path);
   }
 
   const signUp = () => {
