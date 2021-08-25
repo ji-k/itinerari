@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Redirect } from 'react-router-dom';
+import { Redirect, useHistory } from 'react-router-dom';
 import { login } from '../../store/session';
 
 const LoginForm = () => {
@@ -9,6 +9,7 @@ const LoginForm = () => {
   const [password, setPassword] = useState('');
   const user = useSelector(state => state.session.user);
   const dispatch = useDispatch();
+  const history = useHistory();
 
   const onLogin = async (e) => {
     e.preventDefault();
@@ -17,6 +18,20 @@ const LoginForm = () => {
       setErrors(data);
     }
   };
+
+  const demoLogin = async (e) => {
+    e.preventDefault();
+    await dispatch(login('jikyung@gmail.com', 'hire_me'));
+    // const demoUser = await dispatch(login('jikyung@gmail.com', 'hire_me'))
+    // if (demoUser) {
+    //   setErrors(demoUser);
+    // }
+  }
+
+  const signUp = () => {
+    let path = `/sign-up`;
+    history.push(path);
+  }
 
   const updateEmail = (e) => {
     setEmail(e.target.value);
@@ -57,6 +72,12 @@ const LoginForm = () => {
           onChange={updatePassword}
         />
         <button type='submit'>Login</button>
+
+        <div>
+          <a onClick={demoLogin}>Demo User</a>
+
+          Don't have an account? <a onClick={signUp}>Sign Up</a>
+        </div>
       </div>
     </form>
   );
