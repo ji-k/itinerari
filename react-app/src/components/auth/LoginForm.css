@@ -1,0 +1,15 @@
+.demo-login-page {
+    color: red;
+}
+
+.demo-login-page:hover {
+    text-decoration: underline;
+}
+
+.account-prompt {
+    color: red;
+}
+
+.account-prompt:hover {
+    text-decoration: underline;
+}

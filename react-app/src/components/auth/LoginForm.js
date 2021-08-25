@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Redirect, useHistory } from 'react-router-dom';
 import { login } from '../../store/session';
+import './LoginForm.css'
 
 const LoginForm = () => {
   const [errors, setErrors] = useState([]);
@@ -76,9 +77,9 @@ const LoginForm = () => {
         <button type='submit'>Login</button>
 
         <div>
-          <a onClick={demoLogin}>Demo User</a>
+          <a className="demo-login-page" onClick={demoLogin}>Demo User</a>
 
-          Don't have an account? <a onClick={signUp}>Sign Up</a>
+          Don't have an account? <a className="account-prompt" onClick={signUp}>Sign Up</a>
         </div>
       </div>
     </form>
