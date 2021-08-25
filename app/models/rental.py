@@ -5,8 +5,8 @@ class Rental(db.Model):
     __tablename__ = 'rentals'
 
     id = db.Column(db.Integer, primary_key=True)
-    itinerary_id = db.Column(db.Integer, db.foreign_key(
-        'itinerary.id'), nullable=False)
+    itinerary_id = db.Column(db.Integer, db.ForeignKey(
+        'itineraries.id'), nullable=False)
     company = db.Column(db.String, nullable=False)
     address = db.Column(db.String, nullable=False)
     city = db.Column(db.String, nullable=False)
@@ -18,8 +18,7 @@ class Rental(db.Model):
     confirmation = db.Column(db.String, nullable=False)
     notes = db.Column(db.String)
 
-    itinerary_relation = db.relationship(
-        'Itinerary', back_populates='rental_relation')
+    # itinerary1 = db.relationship('Itinerary', backref=db.backref('rentals'))
 
     def to_dict(self):
         return {

@@ -1,5 +1,5 @@
 from app.models import db, User
-from datetime import datetime
+
 
 
 def seed_users():

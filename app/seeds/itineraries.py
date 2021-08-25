@@ -21,5 +21,5 @@ def seed_itineraries():
 
 
 def undo_itineraries():
-    db.session.execute('TRUNCATE reviews RESTART IDENTITY CASCADE;')
+    db.session.execute('TRUNCATE itineraries RESTART IDENTITY CASCADE;')
     db.session.commit()

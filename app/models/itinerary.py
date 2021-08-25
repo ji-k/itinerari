@@ -6,16 +6,17 @@ class Itinerary(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(50), nullable=False)
-    start_date = db.Column(db.Datetime, nullable=False)
-    end_date = db.Column(db.Datetime, nullable=False)
+    start_date = db.Column(db.DateTime, nullable=False)
+    end_date = db.Column(db.DateTime, nullable=False)
     owner_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
     image_url = db.Column(db.String)
     notes = db.Column(db.Text)
     created_at = db.Column(db.DateTime)
     updated_at = db.Column(db.DateTime)
 
-    user_relation = db.relationship(
-        'User', back_populates='itineraries_relation')
+    # flights = db.relationship('Flight')
+    # rentals = db.relationship('Rental')
+    # owner = db.relationship('User')
 
     def to_dict(self):
         return {

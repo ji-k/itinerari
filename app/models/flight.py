@@ -5,9 +5,9 @@ class Flight(db.Model):
     __tablename__ = 'flights'
 
     id = db.Column(db.Integer, primary_key=True)
-    itinerary_id = db.Column(db.Integer, db.foreign_key(
-        'itinerary.id'), nullable=False)
-    date = db.Column(db.Datetime, nullable=False)
+    itinerary_id = db.Column(db.Integer, db.ForeignKey(
+        'itineraries.id'), nullable=False)
+    date = db.Column(db.DateTime, nullable=False)
     origin = db.Column(db.String, nullable=False)
     destination = db.Column(db.String, nullable=False)
     departure = db.Column(db.String, nullable=False)
@@ -16,10 +16,8 @@ class Flight(db.Model):
     flight_no = db.Column(db.String, nullable=False)
     notes = db.Column(db.String)
 
-    itinerary_relation = db.relationship(
-        'Itinerary', back_populates='flight_relation')
-    passengers_relation = db.relationship(
-        'Passenger', back_populates='flight_relation')
+    # itinerary2 = db.relationship('Itinerary', backref=db.backref('flights'))
+
 
     def to_dict(self):
         return {
