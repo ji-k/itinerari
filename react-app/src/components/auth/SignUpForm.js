@@ -28,6 +28,8 @@ const SignUpForm = () => {
     }
   };
 
+  // TODO: Email Validation (form currently submits without '@')
+
   const updateUsername = (e) => {
     setUsername(e.target.value);
   };
