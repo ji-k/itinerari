@@ -9,6 +9,7 @@ from .models import db, User
 from .api.user_routes import user_routes
 from .api.auth_routes import auth_routes
 from .api.flight_routes import flight_routes
+from .api.rental_routes import rental_routes
 
 from .api.itinerary_routes import itinerary_routes
 from .seeds import seed_commands
@@ -35,6 +36,7 @@ app.register_blueprint(user_routes, url_prefix='/api/users')
 app.register_blueprint(auth_routes, url_prefix='/api/auth')
 app.register_blueprint(itinerary_routes, url_prefix='/api/itineraries')
 app.register_blueprint(flight_routes, url_prefix='/api/flights')
+app.register_blueprint(rental_routes, url_prefix='/api/rentals')
 db.init_app(app)
 Migrate(app, db)
 
