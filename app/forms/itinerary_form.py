@@ -9,4 +9,4 @@ class ItineraryForm(FlaskForm):
     end_date = DateField("end_date", validators=[DataRequired()])
     image_url = StringField("image_url")
     notes = TextField("notes")
-    submit = SubmitField("Submit")
+    # submit = SubmitField("Submit")

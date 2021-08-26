@@ -29,6 +29,7 @@ const Itineraries = () => {
     return (
         <>
             <h3>itinerary would appear here</h3>
+            {itineraries.title}
         </>
     )
 };

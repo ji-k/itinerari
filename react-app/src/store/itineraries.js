@@ -118,7 +118,7 @@ const initialState = {};
 export default function reducer(state = initialState, action) {
     switch (action.type) {
         case SET_ITINERARIES:
-            return { ...action.payload }
+            return { ...action.payload.itineraries }
         // case SET_ITINERARY:
         //     return { itineraries: action.payload }
         // case EDIT_ITINERARY:
@@ -127,7 +127,7 @@ export default function reducer(state = initialState, action) {
         //         [action.itinerary.id]: action.itinerary
         //     }
         case POST_ITINERARY:
-            return [...state, action.payload];
+            return { itineraries: action.payload };
         // case DELETE_ITINERARY:
         //     const newObj = { ...state };
         //     delete newObj[action.itinerary.id];
