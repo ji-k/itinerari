@@ -1,19 +1,17 @@
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from 'react-router-dom';
-import { getItinerary, getItineraries, updateItinerary, removeItinerary } from '../../store/itineraries';
+import { getItineraries, getItinerary, updateItinerary, removeItinerary } from '../../store/itineraries';
 import './itinerary.css'
 
-function Itinerary() {
-    const itinerary = useSelector(state => state.itinerary)
-    const [title, setTitle] = useState('');
+const Itineraries = () => {
+    const itineraries = useSelector(state => state.itineraries)
 
     const dispatch = useDispatch()
-    const { itineraryId } = useParams();
 
     useEffect(() => {
-        dispatch(getItinerary(itineraryId))
-    }, [dispatch, itineraryId]);
+        dispatch(getItineraries())
+    }, [dispatch]);
 
 
 
@@ -35,4 +33,4 @@ function Itinerary() {
     )
 };
 
-export default Itinerary;
+export default Itineraries;

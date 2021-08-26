@@ -8,12 +8,12 @@ const DELETE_ITINERARY = 'itineraries/DELETE_ITINERARY';
 // define action creator
 const setItineraries = (itineraries) => ({
     type: SET_ITINERARIES,
-    itineraries
+    payload: itineraries
 });
 
 const setItinerary = (itinerary) => ({
     type: SET_ITINERARY,
-    itinerary
+    payload: itinerary
 });
 
 const editItinerary = (itinerary) => ({
@@ -34,55 +34,59 @@ const deleteItinerary = (itinerary) => ({
 
 // define thunk creator for GET /itineraries
 export const getItineraries = () => async (dispatch) => {
-    const res = await fetch('/api/itineraries/', {
-        headers: {
-            'Content-Type': 'application/json'
-        }
-    });
+    const res = await fetch('/api/itineraries/');
     if (res.ok) {
         const data = await res.json();
-        if (data.errors) {
-            return;
-        }
         dispatch(setItineraries(data));
+        return null;
     }
 }
 
 // define thunk creator for GET /itineraries/:id
 export const getItinerary = (id) => async (dispatch) => {
     const res = await fetch(`/api/itineraries/${id}`);
-    const data = await res.json();
-    dispatch(setItinerary(data)); // pass in post from database
-}
-
-// define thunk creator for PUT request (edit)
-export const updateItinerary = (id, title, start_date, end_date, image_url, notes) => async (dispatch) => {
-    const res = await fetch(`/api/itineraries/${id}`, {
-        method: 'PUT',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-            title,
-            start_date,
-            end_date,
-            image_url,
-            notes
-        })
-    });
     if (res.ok) {
         const data = await res.json();
-        dispatch(editItinerary(data));
-        return data
+        dispatch(getItinerary(data));
     }
 }
 
+// define thunk creator for PUT request (edit)
+// export const updateItinerary = (id, title, start_date, end_date, image_url, notes) => async (dispatch) => {
+//     const res = await fetch(`/api/itineraries/${id}`, {
+//         method: 'PUT',
+//         headers: {
+//             'Content-Type': 'application/json'
+//         },
+//         body: JSON.stringify({
+//             title,
+//             start_date,
+//             end_date,
+//             image_url,
+//             notes
+//         })
+//     });
+//     if (res.ok) {
+//         const data = await res.json();
+//         dispatch(editItinerary(data));
+//         return data
+//     } else {
+//         return ["An error occurred. Please try again"]
+//     }
+// }
+
 // define thunk creator for POST request
-export const postItinerary = (itinerary) => async (dispatch) => {
+export const postItinerary = (title, start_date, end_date, image_url, notes) => async (dispatch) => {
+    const form = new FormData();
+    form.append('title', title);
+    form.append('start_date', start_date);
+    form.append('end_date', end_date);
+    form.append('image_url', image_url);
+    form.append('notes', notes);
+
     const res = await fetch(`/api/itineraries/create/`, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(itinerary)
+        body: form
     });
     if (res.ok) {
         const data = await res.json();
@@ -114,28 +118,20 @@ const initialState = {};
 export default function reducer(state = initialState, action) {
     switch (action.type) {
         case SET_ITINERARIES:
-            const allItineraries = {}
-            action.itineraries.forEach(itinerary => {
-                allItineraries[itinerary.id] = itinerary
-            })
-            return allItineraries
-        case SET_ITINERARY:
-            const newItinerary = { post: action.itinerary }
-            return { ...state, ...newItinerary };
-        case EDIT_ITINERARY:
-            return {
-                ...state,
-                [action.itinerary.id]: action.itinerary
-            }
+            return { ...action.payload }
+        // case SET_ITINERARY:
+        //     return { itineraries: action.payload }
+        // case EDIT_ITINERARY:
+        //     return {
+        //         ...state,
+        //         [action.itinerary.id]: action.itinerary
+        //     }
         case POST_ITINERARY:
-            return {
-                ...state,
-                [action.itinerary.id]: action.itinerary
-            }
-        case DELETE_ITINERARY:
-            const newObj = { ...state };
-            delete newObj[action.itinerary.id];
-            return newObj
+            return [...state, action.payload];
+        // case DELETE_ITINERARY:
+        //     const newObj = { ...state };
+        //     delete newObj[action.itinerary.id];
+        //     return newObj
         default:
             return state;
     }
