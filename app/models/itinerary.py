@@ -14,9 +14,9 @@ class Itinerary(db.Model):
     created_at = db.Column(db.DateTime)
     updated_at = db.Column(db.DateTime)
 
-    # flights = db.relationship('Flight')
+    flights = db.relationship('Flight')
     # rentals = db.relationship('Rental')
-    # owner = db.relationship('User')
+    owner = db.relationship('User')
 
     def to_dict(self):
         return {
@@ -29,4 +29,6 @@ class Itinerary(db.Model):
             'notes': self.notes,
             'created_at': self.created_at,
             'updated_at': self.updated_at,
+
+            'flight_info': [el.to_dict() for el in self.flights]
         }
