@@ -1,5 +1,5 @@
 # itinerari
-itinerari is a travel management platform that allows users to create a single-page itinerary to organize and plan their travel logistics. The user can create an itinerary to maintain all pertinent travel information. Itineraries are fully customizable for a single traveler, or for small or large groups. The user begins by creating an itinerary for an upcoming trip and gathering flight, car rental, and hotel information through intuitive forms. 
+itinerari is a travel management platform that allows users to create a single-page itinerary to organize and plan their travel logistics. The user can create an itinerary to maintain all pertinent travel information. Itineraries are fully customizable for a single traveler, or for small or large groups. The user begins by creating an itinerary for an upcoming trip and gathering flight, car rental, and hotel information through intuitive forms. Users are able to edit or delete information from the itinerary as changes in travel are typical and last minute. itinerari hopes travelers can benefit from having their travel information all in one place to help with communication within a group of travelers or to have all their travel information conveniently in one place. 
 
 [Click here for a live demo](https://itinerari-app.herokuapp.com/)
 
