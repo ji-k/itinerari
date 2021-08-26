@@ -44,6 +44,6 @@ Logged in users are able to add and edit features on their itinerary. Features i
 [x]
 
 ## Mobile Version
-This web application is optimized for mobile view making this web application perfect for travel. 
+This web application is optimized for mobile view. 
 
 [x] 
