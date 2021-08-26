@@ -74,9 +74,9 @@ const LoginForm = () => {
         <button type='submit'>Login</button>
 
         <div>
-          <a className="demo-login-page" onClick={demoLogin}>Demo User</a>
+          <div className="demo-login-page" onClick={demoLogin}>Demo User</div>
 
-          Don't have an account? <a className="account-prompt" onClick={signUp}>Sign Up</a>
+          Don't have an account? <div className="account-prompt" onClick={signUp}>Sign Up</div>
         </div>
       </div>
     </form>

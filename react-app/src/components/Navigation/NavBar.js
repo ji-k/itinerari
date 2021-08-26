@@ -1,9 +1,7 @@
-
-import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import LogoutButton from '../auth/LogoutButton';
-import { useDispatch, useSelector } from 'react-redux';
-import { login } from '../../store/session';
+import { useSelector } from 'react-redux';
+// import { login } from '../../store/session';
 import './NavBar.css'
 
 const NavBar = () => {
