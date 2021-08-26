@@ -3,6 +3,7 @@ from .users import seed_users, undo_users
 from .itineraries import seed_itineraries, undo_itineraries
 from .flights import seed_flights, undo_flights
 from .rentals import seed_rentals, undo_rentals
+from .hotels import seed_hotels, undo_hotels
 
 
 # Creates a seed group to hold our commands
@@ -17,6 +18,7 @@ def seed():
     seed_itineraries()
     seed_flights()
     seed_rentals()
+    seed_hotels()
     # Add other seed functions here
 
 
@@ -27,4 +29,5 @@ def undo():
     undo_rentals()
     undo_itineraries()
     undo_users()
+    undo_hotels()
     # Add other undo functions here
