@@ -8,7 +8,8 @@ itinerary_routes = Blueprint('itineraries', __name__, url_prefix='')
 # get all itineraries
 @itinerary_routes.route('/')
 def get_itineraries():
-    all_itineraries = Itinerary.query.filter(Itinerary.owner_id == current_user.id).all()
+    all_itineraries = Itinerary.query.all()
+    # all_itineraries = Itinerary.query.filter(Itinerary.owner_id == current_user.id).all()
     return {'itineraries': [itinerary.to_dict() for itinerary in all_itineraries]}
 
 # get an itinerary
