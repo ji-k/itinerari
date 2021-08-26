@@ -11,8 +11,8 @@ def get_flights():
     all_flights = Flight.query
     return {'flights': [flight.to_dict() for flight in all_flights]}
 
-# # get an itinerary
-# @flight_routes.route('/<int:id>')
-# def get_flight(id):
-#     flight = Flight.query.get(id)
-#     return flight.to_dict()
+# get a flight
+@flight_routes.route('/<int:id>')
+def get_flight(id):
+    flight = Flight.query.get(id)
+    return flight.to_dict()
