@@ -56,8 +56,8 @@ export const getItinerary = (id) => async (dispatch) => {
 }
 
 // define thunk creator for PUT request (edit)
-export const updateItinerary = (title, start_date, end_date, image_url, notes) => async (dispatch) => {
-    const res = await fetch(`/api/itineraries/${itinerary_id}`, {
+export const updateItinerary = (id, title, start_date, end_date, image_url, notes) => async (dispatch) => {
+    const res = await fetch(`/api/itineraries/${id}`, {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json'

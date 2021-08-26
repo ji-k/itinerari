@@ -9,6 +9,7 @@ import ProtectedRoute from './components/auth/ProtectedRoute';
 // import User from './components/User';
 import LandingPage from './components/LandingPage';
 import Dashboard from './components/Dashboard';
+import Itinerary from './components/Itinerary';
 import { authenticate } from './store/session';
 
 function App() {
@@ -44,6 +45,7 @@ function App() {
         </ProtectedRoute> */}
         <ProtectedRoute path='/dashboard' exact={true} >
           <Dashboard />
+          <Itinerary />
         </ProtectedRoute>
         <Route path='/' exact={true} >
           <LandingPage />
