@@ -11,6 +11,8 @@ from .api.auth_routes import auth_routes
 from .api.flight_routes import flight_routes
 from .api.rental_routes import rental_routes
 from .api.hotel_routes import hotel_routes
+from .api.passenger_routes import passenger_routes
+from .api.guest_routes import guest_routes
 
 from .api.itinerary_routes import itinerary_routes
 from .seeds import seed_commands
@@ -39,6 +41,8 @@ app.register_blueprint(itinerary_routes, url_prefix='/api/itineraries')
 app.register_blueprint(flight_routes, url_prefix='/api/flights')
 app.register_blueprint(rental_routes, url_prefix='/api/rentals')
 app.register_blueprint(hotel_routes, url_prefix='/api/hotels')
+app.register_blueprint(passenger_routes, url_prefix='/api/passengers')
+app.register_blueprint(guest_routes, url_prefix='/api/guests')
 db.init_app(app)
 Migrate(app, db)
 

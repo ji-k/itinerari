@@ -13,6 +13,7 @@ class Hotel(db.Model):
     zipcode = db.Column(db.Integer, nullable=False)
     notes = db.Column(db.String)
 
+    guests = db.relationship('Guest')
     # itinerary2 = db.relationship('Itinerary', backref=db.backref('flights'))
 
 
@@ -26,4 +27,6 @@ class Hotel(db.Model):
             'state': self.state,
             'zipcode': self.zipcode,
             'notes': self.notes,
+
+            'guest_info': [el.to_dict() for el in self.guests],
         }

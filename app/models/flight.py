@@ -16,6 +16,7 @@ class Flight(db.Model):
     flight_no = db.Column(db.String, nullable=False)
     notes = db.Column(db.String)
 
+    passengers = db.relationship('Passenger')
     # itinerary2 = db.relationship('Itinerary', backref=db.backref('flights'))
 
 
@@ -31,4 +32,6 @@ class Flight(db.Model):
             'airline': self.airline,
             'flight_no': self.flight_no,
             'notes': self.notes,
+
+            'passenger_info': [el.to_dict() for el in self.passengers],
         }

@@ -4,7 +4,8 @@ from .itineraries import seed_itineraries, undo_itineraries
 from .flights import seed_flights, undo_flights
 from .rentals import seed_rentals, undo_rentals
 from .hotels import seed_hotels, undo_hotels
-
+from .passengers import seed_passengers, undo_passengers
+from .guests import seed_guests, undo_guests
 
 # Creates a seed group to hold our commands
 # So we can type `flask seed --help`
@@ -19,6 +20,8 @@ def seed():
     seed_flights()
     seed_rentals()
     seed_hotels()
+    seed_passengers()
+    seed_guests()
     # Add other seed functions here
 
 
@@ -30,4 +33,6 @@ def undo():
     undo_itineraries()
     undo_users()
     undo_hotels()
+    undo_passengers()
+    undo_guests()
     # Add other undo functions here
