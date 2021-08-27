@@ -1,0 +1,30 @@
+.dashboard__outer-container {
+    background-color: lightpink;
+}
+
+.dashboard__sidebar-outer-container {
+    background-color: lightblue;
+    width: 300px;
+    height: 100vh;
+    border-top-left-radius: 50px;
+    float: left;
+}
+
+.dashboard__main-body-container {
+    background-color: lightyellow;
+    height: 100vh;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+}
+
+.dashboard__sidebar-header-container {
+    position: relative;
+    top: 10px;
+    float: right;
+    margin-right: 10px;
+}
+
+.dashboard__sidebar-list-container {
+    position: relative;
+    top: 100px;
+}

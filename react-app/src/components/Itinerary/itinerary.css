@@ -1,4 +1,12 @@
-.itinerary-view__container {
-    border: 1px solid red;
-    width: 50%;
+.itineraries-link {
+    display: block;
+    border: 1px solid black;
+    margin: 10px;
+    text-align: center;
+    min-height: 30px;
+    padding-top: 10px;
+}
+
+.itineraries-link a {
+    color: white;
 }

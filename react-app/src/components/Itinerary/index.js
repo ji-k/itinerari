@@ -30,18 +30,21 @@ const Itineraries = () => {
 
     return (
         <>
-            {Object.values(itineraries).map(itinerary => {
-                if (user.id === itinerary?.owner_id)
-                    return (
-                        <a key={itinerary.id}
-                            href={`/itineraries/${itinerary.id}`}
-                            id={itinerary.id}
-                            className="itineraries-link" >
-                            {itinerary.title}
-                        </a>)
-            })
-            }
+            <div className="itineraries__outer-container">
 
+                {Object.values(itineraries).map(itinerary => {
+                    if (user.id === itinerary?.owner_id)
+                        return (
+                            <a key={itinerary.id}
+                                href={`/itineraries/${itinerary.id}`}
+                                id={itinerary.id}
+                                className="itineraries-link" >
+                                {itinerary.title}
+                            </a>)
+                })
+                }
+
+            </div>
         </>
     )
 };
