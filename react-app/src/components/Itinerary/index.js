@@ -4,6 +4,9 @@ import { NavLink, useParams } from 'react-router-dom';
 import { getItineraries, getItinerary, updateItinerary, removeItinerary } from '../../store/itineraries';
 import './itinerary.css'
 
+// !
+// ! THIS IS CURRENTLY A DEAD COMPONENT
+// !
 
 const Itineraries = () => {
 
