@@ -13,8 +13,8 @@ const LandingPage = () => {
     return (
         <>
             <div className="landing-page__outer-container">
-                <p>Create informative, single-page itineraries</p>
-                <p>TRAVEL SMARTER</p>
+                <p className="tag-line">Create informative, single-page itineraries</p>
+                <p className="travel-smarter">TRAVEL SMARTER</p>
                 <button onClick={getStarted} className="getStarted-button">Get Started</button>
             </div>
         </>

@@ -1,11 +1,45 @@
 .landing-page__outer-container {
-    background-image: url('https://github.com/ji-k/itinerari/blob/main/assets/images/5.jpg?raw=true');
+    background-image: url('https://github.com/ji-k/itinerari/blob/main/assets/images/6.jpg?raw=true');
     background-repeat: no-repeat;
     background-size: cover;
-    height: 600px;
+    height: 800px;
     width: 100%;
     position: absolute;
     top: 0px;
     right: 0px;
     z-index: -5;
+}
+
+.tag-line {
+    color: black;
+    font-size: 5vh;
+    width: 500px;
+    margin: auto;
+    text-align: center;
+    position: relative;
+    top: 200px;
+}
+
+.travel-smarter {
+    color: black;
+    font-weight: thin;
+    font-size: 4vh;
+    width: 500px;
+    margin: auto;
+    text-align: center;
+    position: relative;
+    top: 300px;
+}
+
+.getStarted-button {
+    background-color: transparent;
+    border: 2px solid black;
+    color: black;
+    font-size: 3vh;
+    padding: 5px;
+    width: 150px;
+    position: relative;
+    top: 400px;
+    margin: 0 auto;
+    display: block;
 }
