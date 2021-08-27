@@ -1,0 +1,43 @@
+nav {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 14pt;
+    padding: 5px;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+.nav__outer-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+    ". itinerari nav-session__right";
+}
+
+.nav-itinerari__middle {
+    font-size: 20pt;
+    grid-area: itinerari;
+    justify-self: center;
+    place-self: center;
+}
+
+.nav-session__right {
+    grid-area: nav-session__right;
+    justify-self: end;
+    align-self: center;
+}
+
+.nav-login {
+    margin-right: 20px;
+}
+
+.logout-button {
+    color: white;
+    border: 1px solid white;
+    background-color: transparent;
+    font-size: 14pt;
+}
