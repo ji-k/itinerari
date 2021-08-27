@@ -12,7 +12,18 @@
 
 .tag-line {
     color: black;
-    font-size: 5vh;
+    font-size: 28pt;
+    width: 400px;
+    margin: auto;
+    text-align: center;
+    position: relative;
+    top: 150px;
+}
+
+.travel-smarter {
+    color: black;
+    font-weight: thin;
+    font-size: 20pt;
     width: 500px;
     margin: auto;
     text-align: center;
@@ -20,26 +31,15 @@
     top: 200px;
 }
 
-.travel-smarter {
-    color: black;
-    font-weight: thin;
-    font-size: 4vh;
-    width: 500px;
-    margin: auto;
-    text-align: center;
-    position: relative;
-    top: 300px;
-}
-
 .getStarted-button {
     background-color: transparent;
     border: 2px solid black;
     color: black;
-    font-size: 3vh;
+    font-size: 16pt;
     padding: 5px;
     width: 150px;
     position: relative;
-    top: 400px;
+    top: 250px;
     margin: 0 auto;
     display: block;
 }
