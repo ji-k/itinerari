@@ -5,7 +5,7 @@ nav {
     padding: 5px;
 }
 
-a {
+.nav__outer-container a {
     color: white;
     text-decoration: none;
 }
