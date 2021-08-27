@@ -6,11 +6,12 @@ import './itinerary.css'
 
 
 const Itineraries = () => {
-    // const [itineraries, setItineraries] = useState([])
+
     const itineraries = useSelector(state => state.itineraries)
-    // setItineraries(wow)
+
     const user = useSelector(state => state.session.user)
     const dispatch = useDispatch()
+
 
     useEffect(() => {
         dispatch(getItineraries())
