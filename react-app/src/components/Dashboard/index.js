@@ -22,19 +22,20 @@ const Dashboard = () => {
         <>
             <div className="dashboard__outer-container">
 
-                <h1>Welcome, [username]!</h1>
-                <div className="dashboard__sidebar-outer-container">
-                    <div className="dashboard__sidebar-header-container">
-                        <button>create itinerary</button>
+                <div className="dashboard__inner-container">
+                    <h1>Welcome, [username]!</h1>
+                    <div className="dashboard__sidebar-outer-container">
+                        <div className="dashboard__sidebar-header-container">
+                            <button>create itinerary</button>
+                        </div>
+                        <div className="dashboard__sidebar-list-container">
+                            <Itineraries />
+                        </div>
                     </div>
-                    <div className="dashboard__sidebar-list-container">
-                        <Itineraries />
+                    <div className="dashboard__main-body-container">
+                        <ItineraryForm submittedForm={submittedForm} />
                     </div>
                 </div>
-                <div className="dashboard__main-body-container">
-                    <ItineraryForm submittedForm={submittedForm} />
-                </div>
-
             </div>
 
         </>

@@ -1,5 +1,10 @@
 .dashboard__outer-container {
     background-color: lightpink;
+    /* width: 100%; */
+    position: absolute;
+    top: 0px;
+    /* right: 0px; */
+    z-index: -5;
 }
 
 .dashboard__sidebar-outer-container {
@@ -8,6 +13,11 @@
     height: 100vh;
     border-top-left-radius: 50px;
     float: left;
+}
+
+.dashboard__inner-container {
+    position: relative;
+    top: 50px;
 }
 
 .dashboard__main-body-container {
