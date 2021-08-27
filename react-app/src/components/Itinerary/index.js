@@ -4,14 +4,18 @@ import { NavLink, useParams } from 'react-router-dom';
 import { getItineraries, getItinerary, updateItinerary, removeItinerary } from '../../store/itineraries';
 import './itinerary.css'
 
-const Itineraries = () => {
-    const itineraries = useSelector(state => state.itineraries)
 
+const Itineraries = () => {
+    // const [itineraries, setItineraries] = useState([])
+    const itineraries = useSelector(state => state.itineraries)
+    // setItineraries(wow)
+    const user = useSelector(state => state.session.user)
     const dispatch = useDispatch()
 
     useEffect(() => {
         dispatch(getItineraries())
     }, [dispatch]);
+
 
     // const onChange = (e) => {
     //     setTitle(e.target.value);
@@ -27,14 +31,14 @@ const Itineraries = () => {
     return (
         <>
             {Object.values(itineraries).map(itinerary => {
-                console.log(itinerary)
-                return (
-                    <a
-                        href={`/itineraries/${itinerary.id}`}
-                        id={itinerary.id}
-                        className="itineraries-link" >
-                        {itinerary.title}
-                    </a>)
+                if (user.id === itinerary?.owner_id)
+                    return (
+                        <a key={itinerary.id}
+                            href={`/itineraries/${itinerary.id}`}
+                            id={itinerary.id}
+                            className="itineraries-link" >
+                            {itinerary.title}
+                        </a>)
             })
             }
 
@@ -42,4 +46,4 @@ const Itineraries = () => {
     )
 };
 
-export default Itineraries;
+export default Itineraries

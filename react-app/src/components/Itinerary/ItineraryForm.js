@@ -1,9 +1,8 @@
 import { useState } from 'react';
-import { useDispatch } from 'react-redux';
-
+import { useDispatch, useSelector } from 'react-redux';
 import { postItinerary } from '../../store/itineraries';
 
-const ItineraryForm = () => {
+const ItineraryForm = ({ submittedForm }) => {
     const [title, setTitle] = useState('');
     const [start_date, setStart_date] = useState('');
     const [end_date, setEnd_date] = useState('');
@@ -11,21 +10,39 @@ const ItineraryForm = () => {
     const [notes, setNotes] = useState('');
 
     const dispatch = useDispatch();
+    const owner_id = useSelector(state => state.session.user.id)
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        await dispatch(postItinerary(title, start_date, end_date, image_url, notes));
+        console.log('BEFORE')
+        await dispatch(postItinerary(title, start_date, end_date, owner_id, image_url, notes));
+        submittedForm()
+        console.log('AFTER')
     };
-
     return (
         <>
             <div className="itinerary-form__container">
                 <form className="itinerary-form" onSubmit={handleSubmit}>
-                    <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} />
+                    <label>
+                        Title
+                    </label>
+                    <input type="text" value={title} placeholder="Bon Voyage!" onChange={(e) => setTitle(e.target.value)} />
+                    <label>
+                        Start Date
+                    </label>
                     <input type="date" value={start_date} onChange={(e) => setStart_date(e.target.value)} />
+                    <label>
+                        End Date
+                    </label>
                     <input type="date" value={end_date} onChange={(e) => setEnd_date(e.target.value)} />
-                    <input type="text" value={image_url} onChange={(e) => setImage_url(e.target.value)} />
-                    <input type="text" value={notes} onChange={(e) => setNotes(e.target.value)} />
+                    <label>
+                        Upload an Cover
+                    </label>
+                    <input type="text" value={image_url} placeholder="Change cover" onChange={(e) => setImage_url(e.target.value)} />
+                    <label>
+                        Itinerary Notes
+                    </label>
+                    <input type="text" value={notes} placeholder="Notes..." onChange={(e) => setNotes(e.target.value)} />
                     <button>New Itinerary</button>
                 </form>
             </div>

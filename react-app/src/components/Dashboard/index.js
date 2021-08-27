@@ -6,19 +6,21 @@ import ItineraryForm from '../Itinerary/ItineraryForm';
 import Itineraries from '../Itinerary/';
 
 const Dashboard = () => {
-    const itineraries = useSelector(state => state.itineraries)
-
+    const [formSubmitted, setFormSubmitted] = useState(false)
     const dispatch = useDispatch();
 
     useEffect(() => {
         dispatch(getItineraries());
-    }, [dispatch]);
+    }, [dispatch, formSubmitted]);
 
+    const submittedForm = () => {
+        setFormSubmitted(!formSubmitted)
+    }
 
     return (
         <>
             <h1>DASHBOARD TEST :)</h1>
-            <ItineraryForm />
+            <ItineraryForm submittedForm={submittedForm} />
             <Itineraries />
 
 

@@ -11,6 +11,8 @@ class User(db.Model, UserMixin):
     email = db.Column(db.String(255), nullable=False, unique=True)
     hashed_password = db.Column(db.String(255), nullable=False)
 
+    itineraries = db.relationship("Itinerary")
+
     @property
     def password(self):
         return self.hashed_password
@@ -29,4 +31,5 @@ class User(db.Model, UserMixin):
             'id': self.id,
             'username': self.username,
             'email': self.email,
+            'itineraries': [itinerary.to_dict() for itinerary in self.itineraries]
         }

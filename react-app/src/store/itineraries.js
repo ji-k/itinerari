@@ -76,14 +76,15 @@ export const getItinerary = (id) => async (dispatch) => {
 // }
 
 // define thunk creator for POST request
-export const postItinerary = (title, start_date, end_date, image_url, notes) => async (dispatch) => {
+export const postItinerary = (title, start_date, end_date, owner_id, image_url, notes) => async (dispatch) => {
+    console.log('NO BRANDON', owner_id)
     const form = new FormData();
     form.append('title', title);
     form.append('start_date', start_date);
     form.append('end_date', end_date);
     form.append('image_url', image_url);
+    form.append('owner_id', owner_id);
     form.append('notes', notes);
-
     const res = await fetch(`/api/itineraries/create/`, {
         method: "POST",
         body: form
