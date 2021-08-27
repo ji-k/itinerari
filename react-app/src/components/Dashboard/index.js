@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getItineraries } from '../../store/itineraries'
 import ItineraryForm from '../Itinerary/ItineraryForm';
 import Itineraries from '../Itinerary/';
+import './Dashboard.css'
 
 const Dashboard = () => {
     const itineraries = useSelector(state => state.itineraries)
@@ -17,11 +18,9 @@ const Dashboard = () => {
 
     return (
         <>
-            <h1>DASHBOARD TEST :)</h1>
-            <ItineraryForm />
-            <Itineraries />
-
-
+            <div className="side-bar__outer-container">
+                purple me
+            </div>
         </>
     )
 }
