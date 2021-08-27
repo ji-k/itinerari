@@ -45,7 +45,6 @@ function App() {
         </ProtectedRoute> */}
         <ProtectedRoute path='/dashboard' exact={true} >
           <Dashboard />
-          <Itinerary />
         </ProtectedRoute>
         <Route path='/' exact={true} >
           <LandingPage />

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from 'react-router-dom';
+import { NavLink, useParams } from 'react-router-dom';
 import { getItineraries, getItinerary, updateItinerary, removeItinerary } from '../../store/itineraries';
 import './itinerary.css'
 
@@ -12,8 +12,6 @@ const Itineraries = () => {
     useEffect(() => {
         dispatch(getItineraries())
     }, [dispatch]);
-
-
 
     // const onChange = (e) => {
     //     setTitle(e.target.value);
@@ -28,8 +26,18 @@ const Itineraries = () => {
 
     return (
         <>
-            <h3>itinerary would appear here</h3>
-            {itineraries.title}
+            {Object.values(itineraries).map(itinerary => {
+                console.log(itinerary)
+                return (
+                    <a
+                        href={`/itineraries/${itinerary.id}`}
+                        id={itinerary.id}
+                        className="itineraries-link" >
+                        {itinerary.title}
+                    </a>)
+            })
+            }
+
         </>
     )
 };
