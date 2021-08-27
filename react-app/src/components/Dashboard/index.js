@@ -10,16 +10,13 @@ import './Dashboard.css'
 const Dashboard = () => {
 
     const user = useSelector(state => state.session.user)
+    const itineraries = useSelector(state => state.itineraries)
 
     const [formSubmitted, setFormSubmitted] = useState(false)
     const [itineraryOn, setItineraryOn] = useState(false)
-    // const [itineraryOff, setItineraryOff] = useState(true)
     const [number, setNumber] = useState('')
+
     const dispatch = useDispatch();
-
-    const itineraries = useSelector(state => state.itineraries)
-
-
 
 
     useEffect(() => {
@@ -35,13 +32,6 @@ const Dashboard = () => {
         setItineraryOn(true)
     }
 
-    // const hideItinerary = (e) => {
-    //     setItineraryOn(!itineraryOn)
-    //     setNumber(e.target.id)
-    //     console.log("--------------------")
-    // }
-
-
     return (
         <>
             <div className="dashboard__outer-container">
@@ -55,14 +45,14 @@ const Dashboard = () => {
                         <div className="dashboard__sidebar-list-container" >
                             {/* <Itineraries /> */}
                             {Object.values(itineraries).map(itinerary => {
-                                // if (user.id === itinerary?.owner_id)
-                                return (
-                                    <div key={itinerary.id}
-                                        onClick={showItinerary}
-                                        id={itinerary.id}
-                                        className="itineraries-link" >
-                                        {itinerary.title}
-                                    </div>)
+                                if (user.id === itinerary?.owner_id)
+                                    return (
+                                        <div key={itinerary.id}
+                                            onClick={showItinerary}
+                                            id={itinerary.id}
+                                            className="itineraries-link" >
+                                            {itinerary.title}
+                                        </div>)
                             })
                             }
                         </div>
