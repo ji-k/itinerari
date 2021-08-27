@@ -1,0 +1,11 @@
+.landing-page__outer-container {
+    background-image: url('https://github.com/ji-k/itinerari/blob/main/assets/images/5.jpg?raw=true');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 600px;
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    z-index: -5;
+}

@@ -12,13 +12,11 @@ const LandingPage = () => {
 
     return (
         <>
-            <h1>LANDING PAGE TEST</h1>
-            <h2>Create Your Itineraries using Itinerari</h2>
-            <h3>Itinerari makes it easy to travel in large groups.</h3>
-            <h4>Build informative, one-page itineraries that blahblahblah</h4>
-
-            When you click on this button, it will take you to the itineraries dashboard when logged in. If not, it will take you to the login page:
-            <button onClick={getStarted} className="getStarted-bttn">Get Started</button>
+            <div className="landing-page__outer-container">
+                <p>Create informative, single-page itineraries</p>
+                <p>TRAVEL SMARTER</p>
+                <button onClick={getStarted} className="getStarted-button">Get Started</button>
+            </div>
         </>
     )
 }
