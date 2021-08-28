@@ -1,5 +1,6 @@
 import React from 'react'
 import { useDispatch, useSelector } from "react-redux";
+import './ItineraryPage.css'
 
 export default function Profile({ number }) {
 
@@ -11,15 +12,13 @@ export default function Profile({ number }) {
 
     return (
         <>
-            <p>{itinerary[0].title}</p>
-            < p > Selected Itinerary will go here!</ p>
-            <p>Selected Itinerary will go here!</p>
-            <p>Selected Itinerary will go here!</p>
-            <p>Selected Itinerary will go here!</p>
-            <p>Selected Itinerary will go here!</p>
-            <p>Selected Itinerary will go here!</p>
-            <p>Selected Itinerary will go here!</p>
-            <p>Selected Itinerary will go here!</p>
+            <div className="itinerary-page__outer-container">
+                <p>Title: {itinerary[0].title}</p>
+                <p>Trip Start: {itinerary[0].start_date}</p>
+                <p>Trip End: {itinerary[0].end_date}</p>
+                <p>Banner: {itinerary[0].image_url}</p>
+                <p>Notes: {itinerary[0].notes}</p>
+            </div>
         </>
     )
 }
