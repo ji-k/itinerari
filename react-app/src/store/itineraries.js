@@ -131,7 +131,7 @@ export default function reducer(state = initialState, action) {
             return { itineraries: action.payload };
         case DELETE_ITINERARY: // ! WHYYYY DID I HAVE THIS COMMENTED OUT
             const newObj = { ...state };
-            delete newObj[action.itinerary.id];
+            delete newObj[action.itinerary];
             return newObj
         default:
             return state;

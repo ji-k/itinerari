@@ -19,7 +19,8 @@ export default function Profile({ number }) {
                 <p>Banner: {itinerary[0]?.image_url}</p>
                 <p>Notes: {itinerary[0]?.notes}</p>
 
-                <p>Airline: {itineraries[0]?.flight_info[0]?.airline}</p>
+                <p>Airline: {itinerary[0]?.flight_info[0]?.airline}</p>
+
             </div>
         </>
     )

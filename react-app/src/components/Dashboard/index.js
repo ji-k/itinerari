@@ -61,16 +61,22 @@ const Dashboard = () => {
                                         return (
                                             <>
                                                 <div key={itinerary.id}
-                                                    onClick={showItinerary}
-                                                    id={itinerary.id}
+                                                    // onClick={showItinerary}
                                                     className="itineraries-link" >
-                                                    {itinerary.title}
+
+                                                    <span
+                                                        id={itinerary.id}
+                                                        onClick={showItinerary}>
+                                                        {itinerary.title}
+                                                    </span>
+
+
                                                     {/* <div onClick={handleDelete}>Delete</div> */}
                                                     {itinerary?.owner_id === user.id && <button
                                                         className="itinerary-delete"
                                                         onClick={() => {
                                                             dispatch(removeItinerary(itinerary.id));
-                                                            history.push('/dashboard');
+                                                            // history.push('/dashboard');
                                                             window.location.reload(); // ! refactor this with a useState toggle
                                                         }}
                                                     >
