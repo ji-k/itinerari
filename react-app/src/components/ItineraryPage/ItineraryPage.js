@@ -18,6 +18,8 @@ export default function Profile({ number }) {
                 <p>Trip End: {itinerary[0]?.end_date}</p>
                 <p>Banner: {itinerary[0]?.image_url}</p>
                 <p>Notes: {itinerary[0]?.notes}</p>
+
+                <p>Airline: {itineraries[0]?.flight_info[0]?.airline}</p>
             </div>
         </>
     )

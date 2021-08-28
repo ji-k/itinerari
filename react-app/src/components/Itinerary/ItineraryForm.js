@@ -1,12 +1,13 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { postItinerary } from '../../store/itineraries';
+import './ItineraryForm.css'
 
 
 
-// const ItineraryForm = ({ submittedForm }) => {
-const ItineraryForm = () => {
-    const [formSubmitted, setFormSubmitted] = useState(false)
+const ItineraryForm = ({ submittedForm, setSubmittedForm }) => {
+    // const ItineraryForm = () => {
+    // const [formSubmitted, setFormSubmitted] = useState(false)
     const [title, setTitle] = useState('');
     const [start_date, setStart_date] = useState('');
     const [end_date, setEnd_date] = useState('');
@@ -16,15 +17,16 @@ const ItineraryForm = () => {
     const dispatch = useDispatch();
     const owner_id = useSelector(state => state.session.user.id)
 
-    const submittedForm = () => {
-        setFormSubmitted(!formSubmitted)
-    }
+    // const submittedForm = () => {
+    //     setSubmittedForm(!submittedForm)
+    // }
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         // console.log('BEFORE')
         await dispatch(postItinerary(title, start_date, end_date, owner_id, image_url, notes));
-        submittedForm()
+        setSubmittedForm(!submittedForm)
+        window.location.reload();
         // console.log('AFTER')
     };
 

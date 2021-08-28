@@ -100,14 +100,14 @@ export const postItinerary = (title, start_date, end_date, owner_id, image_url, 
 }
 
 // define thunk creator for DELETE request
-export const removeItinerary = async (id) => async (dispatch) => {
+export const removeItinerary = (id) => async (dispatch) => {
     const res = await fetch(`/api/itineraries/${id}`, {
         method: 'DELETE'
     });
-
+    // console.log("----------------------------------------------------------------", res)
     if (res.ok) {
         const data = await res.json();
-        dispatch(deleteItinerary(data))
+        dispatch(deleteItinerary(id))
         return data;
     }
 }
@@ -129,10 +129,10 @@ export default function reducer(state = initialState, action) {
         //     }
         case POST_ITINERARY:
             return { itineraries: action.payload };
-        // case DELETE_ITINERARY:
-        //     const newObj = { ...state };
-        //     delete newObj[action.itinerary.id];
-        //     return newObj
+        case DELETE_ITINERARY: // ! WHYYYY DID I HAVE THIS COMMENTED OUT
+            const newObj = { ...state };
+            delete newObj[action.itinerary.id];
+            return newObj
         default:
             return state;
     }
