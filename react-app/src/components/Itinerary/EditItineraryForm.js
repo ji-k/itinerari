@@ -8,7 +8,9 @@ import './ItineraryForm.css'
 
 const EditItineraryForm = ({ itinerary }) => {
     const owner_id = useSelector(state => state.session.user.id)
-    const itineraries = useSelector(state => state.itineraries)
+    // const itineraries = useSelector(state => state.itineraries)
+    const itineraries = Object.values(useSelector(state => state.itineraries))
+
     const dispatch = useDispatch();
     const { id } = useParams;
 
@@ -18,35 +20,47 @@ const EditItineraryForm = ({ itinerary }) => {
     const [image_url, setImage_url] = useState('');
     const [notes, setNotes] = useState('');
 
+    const itineraryId = itinerary[0].id
+
+    // const itineraryIdToEdit = itineraries.filter(itinerary => (
+    //     itinerary?.id == number
+    // ))
+
 
     // const submittedForm = () => {
     //     setSubmittedForm(!submittedForm)
     // }
 
+    const itinerariesX = itinerary
+
     useEffect(() => {
-        setTitle(itinerary?.title)
-        setStart_date(itinerary?.start_date)
-        setEnd_date(itinerary?.end_date)
-        setImage_url(itinerary?.image_url)
-        setNotes(itinerary?.notes)
-    }, [itinerary])
+        setTitle(itinerariesX.title)
+        setStart_date(itinerariesX.start_date)
+        setEnd_date(itinerariesX.end_date)
+        setImage_url(itinerariesX.image_url)
+        setNotes(itinerariesX.notes)
+    }, [itinerariesX])
+
+    console.log("------", itinerariesX)
+
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        itinerary?.title = title
-        itinerary?.start_date = start_date
-        itinerary?.end_date = end_date
-        itinerary?.image_url = image_url
-        itinerary?.notes = notes
+        itinerariesX.title = title
+        itinerariesX.start_date = start_date
+        itinerariesX.end_date = end_date
+        itinerariesX.image_url = image_url
+        itinerariesX.notes = notes
         // console.log('BEFORE')
         // setSubmittedForm(!submittedForm)
         // window.location.reload();
         // console.log('AFTER')
-        dispatch(updateItinerary(itinerary));
+        dispatch(updateItinerary(itineraryId, title, start_date, end_date, image_url, notes));
         // history.push('/');
     };
+    console.log("---odksfjdlfsdf==-=", itineraryId)
 
-
+    console.log("---------", itineraries)
     return (
         <>
             <div className="itinerary-form__container">
