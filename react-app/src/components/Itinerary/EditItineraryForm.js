@@ -33,8 +33,11 @@ const EditItineraryForm = ({ itinerary }) => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        title: title
-
+        itinerary?.title = title
+        itinerary?.start_date = start_date
+        itinerary?.end_date = end_date
+        itinerary?.image_url = image_url
+        itinerary?.notes = notes
         // console.log('BEFORE')
         // setSubmittedForm(!submittedForm)
         // window.location.reload();
@@ -42,6 +45,7 @@ const EditItineraryForm = ({ itinerary }) => {
         dispatch(updateItinerary(itinerary));
         // history.push('/');
     };
+
 
     return (
         <>
