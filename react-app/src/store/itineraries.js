@@ -34,13 +34,13 @@ const deleteItinerary = (itinerary) => ({
 
 // define thunk creator for GET /itineraries
 export const getItineraries = () => async (dispatch) => {
-    const res = await fetch('/api/itineraries/');
+    const res = await fetch("/api/itineraries/");
     if (res.ok) {
-        const data = await res.json();
-        dispatch(setItineraries(data));
+        const { itineraries } = await res.json();
+        dispatch(setItineraries(itineraries));
         return null;
     }
-}
+};
 
 // define thunk creator for GET /itineraries/:id
 export const getItinerary = (id) => async (dispatch) => {
@@ -49,6 +49,7 @@ export const getItinerary = (id) => async (dispatch) => {
         const data = await res.json();
         dispatch(getItinerary(data));
     }
+    return res
 }
 
 // define thunk creator for PUT request (edit)
@@ -108,8 +109,8 @@ export const removeItinerary = (id) => async (dispatch) => {
     if (res.ok) {
         const data = await res.json();
         dispatch(deleteItinerary(id))
-        return res;
     }
+    return res;
 }
 
 // define the initial state
@@ -119,7 +120,11 @@ const initialState = {};
 export default function reducer(state = initialState, action) {
     switch (action.type) {
         case SET_ITINERARIES:
-            return { ...action.payload.itineraries }
+            // return { ...action.payload.itineraries }
+            return {
+                ...state,
+                ...action.payload
+            }
         // case SET_ITINERARY:
         //     return { itineraries: action.payload }
         // case EDIT_ITINERARY:
@@ -128,7 +133,11 @@ export default function reducer(state = initialState, action) {
         //         [action.itinerary.id]: action.itinerary
         //     }
         case POST_ITINERARY:
-            return { itineraries: action.payload };
+            // return { itineraries: action.payload };
+            return {
+                ...state,
+                ...action.itinerary
+            };
         case DELETE_ITINERARY: // ! WHYYYY DID I HAVE THIS COMMENTED OUT
             const newObj = { ...state };
             delete newObj[action.itinerary];

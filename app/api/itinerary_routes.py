@@ -11,7 +11,8 @@ itinerary_routes = Blueprint('itineraries', __name__, url_prefix='')
 def get_itineraries():
     all_itineraries = Itinerary.query.all()
     # all_itineraries = Itinerary.query(Itinerary.owner_id == current_user.id).all()
-    return {'itineraries': [itinerary.to_dict() for itinerary in all_itineraries]}
+    # return {'itineraries': [itinerary.to_dict() for itinerary in all_itineraries]}
+    return {'itineraries': {itinerary.id: itinerary.to_dict() for itinerary in all_itineraries}}
 
 # get an itinerary
 @itinerary_routes.route('/<int:id>')

@@ -11,7 +11,8 @@ import './Dashboard.css'
 const Dashboard = () => {
 
     const user = useSelector(state => state.session.user)
-    const itineraries = useSelector(state => state.itineraries)
+    const itineraries = useSelector((state) => Object.values(state.itineraries));
+    // const itineraries = useSelector(state => state.itineraries)
 
     const [submittedForm, setSubmittedForm] = useState(false) // !!!!
     const [itineraryOn, setItineraryOn] = useState(false)
@@ -56,7 +57,8 @@ const Dashboard = () => {
                         <div className="dashboard__sidebar-list-container" >
                             {/* <Itineraries /> */}
                             <div className="dashboard__sidebar-itinerary-button">
-                                {Object.values(itineraries).map(itinerary => {
+                                {/* {Object.values(itineraries).map(itinerary => { */}
+                                {itineraries.map(itinerary => {
                                     if (user.id === itinerary?.owner_id)
                                         return (
                                             <>
