@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink, useHistory } from "react-router-dom";
-import { getItineraries, removeItinerary } from '../../store/itineraries'
+import { getItineraries, updateItinerary, removeItinerary } from '../../store/itineraries'
 import ItineraryForm from '../Itinerary/ItineraryForm';
 import ItineraryPage from '../ItineraryPage/ItineraryPage';
 import Itineraries from '../Itinerary/';

@@ -53,28 +53,28 @@ export const getItinerary = (id) => async (dispatch) => {
 }
 
 // define thunk creator for PUT request (edit)
-// export const updateItinerary = (id, title, start_date, end_date, image_url, notes) => async (dispatch) => {
-//     const res = await fetch(`/api/itineraries/${id}`, {
-//         method: 'PUT',
-//         headers: {
-//             'Content-Type': 'application/json'
-//         },
-//         body: JSON.stringify({
-//             title,
-//             start_date,
-//             end_date,
-//             image_url,
-//             notes
-//         })
-//     });
-//     if (res.ok) {
-//         const data = await res.json();
-//         dispatch(editItinerary(data));
-//         return data
-//     } else {
-//         return ["An error occurred. Please try again"]
-//     }
-// }
+export const updateItinerary = (id, title, start_date, end_date, image_url, notes) => async (dispatch) => {
+    const res = await fetch(`/api/itineraries/${id}`, {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            title,
+            start_date,
+            end_date,
+            image_url,
+            notes
+        })
+    });
+    if (res.ok) {
+        const data = await res.json();
+        dispatch(editItinerary(data));
+        return data
+    } else {
+        return ["An error occurred. Please try again"]
+    }
+}
 
 // define thunk creator for POST request
 export const postItinerary = (title, start_date, end_date, owner_id, image_url, notes) => async (dispatch) => {
