@@ -6,16 +6,16 @@ import './ItineraryForm.css'
 
 
 const ItineraryForm = ({ submittedForm, setSubmittedForm }) => {
-    // const ItineraryForm = () => {
-    // const [formSubmitted, setFormSubmitted] = useState(false)
+    const owner_id = useSelector(state => state.session.user.id)
+
+    const dispatch = useDispatch();
+
     const [title, setTitle] = useState('');
     const [start_date, setStart_date] = useState('');
     const [end_date, setEnd_date] = useState('');
     const [image_url, setImage_url] = useState('');
     const [notes, setNotes] = useState('');
 
-    const dispatch = useDispatch();
-    const owner_id = useSelector(state => state.session.user.id)
 
     // const submittedForm = () => {
     //     setSubmittedForm(!submittedForm)
@@ -25,8 +25,8 @@ const ItineraryForm = ({ submittedForm, setSubmittedForm }) => {
         e.preventDefault();
         // console.log('BEFORE')
         await dispatch(postItinerary(title, start_date, end_date, owner_id, image_url, notes));
-        setSubmittedForm(!submittedForm)
-        window.location.reload();
+        // setSubmittedForm(!submittedForm)
+        // window.location.reload();
         // console.log('AFTER')
     };
 
