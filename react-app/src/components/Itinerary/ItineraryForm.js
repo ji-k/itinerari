@@ -1,13 +1,10 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+
 import { postItinerary } from '../../store/itineraries';
 import './ItineraryForm.css'
 
-
-
-const ItineraryForm = ({ submittedForm, setSubmittedForm }) => {
-    const owner_id = useSelector(state => state.session.user.id)
-
+const ItineraryForm = ({ input, setInput }) => {
     const dispatch = useDispatch();
 
     const [title, setTitle] = useState('');
@@ -16,6 +13,10 @@ const ItineraryForm = ({ submittedForm, setSubmittedForm }) => {
     const [image_url, setImage_url] = useState('');
     const [notes, setNotes] = useState('');
 
+    const [submittedForm, setSubmittedForm] = useState(false)
+    const owner_id = useSelector(state => state.session.user.id)
+    const [errors, setErrors] = useState([]);
+
 
     // const submittedForm = () => {
     //     setSubmittedForm(!submittedForm)
@@ -23,17 +24,44 @@ const ItineraryForm = ({ submittedForm, setSubmittedForm }) => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        // console.log('BEFORE')
+        setErrors([]);
+
         await dispatch(postItinerary(title, start_date, end_date, owner_id, image_url, notes));
         setSubmittedForm(!submittedForm)
-        window.location.reload();
-        // console.log('AFTER')
-    };
+    }
+
+    // setSubmittedForm(!submittedForm)
+    // window.location.reload();
+    // // console.log('AFTER')
+
+    const successMessage = `Your itinerary has been created.`;
+    const closeWindow = `Click outside of this window to close.`;
+
+    useEffect(() => {
+        alert('reload!')
+    }, [])
 
     return (
         <>
+            <div>
+                {submittedForm && (
+                    <>
+                        <h3 style={{ color: "green" }}>{successMessage}</h3>
+                        <p>{closeWindow}</p>
+                    </>
+                )}
+                {!submittedForm}
+            </div>
             <div className="itinerary-form__container">
                 <form className="itinerary-form" onSubmit={handleSubmit}>
+                    <ul>
+                        {errors &&
+                            errors.map((error, idx) => (
+                                <li key={idx} style={{ color: "red" }}>
+                                    {error}
+                                </li>
+                            ))}
+                    </ul>
                     <label>
                         Title
                     </label>

@@ -79,7 +79,7 @@ const Dashboard = () => {
                                                         onClick={() => {
                                                             dispatch(removeItinerary(itinerary.id));
                                                             // history.push('/dashboard');
-                                                            window.location.reload(); // ! refactor this with a useState toggle
+                                                            // window.location.reload(); // ! refactor this with a useState toggle
                                                         }}
                                                     >
                                                         delete
