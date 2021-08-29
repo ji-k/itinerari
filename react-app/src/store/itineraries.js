@@ -95,7 +95,7 @@ export const postItinerary = (title, start_date, end_date, owner_id, image_url, 
             return data;
         }
         dispatch(createItinerary(data));
-        return data;
+        return res;
     }
 }
 
@@ -108,7 +108,7 @@ export const removeItinerary = (id) => async (dispatch) => {
     if (res.ok) {
         const data = await res.json();
         dispatch(deleteItinerary(id))
-        return data;
+        return res;
     }
 }
 
