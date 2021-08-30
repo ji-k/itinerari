@@ -36,12 +36,20 @@ const LandingPage = () => {
                         </div>
                         <div className="feature-4-container feature-points">
                             <img src="https://github.com/ji-k/itinerari/blob/main/assets/images/9.jpg?raw=true" className="feature-image" />
-                            <p className="feature-points-details">Add hotel information so you'll know exact dates of stay. Add a rooming list so you'll know who is staying where.</p>
+                            <p className="feature-points-details">Add hotel information so you'll know exact dates of stay. Add a rooming list so you'll know where your group is staying.</p>
                         </div>
                     </div>
                 </div>
                 <div className="landing-page__mid-banner-container">
                     <div className="travel-quote">Collect moments, not things.</div>
+                </div>
+                <div className="landing-page__about-me-container">
+                    <div className="landing-page__about-me-inner-container">
+                        <p className="about">Created by <strong>Ji Kyung</strong></p>
+                        <p className="about">jikyung@gmail.com</p>
+                        <a href="www.linkedin.com/in/jikyung" className="about">LinkedIn</a><br /><br />
+                        <a href="https://github.com/ji-k" className="about">GitHub</a>
+                    </div>
                 </div>
             </div>
         </>
