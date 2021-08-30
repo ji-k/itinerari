@@ -17,6 +17,7 @@ const Dashboard = () => {
     const [submittedForm, setSubmittedForm] = useState(false) // !!!!
     const [itineraryOn, setItineraryOn] = useState(false)
     const [number, setNumber] = useState('')
+    const [reloader, setReloader] = useState(true)
 
     const dispatch = useDispatch();
     const history = useHistory();
@@ -24,7 +25,7 @@ const Dashboard = () => {
 
     useEffect(() => {
         dispatch(getItineraries());
-    }, [dispatch]);
+    }, [dispatch, reloader]);
     // }, [dispatch, formSubmitted]);
 
     // const submittedForm = () => {
@@ -76,9 +77,13 @@ const Dashboard = () => {
                                                     {/* <div onClick={handleDelete}>Delete</div> */}
                                                     {itinerary?.owner_id === user.id && <button
                                                         className="itinerary-delete"
+
                                                         onClick={() => {
                                                             dispatch(removeItinerary(itinerary.id));
                                                             // history.push('/dashboard');
+                                                            // setReloader(!reloader);
+                                                            history.push('/')
+                                                            history.push('/dashboard')
                                                             // window.location.reload(); // ! refactor this with a useState toggle
                                                         }}
                                                     >

@@ -61,11 +61,7 @@ export const updateItinerary = (id, title, start_date, end_date, image_url, note
     form.append('image_url', image_url);
     form.append('notes', notes);
 
-    console.log("7777777", title)
-    console.log("7777777", start_date)
-    console.log("7777777", end_date)
-    console.log("7777777", image_url)
-    console.log("7777777", notes)
+
 
     const res = await fetch(`/api/itineraries/${id}/edit/`, {
         method: 'POST',

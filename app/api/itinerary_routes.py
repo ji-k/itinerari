@@ -69,4 +69,4 @@ def delete_itinerary(id):
     itinerary = Itinerary.query.get(id)
     db.session.delete(itinerary)
     db.session.commit()
-    return itinerary.to_dict
+    return {"delete": 1}

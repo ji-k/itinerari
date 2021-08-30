@@ -6,7 +6,7 @@ import './ItineraryForm.css'
 
 
 
-const EditItineraryForm = ({ itinerary }) => {
+const EditItineraryForm = ({ itinerary, reloader }) => {
     const owner_id = useSelector(state => state.session.user.id)
     // const itineraries = useSelector(state => state.itineraries)
     const itineraries = Object.values(useSelector(state => state.itineraries))
@@ -56,7 +56,7 @@ const EditItineraryForm = ({ itinerary }) => {
         // window.location.reload();
         // console.log('AFTER')
         dispatch(updateItinerary(itineraryId, title, start_date, end_date, image_url, notes));
-        // history.push('/');
+        reloader()// history.push('/');
     };
     console.log("---odksfjdlfsdf==-=", itineraryId)
 
