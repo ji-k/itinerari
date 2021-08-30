@@ -48,6 +48,7 @@
     background-color:#282828;
     position: absolute;
     top: 800px;
+    width: 100vw;
 }
 
 .features {
@@ -55,12 +56,45 @@
     font-size: 20pt;
     text-align: center;
     margin-top: 50px;
+    /* margin-bottom: 50px; */
+}
+
+.flex-center-me {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
 }
 
 .features-details {
     color: white;
     font-weight: 100;
-    font-size: 12pt;
+    font-size: 14pt;
     text-align: center;
     margin: 0 15% 0 15%;
+}
+
+.feature-points {
+    margin: 10px;
+}
+
+.feature-1-container {
+    float: left;
+}
+
+.feature-image {
+    object-fit: cover;
+    width: 200px;
+    height: 200px;
+}
+
+.feature-points-details {
+    color: white;
+    font-weight: 100;
+    font-size: 11pt;
+    width: 200px;
+    text-align: center;
+}
+
+.feature-2-container {
+    float: left;
 }
