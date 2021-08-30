@@ -25,11 +25,11 @@ def get_itinerary(id):
 @itinerary_routes.route('/create/', methods=['POST'])
 @login_required
 def create_itinerary():
-    print('----YERRRRTLFJKLSFJDKLSFJ')
+
     form = ItineraryForm()
     form['csrf_token'].data = request.cookies['csrf_token']
     data = form.data
-    print('OKAY BRANDON',data)
+
     if form.validate_on_submit():
         itinerary = Itinerary(
             title=data['title'],
@@ -49,7 +49,6 @@ def create_itinerary():
 def edit_itinerary(id):
     title = request.form['title']
     start_date = request.form["start_date"]
-    # print("du du du dud ud ud du 777789Q1382094820343948239048290482390482904823904803498239048390", start_date)
     end_date = request.form["end_date"]
     image_url = request.form["image_url"]
     notes = request.form["notes"]
