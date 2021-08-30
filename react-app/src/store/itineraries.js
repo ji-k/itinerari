@@ -137,9 +137,9 @@ export default function reducer(state = initialState, action) {
         //         [action.itinerary.id]: action.itinerary
         //     }
         case POST_ITINERARY:
-            // return { itineraries: action.payload };
-            const { itineraries } = action.payload;
-            return { ...state, [itineraries.id]: itineraries };
+            return { itineraries: action.payload };
+        // const { itineraries } = action.payload;
+        // return { ...state, [itineraries.id]: itineraries };
         case DELETE_ITINERARY:
             const newObj = { ...state };
             delete newObj[action.itinerary];
