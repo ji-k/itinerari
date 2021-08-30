@@ -40,7 +40,7 @@ def create_itinerary():
         )
         db.session.add(itinerary)
         db.session.commit()
-        return {'itinerary': itinerary.to_dict(), 'input': {}}
+        return {'itineraries': itinerary.to_dict(), 'itinerary': {}}
 
 # edit an itinerary
 @itinerary_routes.route('/<int:id>/edit/', methods=['POST'])
