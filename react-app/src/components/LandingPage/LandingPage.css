@@ -1,7 +1,7 @@
-.landing-page__outer-container {
-    background-image: url('https://raw.githubusercontent.com/ji-k/itinerari/main/assets/images/7.jpg');
+.landing-page__header-container {
+    background-image: url('https://raw.githubusercontent.com/ji-k/itinerari/main/assets/images/6.jpg');
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size:cover;
     height: 800px;
     width: 100%;
     position: absolute;
@@ -22,7 +22,7 @@
 
 .travel-smarter {
     color: black;
-    font-weight: thin;
+    font-weight: 100;
     font-size: 20pt;
     width: 500px;
     margin: auto;
@@ -42,4 +42,25 @@
     top: 250px;
     margin: 0 auto;
     display: block;
+}
+
+.landing-page__features-container {
+    background-color:#282828;
+    position: absolute;
+    top: 800px;
+}
+
+.features {
+    color: white;
+    font-size: 20pt;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.features-details {
+    color: white;
+    font-weight: 100;
+    font-size: 12pt;
+    text-align: center;
+    margin: 0 15% 0 15%;
 }
