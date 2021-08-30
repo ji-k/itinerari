@@ -43,6 +43,24 @@ def create_itinerary():
         db.session.commit()
     return itinerary.to_dict()
 
+# edit an itinerary
+@itinerary_routes.route('/<int:id>/edit/', methods=['POST'])
+@login_required
+def edit_itinerary(id):
+    title = request.form['title']
+    start_date = request.form["start_date"]
+    # print("du du du dud ud ud du 777789Q1382094820343948239048290482390482904823904803498239048390", start_date)
+    end_date = request.form["end_date"]
+    image_url = request.form["image_url"]
+    notes = request.form["notes"]
+    itinerary = Itinerary.query.get(id)
+    itinerary.title = title
+    itinerary.start_date = start_date
+    itinerary.end_date = end_date
+    itinerary.image_url = image_url
+    itinerary.notes = notes
+    db.session.commit()
+    return 'edit'
 
 # delete an itinerary
 @itinerary_routes.route('<int:id>',methods=['DELETE'])
@@ -51,4 +69,4 @@ def delete_itinerary(id):
     itinerary = Itinerary.query.get(id)
     db.session.delete(itinerary)
     db.session.commit()
-    return itinerary.to_dict
+    return {"delete": 1}

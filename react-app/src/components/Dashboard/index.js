@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink, useHistory } from "react-router-dom";
-import { getItineraries, removeItinerary } from '../../store/itineraries'
+import { getItineraries, updateItinerary, removeItinerary } from '../../store/itineraries'
 import ItineraryForm from '../Itinerary/ItineraryForm';
 import ItineraryPage from '../ItineraryPage/ItineraryPage';
 import Itineraries from '../Itinerary/';
@@ -17,6 +17,7 @@ const Dashboard = () => {
     const [submittedForm, setSubmittedForm] = useState(false) // !!!!
     const [itineraryOn, setItineraryOn] = useState(false)
     const [number, setNumber] = useState('')
+    const [reloader, setReloader] = useState(true)
 
     const dispatch = useDispatch();
     const history = useHistory();
@@ -24,7 +25,7 @@ const Dashboard = () => {
 
     useEffect(() => {
         dispatch(getItineraries());
-    }, [dispatch]);
+    }, [dispatch, reloader]);
     // }, [dispatch, formSubmitted]);
 
     // const submittedForm = () => {
@@ -76,10 +77,14 @@ const Dashboard = () => {
                                                     {/* <div onClick={handleDelete}>Delete</div> */}
                                                     {itinerary?.owner_id === user.id && <button
                                                         className="itinerary-delete"
+
                                                         onClick={() => {
                                                             dispatch(removeItinerary(itinerary.id));
                                                             // history.push('/dashboard');
-                                                            window.location.reload(); // ! refactor this with a useState toggle
+                                                            // setReloader(!reloader);
+                                                            history.push('/')
+                                                            history.push('/dashboard')
+                                                            // window.location.reload(); // ! refactor this with a useState toggle
                                                         }}
                                                     >
                                                         delete

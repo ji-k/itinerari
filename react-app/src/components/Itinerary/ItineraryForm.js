@@ -26,7 +26,7 @@ const ItineraryForm = ({ submittedForm, setSubmittedForm }) => {
         // console.log('BEFORE')
         await dispatch(postItinerary(title, start_date, end_date, owner_id, image_url, notes));
         setSubmittedForm(!submittedForm)
-        window.location.reload();
+        // window.location.reload();
         // console.log('AFTER')
     };
 
