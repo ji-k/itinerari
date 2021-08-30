@@ -78,7 +78,7 @@ export const updateItinerary = (id, title, start_date, end_date, image_url, note
 
 // define thunk creator for POST request
 export const postItinerary = (title, start_date, end_date, owner_id, image_url, notes) => async (dispatch) => {
-    console.log('NO BRANDON', owner_id)
+
     const form = new FormData();
     form.append('title', title);
     form.append('start_date', start_date);
@@ -105,7 +105,6 @@ export const removeItinerary = (id) => async (dispatch) => {
     const res = await fetch(`/api/itineraries/${id}`, {
         method: 'DELETE'
     });
-    // console.log("----------------------------------------------------------------", res)
     if (res.ok) {
         const data = await res.json();
         dispatch(deleteItinerary(id))

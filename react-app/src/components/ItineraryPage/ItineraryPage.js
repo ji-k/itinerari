@@ -11,7 +11,7 @@ export default function Profile({ number }) {
         itinerary?.id == number
     ))
 
-    console.log("4829048239420348", itinerary)
+
     return (
         <>
             < EditItineraryModal itinerary={itinerary} />

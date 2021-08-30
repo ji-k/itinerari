@@ -41,7 +41,7 @@ const EditItineraryForm = ({ itinerary, reloader }) => {
         setNotes(itinerariesX.notes)
     }, [itinerariesX])
 
-    console.log("------", itinerariesX)
+
 
 
     const handleSubmit = async (e) => {
@@ -51,16 +51,16 @@ const EditItineraryForm = ({ itinerary, reloader }) => {
         itinerariesX.end_date = end_date
         itinerariesX.image_url = image_url
         itinerariesX.notes = notes
-        // console.log('BEFORE')
+
         // setSubmittedForm(!submittedForm)
         // window.location.reload();
-        // console.log('AFTER')
+
         dispatch(updateItinerary(itineraryId, title, start_date, end_date, image_url, notes));
         reloader()// history.push('/');
     };
-    console.log("---odksfjdlfsdf==-=", itineraryId)
 
-    console.log("---------", itineraries)
+
+
     return (
         <>
             <div className="itinerary-form__container">
