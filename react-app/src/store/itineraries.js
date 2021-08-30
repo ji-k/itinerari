@@ -94,12 +94,12 @@ export const postItinerary = (itinerary) => async (dispatch) => {
         body: JSON.stringify(itinerary)
     });
     if (res.ok) {
-        const payload = await res.json();
+        const { itineraries } = await res.json();
         // console.log(data)
         // if (data.errors) {
         //     return data;
         // }
-        dispatch(createItinerary(payload));
+        dispatch(createItinerary(itineraries));
         // // return res;
         return 'success';
     }
@@ -131,15 +131,15 @@ export default function reducer(state = initialState, action) {
             }
         // case SET_ITINERARY:
         //     return { itineraries: action.payload }
-        // case EDIT_ITINERARY:
-        //     return {
-        //         ...state,
-        //         [action.itinerary.id]: action.itinerary
-        //     }
+        case EDIT_ITINERARY:
+            return {
+                ...state,
+                [action.itinerary.id]: action.itinerary
+            }
         case POST_ITINERARY:
-            return { itineraries: action.payload };
-        // const { itineraries } = action.payload;
-        // return { ...state, [itineraries.id]: itineraries };
+            // return { itineraries: action.payload };
+            // const { itineraries } = action.payload;
+            return { ...state, [action.itinerary.id]: action.itinerary };
         case DELETE_ITINERARY:
             const newObj = { ...state };
             delete newObj[action.itinerary];

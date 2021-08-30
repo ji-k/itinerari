@@ -58,7 +58,7 @@ def edit_itinerary(id):
     itinerary.image_url = image_url
     itinerary.notes = notes
     db.session.commit()
-    return 'edit'
+    return itinerary.to_dict()
 
 # delete an itinerary
 @itinerary_routes.route('<int:id>',methods=['DELETE'])
