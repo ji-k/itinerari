@@ -1,24 +1,47 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { postItinerary } from '../../store/itineraries';
+import './ItineraryForm.css'
 
-const ItineraryForm = ({ submittedForm }) => {
+
+
+const ItineraryForm = ({ handleHide, submittedForm, setSubmittedForm }) => {
+    const owner_id = useSelector(state => state.session.user.id)
+
+    const dispatch = useDispatch();
+
     const [title, setTitle] = useState('');
     const [start_date, setStart_date] = useState('');
     const [end_date, setEnd_date] = useState('');
     const [image_url, setImage_url] = useState('');
     const [notes, setNotes] = useState('');
 
-    const dispatch = useDispatch();
-    const owner_id = useSelector(state => state.session.user.id)
+
+    // const submittedForm = () => {
+    //     setSubmittedForm(!submittedForm)
+    // }
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log('BEFORE')
-        await dispatch(postItinerary(title, start_date, end_date, owner_id, image_url, notes));
-        submittedForm()
-        console.log('AFTER')
+        // console.log('BEFORE')
+        const itinerary = { title, start_date, end_date, owner_id, image_url, notes }
+        const success = await dispatch(postItinerary(itinerary));
+        const clearForm = () => {
+            setTitle('');
+            setStart_date('');
+            setEnd_date('');
+            setImage_url('');
+            setNotes('');
+        }
+        // setSubmittedForm(!submittedForm)
+        if (success) {
+            handleHide(true)
+            clearForm()
+        }
+        // window.location.reload();
+        // console.log('AFTER')
     };
+
     return (
         <>
             <div className="itinerary-form__container">
@@ -43,7 +66,7 @@ const ItineraryForm = ({ submittedForm }) => {
                         Itinerary Notes
                     </label>
                     <input type="text" value={notes} placeholder="Notes..." onChange={(e) => setNotes(e.target.value)} />
-                    <button>New Itinerary</button>
+                    <button type="submit">New Itinerary</button>
                 </form>
             </div>
         </>

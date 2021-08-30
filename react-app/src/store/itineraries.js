@@ -34,13 +34,13 @@ const deleteItinerary = (itinerary) => ({
 
 // define thunk creator for GET /itineraries
 export const getItineraries = () => async (dispatch) => {
-    const res = await fetch('/api/itineraries/');
+    const res = await fetch("/api/itineraries/");
     if (res.ok) {
-        const data = await res.json();
-        dispatch(setItineraries(data));
+        const { itineraries } = await res.json();
+        dispatch(setItineraries(itineraries));
         return null;
     }
-}
+};
 
 // define thunk creator for GET /itineraries/:id
 export const getItinerary = (id) => async (dispatch) => {
@@ -49,67 +49,72 @@ export const getItinerary = (id) => async (dispatch) => {
         const data = await res.json();
         dispatch(getItinerary(data));
     }
+    return res
 }
 
 // define thunk creator for PUT request (edit)
-// export const updateItinerary = (id, title, start_date, end_date, image_url, notes) => async (dispatch) => {
-//     const res = await fetch(`/api/itineraries/${id}`, {
-//         method: 'PUT',
-//         headers: {
-//             'Content-Type': 'application/json'
-//         },
-//         body: JSON.stringify({
-//             title,
-//             start_date,
-//             end_date,
-//             image_url,
-//             notes
-//         })
-//     });
-//     if (res.ok) {
-//         const data = await res.json();
-//         dispatch(editItinerary(data));
-//         return data
-//     } else {
-//         return ["An error occurred. Please try again"]
-//     }
-// }
-
-// define thunk creator for POST request
-export const postItinerary = (title, start_date, end_date, owner_id, image_url, notes) => async (dispatch) => {
-    console.log('NO BRANDON', owner_id)
+export const updateItinerary = (id, title, start_date, end_date, image_url, notes) => async (dispatch) => {
     const form = new FormData();
     form.append('title', title);
     form.append('start_date', start_date);
     form.append('end_date', end_date);
     form.append('image_url', image_url);
-    form.append('owner_id', owner_id);
     form.append('notes', notes);
-    const res = await fetch(`/api/itineraries/create/`, {
-        method: "POST",
+
+
+
+    const res = await fetch(`/api/itineraries/${id}/edit/`, {
+        method: 'POST',
         body: form
     });
     if (res.ok) {
         const data = await res.json();
-        if (data.errors) {
-            return data;
-        }
-        dispatch(createItinerary(data));
-        return data;
+        dispatch(editItinerary(data));
+        return data
+    } else {
+        return ["An error occurred. Please try again"]
+    }
+}
+
+// define thunk creator for POST request
+export const postItinerary = (itinerary) => async (dispatch) => {
+
+    // const form = new FormData();
+    // form.append('title', title);
+    // form.append('start_date', start_date);
+    // form.append('end_date', end_date);
+    // form.append('image_url', image_url);
+    // form.append('owner_id', owner_id);
+    // form.append('notes', notes);
+    const res = await fetch(`/api/itineraries/`, {
+        method: "POST",
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(itinerary)
+    });
+    if (res.ok) {
+        const { itineraries } = await res.json();
+        // console.log(data)
+        // if (data.errors) {
+        //     return data;
+        // }
+        dispatch(createItinerary(itineraries));
+        // // return res;
+        return 'success';
     }
 }
 
 // define thunk creator for DELETE request
-export const removeItinerary = async (id) => async (dispatch) => {
+export const removeItinerary = (id) => async (dispatch) => {
     const res = await fetch(`/api/itineraries/${id}`, {
         method: 'DELETE'
     });
-
     if (res.ok) {
         const data = await res.json();
-        dispatch(deleteItinerary(data))
-        return data;
+        dispatch(deleteItinerary(id))
     }
+    return res;
 }
 
 // define the initial state
@@ -119,20 +124,26 @@ const initialState = {};
 export default function reducer(state = initialState, action) {
     switch (action.type) {
         case SET_ITINERARIES:
-            return { ...action.payload.itineraries }
+            // return { ...action.payload.itineraries }
+            return {
+                ...state,
+                ...action.payload
+            }
         // case SET_ITINERARY:
         //     return { itineraries: action.payload }
-        // case EDIT_ITINERARY:
-        //     return {
-        //         ...state,
-        //         [action.itinerary.id]: action.itinerary
-        //     }
+        case EDIT_ITINERARY:
+            return {
+                ...state,
+                [action.itinerary.id]: action.itinerary
+            }
         case POST_ITINERARY:
-            return { itineraries: action.payload };
-        // case DELETE_ITINERARY:
-        //     const newObj = { ...state };
-        //     delete newObj[action.itinerary.id];
-        //     return newObj
+            // return { itineraries: action.payload };
+            // const { itineraries } = action.payload;
+            return { ...state, [action.itinerary.id]: action.itinerary };
+        case DELETE_ITINERARY:
+            const newObj = { ...state };
+            delete newObj[action.itinerary];
+            return newObj
         default:
             return state;
     }

@@ -4,6 +4,9 @@ import { NavLink, useParams } from 'react-router-dom';
 import { getItineraries, getItinerary, updateItinerary, removeItinerary } from '../../store/itineraries';
 import './itinerary.css'
 
+// !
+// ! THIS IS CURRENTLY A DEAD COMPONENT
+// !
 
 const Itineraries = () => {
 
@@ -31,23 +34,36 @@ const Itineraries = () => {
 
     return (
         <>
-            <div className="itineraries__outer-container">
+            {/* <div className="itineraries__outer-container"> */}
 
-                {Object.values(itineraries).map(itinerary => {
-                    if (user.id === itinerary?.owner_id)
-                        return (
-                            <a key={itinerary.id}
-                                href={`/itineraries/${itinerary.id}`}
-                                id={itinerary.id}
-                                className="itineraries-link" >
-                                {itinerary.title}
-                            </a>)
-                })
-                }
+            {/* {Object.values(itineraries).map(itinerary => { */}
+            {/* if (user.id === itinerary?.owner_id) */}
+            {/*
+            <div>
 
-            </div>
+                id={itinerary.id}
+
+                {itinerary.title}
+            </div>) */}
+
+            {/* } */}
+
+            {/* </div> */}
         </>
     )
 };
 
 export default Itineraries
+
+
+// {Object.values(itineraries).map(itinerary => {
+//     if (user.id === itinerary?.owner_id)
+//         return (
+//             <div key={itinerary.id}
+//                 // href={`/itineraries/${itinerary.id}`}
+//                 id={itinerary.id}
+//                 className="itineraries-link" >
+//                 {itinerary.title}
+//             </div>)
+// })
+// }
