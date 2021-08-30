@@ -18,6 +18,7 @@ const Dashboard = () => {
     const [itineraryOn, setItineraryOn] = useState(false)
     const [number, setNumber] = useState('')
     const [reloader, setReloader] = useState(true)
+    const [formHidden, setFormHidden] = useState(true)
 
     const dispatch = useDispatch();
     const history = useHistory();
@@ -51,7 +52,7 @@ const Dashboard = () => {
                     <div className="dashboard__sidebar-outer-container">
                         <div className="dashboard__sidebar-header-container">
                             {/* <button>create itinerary</button> */}
-                            < CreateItineraryModal submittedForm={submittedForm} setSubmittedForm={setSubmittedForm} />
+                            < CreateItineraryModal handleHide={setFormHidden} submittedForm={submittedForm} setSubmittedForm={setSubmittedForm} />
                             {/* < CreateItineraryModal /> */}
 
                         </div>

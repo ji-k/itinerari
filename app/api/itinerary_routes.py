@@ -22,10 +22,9 @@ def get_itinerary(id):
     return itinerary.to_dict()
 
 # create an itinerary
-@itinerary_routes.route('/create/', methods=['POST'])
+@itinerary_routes.route('/', methods=['POST'])
 @login_required
 def create_itinerary():
-
     form = ItineraryForm()
     form['csrf_token'].data = request.cookies['csrf_token']
     data = form.data
@@ -41,7 +40,7 @@ def create_itinerary():
         )
         db.session.add(itinerary)
         db.session.commit()
-    return itinerary.to_dict()
+        return {'itinerary': itinerary.to_dict(), 'input': {}}
 
 # edit an itinerary
 @itinerary_routes.route('/<int:id>/edit/', methods=['POST'])

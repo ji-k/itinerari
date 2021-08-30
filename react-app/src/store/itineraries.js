@@ -77,26 +77,31 @@ export const updateItinerary = (id, title, start_date, end_date, image_url, note
 }
 
 // define thunk creator for POST request
-export const postItinerary = (title, start_date, end_date, owner_id, image_url, notes) => async (dispatch) => {
+export const postItinerary = (itinerary) => async (dispatch) => {
 
-    const form = new FormData();
-    form.append('title', title);
-    form.append('start_date', start_date);
-    form.append('end_date', end_date);
-    form.append('image_url', image_url);
-    form.append('owner_id', owner_id);
-    form.append('notes', notes);
-    const res = await fetch(`/api/itineraries/create/`, {
+    // const form = new FormData();
+    // form.append('title', title);
+    // form.append('start_date', start_date);
+    // form.append('end_date', end_date);
+    // form.append('image_url', image_url);
+    // form.append('owner_id', owner_id);
+    // form.append('notes', notes);
+    const res = await fetch(`/api/itineraries/`, {
         method: "POST",
-        body: form
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(itinerary)
     });
     if (res.ok) {
         const data = await res.json();
-        if (data.errors) {
-            return data;
-        }
-        dispatch(createItinerary(data));
-        return res;
+        console.log(data)
+        // if (data.errors) {
+        //     return data;
+        // }
+        // dispatch(createItinerary(data));
+        // // return res;
+        // return 'success';
     }
 }
 
@@ -133,11 +138,9 @@ export default function reducer(state = initialState, action) {
         //     }
         case POST_ITINERARY:
             // return { itineraries: action.payload };
-            return {
-                ...state,
-                ...action.itinerary
-            };
-        case DELETE_ITINERARY: // ! WHYYYY DID I HAVE THIS COMMENTED OUT
+            const { itineraries } = action.itinerary;
+            return { ...state, [itineraries.id]: itineraries };
+        case DELETE_ITINERARY:
             const newObj = { ...state };
             delete newObj[action.itinerary];
             return newObj
