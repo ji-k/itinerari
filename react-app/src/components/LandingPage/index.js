@@ -40,6 +40,9 @@ const LandingPage = () => {
                         </div>
                     </div>
                 </div>
+                <div className="landing-page__mid-banner-container">
+                    <div className="travel-quote">Collect moments, not things.</div>
+                </div>
             </div>
         </>
     )
