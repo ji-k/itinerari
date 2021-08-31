@@ -48,10 +48,12 @@ nav {
     grid-area: nav-session__right;
     justify-self: end;
     align-self: center;
+    font-weight: 100;
 }
 
 .nav-login {
     margin-right: 20px;
+    font-weight: 100;
 }
 
 .logout-button {
