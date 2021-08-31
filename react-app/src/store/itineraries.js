@@ -1,6 +1,6 @@
 // define action type as constants
 const SET_ITINERARIES = 'itinerary/SET_ITINERARIES'
-const SET_ITINERARY = 'itineraries/SET_ITINERARY';
+// const SET_ITINERARY = 'itineraries/SET_ITINERARY';
 const EDIT_ITINERARY = 'itineraries/EDIT_ITINERARY';
 const POST_ITINERARY = 'itineraries/POST_ITINERARY';
 const DELETE_ITINERARY = 'itineraries/DELETE_ITINERARY';
@@ -11,10 +11,10 @@ const setItineraries = (itineraries) => ({
     payload: itineraries
 });
 
-const setItinerary = (itinerary) => ({
-    type: SET_ITINERARY,
-    payload: itinerary
-});
+// const setItinerary = (itinerary) => ({
+//     type: SET_ITINERARY,
+//     payload: itinerary
+// });
 
 const editItinerary = (itinerary) => ({
     type: EDIT_ITINERARY,
@@ -111,7 +111,7 @@ export const removeItinerary = (id) => async (dispatch) => {
         method: 'DELETE'
     });
     if (res.ok) {
-        const data = await res.json();
+        await res.json();
         dispatch(deleteItinerary(id))
     }
     return res;

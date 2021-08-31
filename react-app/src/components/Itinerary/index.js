@@ -1,18 +1,14 @@
-import { useState, useEffect } from 'react';
-import { useDispatch, useSelector } from "react-redux";
-import { NavLink, useParams } from 'react-router-dom';
-import { getItineraries, getItinerary, updateItinerary, removeItinerary } from '../../store/itineraries';
+import { useEffect } from 'react';
+import { useDispatch } from "react-redux";
+// import { NavLink, useParams } from 'react-router-dom';
+import { getItineraries } from '../../store/itineraries';
 import './itinerary.css'
-
-// !
-// ! THIS IS CURRENTLY A DEAD COMPONENT
-// !
 
 const Itineraries = () => {
 
-    const itineraries = useSelector(state => state.itineraries)
+    // const itineraries = useSelector(state => state.itineraries)
 
-    const user = useSelector(state => state.session.user)
+    // const user = useSelector(state => state.session.user)
     const dispatch = useDispatch()
 
 

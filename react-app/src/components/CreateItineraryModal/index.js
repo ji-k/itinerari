@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Modal } from '../../context/modal';
-import ItineraryForm from '../Itinerary/ItineraryForm';
+import CreateItineraryForm from '../Itinerary/CreateItineraryForm';
 
 function CreateItineraryModal() {
     const [showModal, setShowModal] = useState(false);
@@ -11,7 +11,7 @@ function CreateItineraryModal() {
             <button onClick={() => setShowModal(true)} >Create</button>
             {showModal && (
                 <Modal onClose={() => setShowModal(false)}>
-                    <ItineraryForm setShowModal={setShowModal} />
+                    <CreateItineraryForm setShowModal={setShowModal} />
                 </Modal>
             )}
         </>

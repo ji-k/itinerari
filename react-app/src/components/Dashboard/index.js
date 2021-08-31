@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from "react-redux";
-import { NavLink, useHistory } from "react-router-dom";
-import { getItineraries, updateItinerary, removeItinerary } from '../../store/itineraries'
-import ItineraryForm from '../Itinerary/ItineraryForm';
+// import { useHistory } from "react-router-dom";
+import { getItineraries, removeItinerary } from '../../store/itineraries'
+// import ItineraryForm from '../Itinerary/ItineraryForm';
 import ItineraryPage from '../ItineraryPage/ItineraryPage';
-import Itineraries from '../Itinerary/';
+// import Itineraries from '../Itinerary/';
 import CreateItineraryModal from '../CreateItineraryModal';
 import './Dashboard.css'
 
@@ -21,7 +21,7 @@ const Dashboard = () => {
     // const [formHidden, setFormHidden] = useState(true)
 
     const dispatch = useDispatch();
-    const history = useHistory();
+    // const history = useHistory();
 
 
     useEffect(() => {
@@ -91,6 +91,7 @@ const Dashboard = () => {
                                                 </div>
                                             </>
                                         )
+
 
                                 })}
                             </div>

@@ -3,7 +3,7 @@ from wtforms import StringField, DateField, IntegerField, TextField, SubmitField
 from wtforms.validators import DataRequired
 
 
-class ItineraryForm(FlaskForm):
+class CreateItineraryForm(FlaskForm):
     title = StringField("title", validators=[DataRequired()])
     start_date = DateField("start_date", validators=[DataRequired()])
     end_date = DateField("end_date", validators=[DataRequired()])
