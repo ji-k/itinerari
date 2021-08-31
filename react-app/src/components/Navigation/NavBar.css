@@ -26,6 +26,7 @@ nav {
     grid-area: itinerari;
     justify-self: center;
     place-self: center;
+    letter-spacing: 2px;
 }
 
 .nav-itinerari__middle:hover {
