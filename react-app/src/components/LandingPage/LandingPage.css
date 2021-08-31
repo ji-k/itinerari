@@ -142,14 +142,16 @@
     position: absolute;
     top: 1900px;
     height: 200px;
-    width: 100vw;
+    width: 100%;
     padding: 30px 0 0px 0;
 }
 
 .landing-page__about-me-inner-container {
     font-size: 12pt;
     font-weight: 100;
-    text-align: center;
+    /* text-align: center; */
+    display: flex;
+    justify-content: space-between;
 }
 
 .about {
@@ -160,11 +162,35 @@ strong {
     color: rgb(144, 218, 243);
 }
 
-.landing-page__about-me-inner-container a {
+.landing-page__about-me-left-container {
+    font-size: 10pt;
+    float: left;
+    padding-left: 4%;
+    height: 120px;
+    display: flex;
+    align-items: flex-end;
+    line-height: 0px;
+}
+
+.made-with {
+    color: white;
+}
+
+.landing-page__about-me-right-container {
+    text-align: right;
+    padding-right: 4%;
+}
+
+.landing-page__about-me-left-container a {
+    color: white;
+}
+
+.landing-page__about-me-right-container a {
     color: white;
 }
 
 .landing-page__about-me-inner-container a:hover {
     color: rgb(144, 218, 243);
     transition: 0.5s;
+
 }
