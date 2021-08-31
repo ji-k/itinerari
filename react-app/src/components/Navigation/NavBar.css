@@ -30,14 +30,17 @@ nav {
 
 .nav-itinerari__middle:hover {
     color: rgb(144, 218, 243);
+    transition: 0.5s;
 }
 
 .nav-login:hover {
     color: rgb(144, 218, 243);
+    transition: 0.5s;
 }
 
 .nav-sign-up:hover {
     color: rgb(144, 218, 243);
+    transition: 0.5s;
 }
 
 .nav-session__right {

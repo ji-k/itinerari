@@ -92,6 +92,7 @@ input::placeholder {
 .demo-login-page:hover {
     text-decoration: none;
     color: rgb(144, 218, 243);
+    transition: 0.5s;
 }
 
 .account-prompt {
@@ -103,4 +104,5 @@ input::placeholder {
 .account-prompt:hover {
     text-decoration: none;
     color: rgb(144, 218, 243);
+    transition: 0.5s;
 }

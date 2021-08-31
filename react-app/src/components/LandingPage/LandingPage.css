@@ -42,6 +42,7 @@
     top: 300px;
     margin: 0 auto;
     display: block;
+    transition: 0.5s;
 }
 
 .getStarted-button:hover {
@@ -164,4 +165,5 @@ strong {
 
 .landing-page__about-me-inner-container a:hover {
     color: rgb(144, 218, 243);
+    transition: 0.5s;
 }
