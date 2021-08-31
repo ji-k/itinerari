@@ -5,7 +5,7 @@ import './ItineraryForm.css'
 
 
 
-const ItineraryForm = ({ handleHide, submittedForm, setSubmittedForm }) => {
+const ItineraryForm = ({ setShowModal }) => {
     const owner_id = useSelector(state => state.session.user.id)
 
     const dispatch = useDispatch();
@@ -26,17 +26,17 @@ const ItineraryForm = ({ handleHide, submittedForm, setSubmittedForm }) => {
         // console.log('BEFORE')
         const itinerary = { title, start_date, end_date, owner_id, image_url, notes }
         const success = await dispatch(postItinerary(itinerary));
-        const clearForm = () => {
-            setTitle('');
-            setStart_date('');
-            setEnd_date('');
-            setImage_url('');
-            setNotes('');
-        }
+        // const clearForm = () => {
+        //     setTitle('');
+        //     setStart_date('');
+        //     setEnd_date('');
+        //     setImage_url('');
+        //     setNotes('');
+        // }
         // setSubmittedForm(!submittedForm)
         if (success) {
-            handleHide(true)
-            clearForm()
+            setShowModal(false)
+            // clearForm()
         }
         // window.location.reload();
         // console.log('AFTER')

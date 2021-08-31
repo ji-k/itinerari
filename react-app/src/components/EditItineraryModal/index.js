@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { Modal } from '../../context/modal';
 import EditItineraryForm from '../Itinerary/EditItineraryForm';
 
-function EditItineraryModal({ itinerary, submittedForm, setSubmittedForm }) {
+function EditItineraryModal({ itinerary }) {
     const [showModal, setShowModal] = useState(false);
-    const [reloader, setReloader] = useState(true)
+    // const [reloader, setReloader] = useState(true)
 
 
 
@@ -13,7 +13,7 @@ function EditItineraryModal({ itinerary, submittedForm, setSubmittedForm }) {
             <button onClick={() => setShowModal(true)}>Edit</button>
             {showModal && (
                 <Modal onClose={() => setShowModal(false)}>
-                    <EditItineraryForm itinerary={itinerary} reloader={() => setReloader(!reloader)} submittedForm={submittedForm} setSubmittedForm={setSubmittedForm} />
+                    <EditItineraryForm itinerary={itinerary} setShowModal={setShowModal} />
                 </Modal>
             )}
         </>
