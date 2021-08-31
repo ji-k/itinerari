@@ -4,8 +4,6 @@ import { updateItinerary } from '../../store/itineraries';
 // import { useParams } from "react-router-dom";
 import './ItineraryForm.css'
 
-
-
 const EditItineraryForm = ({ itinerary, setShowModal }) => {
     // const owner_id = useSelector(state => state.session.user.id)
     // const itineraries = useSelector(state => state.itineraries)
@@ -20,7 +18,7 @@ const EditItineraryForm = ({ itinerary, setShowModal }) => {
     const [image_url, setImage_url] = useState('');
     const [notes, setNotes] = useState('');
 
-    const itineraryId = itinerary[0].id
+    const itineraryId = itinerary.id
 
     // const itineraryIdToEdit = itineraries.filter(itinerary => (
     //     itinerary?.id == number
@@ -31,26 +29,26 @@ const EditItineraryForm = ({ itinerary, setShowModal }) => {
     //     setSubmittedForm(!submittedForm)
     // }
 
-    const itinerariesX = itinerary
-
     useEffect(() => {
-        setTitle(itinerariesX.title)
-        setStart_date(itinerariesX.start_date)
-        setEnd_date(itinerariesX.end_date)
-        setImage_url(itinerariesX.image_url)
-        setNotes(itinerariesX.notes)
-    }, [itinerariesX])
+        setTitle(itinerary.title)
+        setStart_date(itinerary.start_date)
+        setEnd_date(itinerary.end_date)
+        setImage_url(itinerary.image_url)
+        setNotes(itinerary.notes)
+        // console.log(start_date)
+        // console.log(typeof start_date)
+    }, [itinerary])
 
 
 
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        itinerariesX.title = title
-        itinerariesX.start_date = start_date
-        itinerariesX.end_date = end_date
-        itinerariesX.image_url = image_url
-        itinerariesX.notes = notes
+        itinerary.title = title
+        itinerary.start_date = start_date
+        itinerary.end_date = end_date
+        itinerary.image_url = image_url
+        itinerary.notes = notes
 
         // setSubmittedForm(!submittedForm)
         // window.location.reload();
@@ -84,7 +82,7 @@ const EditItineraryForm = ({ itinerary, setShowModal }) => {
                     </label>
                     <input
                         type="date"
-                        value={start_date}
+                        value={new Date(itinerary.start_date)}
                         onChange={(e) => setStart_date(e.target.value)} />
                     <label>
                         End Date
