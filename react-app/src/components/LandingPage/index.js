@@ -47,12 +47,22 @@ const LandingPage = () => {
                 <div className="landing-page__mid-banner-container">
                     <div className="travel-quote">Collect moments, not things.</div>
                 </div>
-                <div className="landing-page__about-me-container">
-                    <div className="landing-page__about-me-inner-container">
-                        <p className="about">Created by <strong>Ji Kyung</strong></p>
-                        <p className="about">jikyung@gmail.com</p>
-                        <p><a href="www.linkedin.com/in/jikyung" className="about">LinkedIn</a></p>
-                        <p><a href="https://github.com/ji-k" className="about">GitHub</a></p>
+                <div className="landing-page__about-me-inner-container">
+                    <div className="landing-page__about-me-container">
+                        <div className="landing-page__about-me-left-container">
+                            {/* <div className="made-with">Made with:</div> */}
+                            <div className="made-with">Made with: JavaScript, React-Redux, Python, Flask, SQLAlchemy, PostgreSQL, Node.js</div>
+                            {/* <p className="about">Created by <strong>Ji Kyung</strong></p>
+                            <p className="about">jikyung@gmail.com</p>
+                            <p><a href="www.linkedin.com/in/jikyung" className="about">LinkedIn</a></p>
+                            <p><a href="https://github.com/ji-k" className="about">GitHub</a></p> */}
+                        </div>
+                        <div className="landing-page__about-me-right-container">
+                            <p className="about">Created by <strong>Ji Kyung</strong></p>
+                            <p className="about">jikyung@gmail.com</p>
+                            <p><a href="www.linkedin.com/in/jikyung" className="about">LinkedIn</a></p>
+                            <p><a href="https://github.com/ji-k" className="about">GitHub</a></p>
+                        </div>
                     </div>
                 </div>
             </div>
