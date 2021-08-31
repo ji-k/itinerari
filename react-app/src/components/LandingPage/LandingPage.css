@@ -44,6 +44,11 @@
     display: block;
 }
 
+.getStarted-button:hover {
+    color: rgb(144, 218, 243);
+    border: 2px solid rgb(144, 218, 243);
+}
+
 .landing-page__features-container {
     background-color:#282828;
     position: absolute;
@@ -54,7 +59,7 @@
 
 .features {
     color: white;
-    font-size: 20pt;
+    font-size: 18pt;
     text-align: center;
     margin-top: 50px;
     /* margin-bottom: 50px; */
@@ -86,6 +91,14 @@
     object-fit: cover;
     width: 200px;
     height: 200px;
+    border-radius: 5px;
+}
+
+.feature-point-header {
+    text-align: center;
+    margin-top: 10px;
+    color: rgb(144, 218, 243);
+    font-weight: 100;
 }
 
 .feature-points-details {
