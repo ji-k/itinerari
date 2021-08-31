@@ -1,8 +1,11 @@
 nav {
     background-color: rgba(0, 0, 0, 0.5);
+    box-shadow: 0 26px 42px rgba(0, 0, 0, 0.1);
+    /* background: rgba(255, 255, 255, 0.1); */
     color: white;
     font-size: 14pt;
     padding: 5px;
+    backdrop-filter: blur(5px);
 }
 
 .nav__outer-container a {
@@ -23,6 +26,18 @@ nav {
     grid-area: itinerari;
     justify-self: center;
     place-self: center;
+}
+
+.nav-itinerari__middle:hover {
+    color: rgb(144, 218, 243);
+}
+
+.nav-login:hover {
+    color: rgb(144, 218, 243);
+}
+
+.nav-sign-up:hover {
+    color: rgb(144, 218, 243);
 }
 
 .nav-session__right {

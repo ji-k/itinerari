@@ -46,40 +46,51 @@ const LoginForm = () => {
   }
 
   return (
-    <form onSubmit={onLogin}>
-      <div>
-        {errors.map((error, ind) => (
-          <div key={ind}>{error}</div>
-        ))}
-      </div>
-      <div>
-        <label htmlFor='email'>Email</label>
-        <input
-          name='email'
-          type='text'
-          placeholder='Email'
-          value={email}
-          onChange={updateEmail}
-        />
-      </div>
-      <div>
-        <label htmlFor='password'>Password</label>
-        <input
-          name='password'
-          type='password'
-          placeholder='Password'
-          value={password}
-          onChange={updatePassword}
-        />
-        <button type='submit'>Login</button>
+    <>
+      <div className="login-form__outer-container">
+        <div className="login-form__inner-container">
+          <div className="login-form-itinerari">itinerari</div>
+          <form onSubmit={onLogin}>
+            <div>
+              {errors.map((error, ind) => (
+                <div key={ind}>{error}</div>
+              ))}
+            </div>
+            <div>
+              {/* <label htmlFor='email'>Email</label> */}
+              <input
+                name='email'
+                type='text'
+                placeholder='xyz@gmail.com'
+                value={email}
+                onChange={updateEmail}
+                className="login-form-input"
+              />
+            </div>
+            <div>
+              {/* <label htmlFor='password'>Password</label> */}
+              <input
+                name='password'
+                type='password'
+                placeholder='Must have atleast 6 characters'
+                value={password}
+                onChange={updatePassword}
+                className="login-form-input"
+              />
+              <div>
+                <button type='submit' className='login-form-login-button'>Login</button>
+              </div>
 
-        <div>
-          <div className="demo-login-page" onClick={demoLogin}>Demo User</div>
+              <div className="login-form-flex-me">
+                <span className="demo-login-page" onClick={demoLogin}>Demo User</span>
 
-          Don't have an account? <div className="account-prompt" onClick={signUp}>Sign Up</div>
+                <span className="account-prompt" onClick={signUp}>Sign Up</span>
+              </div>
+            </div>
+          </form>
         </div>
       </div>
-    </form>
+    </>
   );
 };
 
