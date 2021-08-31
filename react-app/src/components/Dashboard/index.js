@@ -14,11 +14,11 @@ const Dashboard = () => {
     const itineraries = useSelector((state) => Object.values(state.itineraries));
     // const itineraries = useSelector(state => state.itineraries)
 
-    const [submittedForm, setSubmittedForm] = useState(false) // !!!!
+    // const [submittedForm, setSubmittedForm] = useState(false)
     const [itineraryOn, setItineraryOn] = useState(false)
     const [number, setNumber] = useState('')
-    const [reloader, setReloader] = useState(true)
-    const [formHidden, setFormHidden] = useState(true)
+    // const [reloader, setReloader] = useState(true)
+    // const [formHidden, setFormHidden] = useState(true)
 
     const dispatch = useDispatch();
     const history = useHistory();
@@ -26,7 +26,7 @@ const Dashboard = () => {
 
     useEffect(() => {
         dispatch(getItineraries());
-    }, [dispatch, reloader]);
+    }, [dispatch]);
     // }, [dispatch, formSubmitted]);
 
     // const submittedForm = () => {
@@ -52,7 +52,7 @@ const Dashboard = () => {
                     <div className="dashboard__sidebar-outer-container">
                         <div className="dashboard__sidebar-header-container">
                             {/* <button>create itinerary</button> */}
-                            < CreateItineraryModal handleHide={setFormHidden} submittedForm={submittedForm} setSubmittedForm={setSubmittedForm} />
+                            < CreateItineraryModal />
                             {/* < CreateItineraryModal /> */}
 
                         </div>
@@ -81,11 +81,9 @@ const Dashboard = () => {
 
                                                         onClick={() => {
                                                             dispatch(removeItinerary(itinerary.id));
-                                                            // history.push('/dashboard');
-                                                            // setReloader(!reloader);
-                                                            history.push('/')
-                                                            history.push('/dashboard')
-                                                            // window.location.reload(); // ! refactor this with a useState toggle
+                                                            // history.push('/')
+                                                            // history.push('/dashboard')
+
                                                         }}
                                                     >
                                                         delete
