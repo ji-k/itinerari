@@ -8,15 +8,35 @@ const EditItineraryForm = ({ itinerary, setShowModal }) => {
     // const owner_id = useSelector(state => state.session.user.id)
     // const itineraries = useSelector(state => state.itineraries)
     // const itineraries = Object.values(useSelector(state => state.itineraries))
-
+    let sYear = (new Date(Date.parse(itinerary.start_date))).getFullYear()
+    let sMonth = ((new Date(Date.parse(itinerary.start_date))).getUTCMonth() + 1).toString()
+    // let sDay = ((new Date(Date.parse(itinerary.start_date))).getDate() + 1).toString()
+    let sDay = ((new Date(Date.parse(itinerary.start_date))).getUTCDate()).toString()
+    let eYear = (new Date(Date.parse(itinerary.end_date))).getFullYear()
+    let eMonth = ((new Date(Date.parse(itinerary.end_date))).getUTCMonth() + 1).toString()
+    // let eDay = ((new Date(Date.parse(itinerary.end_date))).getDate() + 1).toString()
+    let eDay = ((new Date(Date.parse(itinerary.end_date))).getUTCDate()).toString()
     const dispatch = useDispatch();
     // const { id } = useParams;
-
+    // console.log(sMonth)
+    // console.log("****", itinerary.start_date)
+    // console.log("---------", sMonth.toString())
     const [title, setTitle] = useState('');
-    const [start_date, setStart_date] = useState('');
-    const [end_date, setEnd_date] = useState('');
+    const [start_date, setStart_date] = useState(`${sYear}-${sMonth.length < 2 ? `0${sMonth}` : sMonth}-${sDay.length < 2 ? `0${sDay}` : sDay}`);
+    const [end_date, setEnd_date] = useState(`${eYear}-${eMonth.length < 2 ? `0${eMonth}` : eMonth}-${eDay.length < 2 ? `0${eDay}` : eDay}`);
+    // const [end_date, setEnd_date] = useState(`${eYear}-${eMonth}-${eDay}`);
     const [image_url, setImage_url] = useState('');
     const [notes, setNotes] = useState('');
+
+    // var step1 = itinerary.start_date;
+    // var step2 = Date.parse(step1);
+    // var step3 = new Date(step2);
+    // var step4 = step3.getMonth()
+
+    // console.log(step1);
+    // console.log(step2);
+    // console.log(step3);
+    // console.log(step4);
 
     const itineraryId = itinerary.id
 
@@ -31,12 +51,19 @@ const EditItineraryForm = ({ itinerary, setShowModal }) => {
 
     useEffect(() => {
         setTitle(itinerary.title)
-        setStart_date(itinerary.start_date)
-        setEnd_date(itinerary.end_date)
+        //setStart_date(itinerary.start_date)
+        //setEnd_date(itinerary.end_date)
         setImage_url(itinerary.image_url)
         setNotes(itinerary.notes)
-        // console.log(start_date)
-        // console.log(typeof start_date)
+        //console.log(itinerary.start_date)
+        //console.log(typeof start_date)
+        //console.log(Date.parse(itinerary.start_date))
+        //console.log(new Date(Date.parse(itinerary.start_date)))
+
+
+        setStart_date(`${sYear}-${sMonth.length < 2 ? `0${sMonth}` : sMonth}-${sDay.length < 2 ? `0${sDay}` : sDay}`)
+        setEnd_date(`${eYear}-${eMonth.length < 2 ? `0${eMonth}` : eMonth}-${eDay.length < 2 ? `0${eDay}` : eDay}`)
+        // setEnd_date(`${eYear}-${eMonth}-${eDay}`)
     }, [itinerary])
 
 
@@ -82,12 +109,8 @@ const EditItineraryForm = ({ itinerary, setShowModal }) => {
                     </label>
                     <input
                         type="date"
-                        value={itinerary.start_date}
-                        onChange={(e) => {
-                            console.log(typeof e.target.value)
-                            console.log(e.target.value)
-                            return setStart_date(e.target.value)
-                        }} />
+                        value={start_date}
+                        onChange={(e) => setStart_date(e.target.value)} />
                     <label>
                         End Date
                     </label>
