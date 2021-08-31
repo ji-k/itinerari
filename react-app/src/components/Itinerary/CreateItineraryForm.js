@@ -5,7 +5,7 @@ import './ItineraryForm.css'
 
 
 
-const ItineraryForm = ({ setShowModal }) => {
+const CreateItineraryForm = ({ setShowModal }) => {
     const owner_id = useSelector(state => state.session.user.id)
 
     const dispatch = useDispatch();
@@ -73,4 +73,4 @@ const ItineraryForm = ({ setShowModal }) => {
     )
 }
 
-export default ItineraryForm
+export default CreateItineraryForm

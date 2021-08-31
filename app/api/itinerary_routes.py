@@ -1,7 +1,7 @@
 from flask import Blueprint, request
 from flask_login import login_required, current_user
 from app.models import db, Itinerary
-from ..forms import ItineraryForm
+from ..forms import CreateItineraryForm
 
 itinerary_routes = Blueprint('itineraries', __name__, url_prefix='')
 
@@ -25,7 +25,7 @@ def get_itinerary(id):
 @itinerary_routes.route('/', methods=['POST'])
 @login_required
 def create_itinerary():
-    form = ItineraryForm()
+    form = CreateItineraryForm()
     form['csrf_token'].data = request.cookies['csrf_token']
     data = form.data
 

@@ -1,18 +1,18 @@
 import { useState, useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { updateItinerary } from '../../store/itineraries';
-import { useParams } from "react-router-dom";
+// import { useParams } from "react-router-dom";
 import './ItineraryForm.css'
 
 
 
 const EditItineraryForm = ({ itinerary, setShowModal }) => {
-    const owner_id = useSelector(state => state.session.user.id)
+    // const owner_id = useSelector(state => state.session.user.id)
     // const itineraries = useSelector(state => state.itineraries)
-    const itineraries = Object.values(useSelector(state => state.itineraries))
+    // const itineraries = Object.values(useSelector(state => state.itineraries))
 
     const dispatch = useDispatch();
-    const { id } = useParams;
+    // const { id } = useParams;
 
     const [title, setTitle] = useState('');
     const [start_date, setStart_date] = useState('');

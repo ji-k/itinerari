@@ -46,9 +46,9 @@ function App() {
         <ProtectedRoute path='/dashboard' exact={true} >
           <Dashboard />
         </ProtectedRoute>
-        <ProtectedRoute path='/itineraries/:userId' exact={true} >
+        {/* <ProtectedRoute path='/itineraries/:userId' exact={true} >
           <ItineraryPage />
-        </ProtectedRoute>
+        </ProtectedRoute> */}
         <Route path='/' exact={true} >
           <LandingPage />
         </Route>
