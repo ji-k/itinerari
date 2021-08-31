@@ -1,0 +1,85 @@
+.signup-form__outer-container {
+    background-image: url('https://raw.githubusercontent.com/ji-k/itinerari/main/assets/images/3.jpg');
+    background-repeat: no-repeat;
+    background-size:cover;
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    z-index: -5;
+    display: grid;
+    place-content: center;
+}
+
+.signup-form__inner-container {
+    text-align: center;
+    width: 400px;
+    /* height: 400px; */
+    background: rgba(255, 255, 255, 0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-left: 1px solid rgba(255, 255, 255, 0.3);
+    border-right: 1px solid rgba(255, 255, 255, 0.3);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 26px 42px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    padding: 10%;
+    box-sizing: border-box;
+}
+
+.signup-form-itinerari {
+    color: white;
+    letter-spacing: 2px;
+    font-size: 24pt;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+
+.signup-form-input {
+    font-size: 14pt;
+    box-sizing: border-box;
+    width: 100%;
+    border: none;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 13px 21px rgba(0, 0, 0, 0.05);
+    height: 35px;
+    margin: 20px auto 20px;
+    padding: 12px 20px;
+    color: white;
+}
+
+input:focus {
+    outline: none;
+  }
+
+input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.signup-form-signup-button {
+    color: white;
+    /* border: 1px solid white; */
+    border: none;
+    background-color: #282828;
+    width: 100%;
+    font-size: 14pt;
+    border-radius: 5px;
+    height: 35px;
+    transition: 0.5s;
+    margin: 15px auto;
+    margin-bottom: 40px;
+}
+
+.signup-form-signup-button:hover {
+    background: rgb(144, 218, 243);
+    color: #282828;
+    /* border: 1px solid white; */
+  }
+
+  .signup-form-already {
+      color: #282828;
+  }

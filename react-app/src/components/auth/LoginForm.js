@@ -72,7 +72,7 @@ const LoginForm = () => {
               <input
                 name='password'
                 type='password'
-                placeholder='Must have atleast 6 characters'
+                placeholder='password'
                 value={password}
                 onChange={updatePassword}
                 className="login-form-input"
