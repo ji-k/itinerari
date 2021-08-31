@@ -44,11 +44,11 @@ const EditItineraryForm = ({ itinerary, setShowModal }) => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        itinerary.title = title
-        itinerary.start_date = start_date
-        itinerary.end_date = end_date
-        itinerary.image_url = image_url
-        itinerary.notes = notes
+        // itinerary.title = title
+        // itinerary.start_date = start_date
+        // itinerary.end_date = end_date
+        // itinerary.image_url = image_url
+        // itinerary.notes = notes
 
         // setSubmittedForm(!submittedForm)
         // window.location.reload();
@@ -82,8 +82,12 @@ const EditItineraryForm = ({ itinerary, setShowModal }) => {
                     </label>
                     <input
                         type="date"
-                        value={new Date(itinerary.start_date)}
-                        onChange={(e) => setStart_date(e.target.value)} />
+                        value={itinerary.start_date}
+                        onChange={(e) => {
+                            console.log(typeof e.target.value)
+                            console.log(e.target.value)
+                            return setStart_date(e.target.value)
+                        }} />
                     <label>
                         End Date
                     </label>
