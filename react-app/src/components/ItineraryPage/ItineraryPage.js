@@ -18,7 +18,7 @@ export default function Profile({ number }) {
                 <div>
                     < EditItineraryModal itinerary={itinerary} />
                     <div className="itinerary-page__outer-container">
-                        {/* Itinerary */}
+                        {/* ************* Itinerary ************* */}
                         <div className="general-info__outer-container">
                             <p className="general-info__title">Tite: {itinerary?.title}</p>
                             <p className="general-info__sDate">Trip Start: {itinerary?.start_date}</p>
@@ -26,8 +26,7 @@ export default function Profile({ number }) {
                             <p className="general-info__notes">Notes: {itinerary?.notes}</p>
                             <p className="">Banner: {itinerary?.image_url}</p>
                         </div>
-                        {/* <p>Airline: {itinerary?.flight_info[0]?.airline}</p> */}
-                        {/* Flights */}
+                        {/* ************* Flights ************* */}
                         <div className="flight-info__outer-container">
                             {itinerary?.flight_info?.map(flight => {
                                 return (
@@ -45,6 +44,7 @@ export default function Profile({ number }) {
                                 )
                             })}
                         </div>
+                        {/* ************* Hotels ************* */}
                         <div className="hotel-info__outer-container">
                             {itinerary?.hotel_info?.map(hotel => {
                                 return (
@@ -60,6 +60,7 @@ export default function Profile({ number }) {
                                 )
                             })}
                         </div>
+                        {/* ************* Rental Cars ************* */}
                         <div className="rentalcar-info__outer-container">
                             {itinerary?.rental_info?.map(car => {
                                 return (
