@@ -1,7 +1,5 @@
 .dashboard__outer-container {
-    /* background-color: lightpink; */
-    /* width: 100%; */
-    background-image: url('https://raw.githubusercontent.com/ji-k/itinerari/main/assets/images/14.jpg');
+    background-image: url('https://raw.githubusercontent.com/ji-k/itinerari/main/assets/images/15.jpg');
     background-repeat: no-repeat;
     background-size:cover;
     position: absolute;
@@ -9,7 +7,8 @@
     /* right: 0px; */
     z-index: -5;
     /* height: 200px; */
-    width: 100%;
+    /* width: 100%; */
+    width: 100vw;
     right: 0px;
     display: grid;
     place-content: center;
