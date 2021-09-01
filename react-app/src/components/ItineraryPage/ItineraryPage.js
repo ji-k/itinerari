@@ -60,7 +60,7 @@ export default function Profile({ number }) {
                                 )
                             })}
                         </div>
-                        {/* <div className="rentalcar-info__outer-container">
+                        <div className="rentalcar-info__outer-container">
                             {itinerary?.rental_info?.map(car => {
                                 return (
                                     <>
@@ -78,7 +78,7 @@ export default function Profile({ number }) {
                                     </>
                                 )
                             })}
-                        </div> */}
+                        </div>
                     </div>
                 </div>
             }
