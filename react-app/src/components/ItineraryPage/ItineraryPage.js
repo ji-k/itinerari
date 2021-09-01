@@ -1,6 +1,7 @@
 import React from 'react'
 import { useSelector } from "react-redux";
 import EditItineraryModal from '../EditItineraryModal';
+import CreateFlightModal from '../CreateFlightModal';
 import './ItineraryPage.css'
 
 export default function Profile({ number }) {
@@ -17,6 +18,7 @@ export default function Profile({ number }) {
             {itinerary &&
                 <div>
                     < EditItineraryModal itinerary={itinerary} />
+                    {/* < CreateFlightModal flight={flight} /> */}
                     <div className="itinerary-page__outer-container">
                         {/* ************* Itinerary ************* */}
                         <div className="general-info__outer-container">
