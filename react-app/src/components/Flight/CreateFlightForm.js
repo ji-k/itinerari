@@ -1,13 +1,13 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { postFlight } from '../../store/flights';
+import { getItinerary } from '../../store/itineraries';
 
 
-const CreateFlightForm = ({ setShowModal }) => {
-    const itinerary_id = useSelector(state => state.itineraries[0])
+const CreateFlightForm = ({ setShowModal, itinerary_id }) => {
+    // const itinerary_id = useSelector(state => state.itineraries[0])
     const dispatch = useDispatch();
     console.log("******************")
-    console.log(itinerary_id)
+    console.log(itinerary_id, "this is from the create flight form")
 
     const [date, setDate] = useState('');
     const [origin, setOrigin] = useState('');
@@ -22,12 +22,28 @@ const CreateFlightForm = ({ setShowModal }) => {
         e.preventDefault();
         const flight = { itinerary_id, date, origin, destination, departure, arrival, airline, flight_no, notes }
         // console.log(flight)
-        const success = await dispatch(postFlight(flight));
 
+        const res = await fetch(`/api/flights/`, {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(flight)
+        });
+        if (res.ok) {
+            console.log("RES IS OOKAYDAOKAYYYY", res.ok)
+            const data = await res.json();
+            console.log("AWAIT RES.JSONNNN OKAYYYYYDOKAYYY ", data)
 
-        if (success) {
+            await dispatch(getItinerary(itinerary_id));
+            // dispatch(createFlight(data));
             setShowModal(false)
+            return 'success';
         }
+
+        // if (success) {
+        //     setShowModal(false)
+        // }
     };
 
     return (

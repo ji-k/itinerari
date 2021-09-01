@@ -11,11 +11,12 @@ export default function Profile({ number }) {
     // const itinerary = itineraries.filter(itinerary => (
     //     itinerary?.id == number
     // ))
-    const flight = itinerary.flight_info[0]
+    const itinerary_id = itinerary?.id
 
     // const flights = useSelector(state => state.itineraries.id)
     // console.log("*******************")
-    // console.log(flights)
+    // console.log(itinerary)
+    // console.log(flight)
     // console.log(itinerary.flight_info[0])
     // console.log(itineraries.id)
 
@@ -25,7 +26,7 @@ export default function Profile({ number }) {
             {itinerary &&
                 <div>
                     < EditItineraryModal itinerary={itinerary} />
-                    < CreateFlightModal flight={flight} />
+                    < CreateFlightModal itinerary_id={itinerary_id} />
                     <div className="itinerary-page__outer-container">
                         {/* ************* Itinerary ************* */}
                         <div className="general-info__outer-container">
@@ -37,9 +38,9 @@ export default function Profile({ number }) {
                         </div>
                         {/* ************* Flights ************* */}
                         <div className="flight-info__outer-container">
-                            {itinerary?.flight_info?.map(flight => {
+                            {itinerary?.flight_info?.map((flight, i) => {
                                 return (
-                                    <>
+                                    <div key={i}>
                                         <p>Flight Information</p>
                                         <p>Date of Travel: {flight.date}</p>
                                         <p>Airline: {flight.airline}</p>
@@ -49,15 +50,15 @@ export default function Profile({ number }) {
                                         <p>Destination: {flight.destination}</p>
                                         <p>Arrival Time: {flight.arrival}</p>
                                         <p>Flight Notes: {flight.notes}</p>
-                                    </>
+                                    </div>
                                 )
                             })}
                         </div>
                         {/* ************* Hotels ************* */}
                         <div className="hotel-info__outer-container">
-                            {itinerary?.hotel_info?.map(hotel => {
+                            {itinerary?.hotel_info?.map((hotel, i) => {
                                 return (
-                                    <>
+                                    <div key={i}>
                                         <p>Hotel Information</p>
                                         <p>Property: {hotel.property}</p>
                                         <p>Address: {hotel.address}</p>
@@ -65,15 +66,15 @@ export default function Profile({ number }) {
                                         <p>State: {hotel.state}</p>
                                         <p>Zipcode: {hotel.zipcode}</p>
                                         <p>notes: {hotel.notes}</p>
-                                    </>
+                                    </div>
                                 )
                             })}
                         </div>
                         {/* ************* Rental Cars ************* */}
                         <div className="rentalcar-info__outer-container">
-                            {itinerary?.rental_info?.map(car => {
+                            {itinerary?.rental_info?.map((car, i) => {
                                 return (
-                                    <>
+                                    <div key={i}>
                                         <p>Rental Car Information</p>
                                         <p>Rental Company: {car.company}</p>
                                         <p>Address: {car.address}</p>
@@ -85,7 +86,7 @@ export default function Profile({ number }) {
                                         <p>Drop Off: {car.dropoff_date}</p>
                                         <p>Drop Off Time: {car.dropoff_time}</p>
                                         <p>Notes: {car.notes}</p>
-                                    </>
+                                    </div>
                                 )
                             })}
                         </div>

@@ -48,7 +48,7 @@ const Dashboard = () => {
             <div className="dashboard__outer-container">
 
                 <div className="dashboard__inner-container">
-                    <h1 class="welcome-msg">Welcome, {user.username}!</h1>
+                    <h1 className="welcome-msg">Welcome, {user.username}!</h1>
                     <div className="dashboard__sidebar-outer-container">
                         <div className="dashboard__sidebar-header-container">
                             {/* <button>create itinerary</button> */}
@@ -63,36 +63,25 @@ const Dashboard = () => {
                                 {itineraries.map(itinerary => {
                                     if (user.id === itinerary?.owner_id)
                                         return (
-                                            <>
-                                                <div key={itinerary.id}
-                                                    // onClick={showItinerary}
-                                                    className="itineraries-link" >
+                                            <div key={itinerary.id}
+                                                className="itineraries-link" >
+                                                <span
+                                                    id={itinerary.id}
+                                                    onClick={showItinerary}>
+                                                    {itinerary.title}
+                                                </span>
+                                                {itinerary?.owner_id === user.id && <button
+                                                    className="itinerary-delete"
+                                                    onClick={() => {
+                                                        console.log("____________________", itinerary)
+                                                        dispatch(removeItinerary(itinerary?.id));
+                                                    }}
+                                                >
+                                                    delete
+                                                </button>}
+                                            </div>
 
-                                                    <span
-                                                        id={itinerary.id}
-                                                        onClick={showItinerary}>
-                                                        {itinerary.title}
-                                                    </span>
-
-
-                                                    {/* <div onClick={handleDelete}>Delete</div> */}
-                                                    {itinerary?.owner_id === user.id && <button
-                                                        className="itinerary-delete"
-
-                                                        onClick={() => {
-                                                            dispatch(removeItinerary(itinerary.id));
-                                                            // history.push('/')
-                                                            // history.push('/dashboard')
-
-                                                        }}
-                                                    >
-                                                        delete
-                                                    </button>}
-                                                </div>
-                                            </>
                                         )
-
-
                                 })}
                             </div>
                         </div>

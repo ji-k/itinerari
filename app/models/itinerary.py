@@ -14,9 +14,9 @@ class Itinerary(db.Model):
     created_at = db.Column(db.DateTime)
     updated_at = db.Column(db.DateTime)
 
-    flights = db.relationship('Flight')
-    rentals = db.relationship('Rental')
-    hotels = db.relationship('Hotel')
+    flights = db.relationship('Flight', cascade='all, delete, delete-orphan')
+    rentals = db.relationship('Rental', cascade='all, delete, delete-orphan')
+    hotels = db.relationship('Hotel', cascade='all, delete, delete-orphan')
     owner = db.relationship('User')
 
     def to_dict(self):

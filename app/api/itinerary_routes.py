@@ -19,7 +19,10 @@ def get_itineraries():
 @login_required
 def get_itinerary(id):
     itinerary = Itinerary.query.get(id)
-    return itinerary.to_dict()
+    if itinerary is not None:
+        return itinerary.to_dict()
+    else:
+        return {'error': "itinerary cannot be found"}, 500
 
 # create an itinerary
 @itinerary_routes.route('/', methods=['POST'])
