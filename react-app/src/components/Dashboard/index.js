@@ -48,7 +48,7 @@ const Dashboard = () => {
             <div className="dashboard__outer-container">
 
                 <div className="dashboard__inner-container">
-                    <h1>Welcome, {user.username}!</h1>
+                    <h1 class="welcome-msg">Welcome, {user.username}!</h1>
                     <div className="dashboard__sidebar-outer-container">
                         <div className="dashboard__sidebar-header-container">
                             {/* <button>create itinerary</button> */}
