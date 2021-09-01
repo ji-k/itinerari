@@ -1,6 +1,6 @@
 // define action type as constants
 const SET_ITINERARIES = 'itinerary/SET_ITINERARIES'
-// const SET_ITINERARY = 'itineraries/SET_ITINERARY';
+const SET_ITINERARY = 'itineraries/SET_ITINERARY';
 const EDIT_ITINERARY = 'itineraries/EDIT_ITINERARY';
 const POST_ITINERARY = 'itineraries/POST_ITINERARY';
 const DELETE_ITINERARY = 'itineraries/DELETE_ITINERARY';
@@ -11,10 +11,10 @@ const setItineraries = (itineraries) => ({
     payload: itineraries
 });
 
-// const setItinerary = (itinerary) => ({
-//     type: SET_ITINERARY,
-//     payload: itinerary
-// });
+const setItinerary = (itinerary) => ({
+    type: SET_ITINERARY,
+    itinerary
+});
 
 const editItinerary = (itinerary) => ({
     type: EDIT_ITINERARY,
@@ -47,7 +47,7 @@ export const getItinerary = (id) => async (dispatch) => {
     const res = await fetch(`/api/itineraries/${id}`);
     if (res.ok) {
         const data = await res.json();
-        dispatch(getItinerary(data));
+        dispatch(setItinerary(data));
     }
     return res
 }
@@ -107,6 +107,7 @@ export const postItinerary = (itinerary) => async (dispatch) => {
 
 // define thunk creator for DELETE request
 export const removeItinerary = (id) => async (dispatch) => {
+    console.log(id)
     const res = await fetch(`/api/itineraries/${id}`, {
         method: 'DELETE'
     });
@@ -129,8 +130,8 @@ export default function reducer(state = initialState, action) {
                 ...state,
                 ...action.payload
             }
-        // case SET_ITINERARY:
-        //     return { itineraries: action.payload }
+        case SET_ITINERARY:
+            return { ...state, [action.itinerary.id]: action.itinerary }
         case EDIT_ITINERARY:
             return {
                 ...state,
