@@ -44,3 +44,12 @@ def create_flight():
     else:
         print("*******", form.errors)
         return form.errors
+
+# delete a flight
+@flight_routes.route('/<int:id>',methods=['DELETE'])
+@login_required
+def delete_flight(id):
+    flight = Flight.query.get(id)
+    db.session.delete(flight)
+    db.session.commit()
+    return {"delete": id}

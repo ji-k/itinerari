@@ -1,10 +1,11 @@
 import React from 'react'
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import EditItineraryModal from '../EditItineraryModal';
 import CreateFlightModal from '../CreateFlightModal';
 import './ItineraryPage.css'
+import * as ItineraryActions from '../../store/itineraries'
 
-export default function Profile({ number }) {
+export default function ItineraryPage({ number }) {
     const itineraries = useSelector(state => state.itineraries)
     // const itineraries = Object.values(useSelector(state => state.itineraries))
     const itinerary = itineraries[number]
@@ -13,13 +14,23 @@ export default function Profile({ number }) {
     // ))
     const itinerary_id = itinerary?.id
 
-    // const flights = useSelector(state => state.itineraries.id)
-    // console.log("*******************")
-    // console.log(itinerary)
-    // console.log(flight)
-    // console.log(itinerary.flight_info[0])
-    // console.log(itineraries.id)
+    const dispatch = useDispatch()
 
+    const deleteFlight = async (e, flightId) => {
+        e.preventDefault();
+        const res = await fetch(`/api/flights/${flightId}`, {
+            method: "DELETE",
+            headers: {
+                'Content-Type': 'application/json'
+            },
+        });
+        if (res.ok) {
+            const data = await res.json();
+            await dispatch(ItineraryActions.getItinerary(itinerary_id));
+            // setShowModal(false)
+            return 'success';
+        }
+    }
 
     return (
         <>
@@ -50,6 +61,10 @@ export default function Profile({ number }) {
                                         <p>Destination: {flight.destination}</p>
                                         <p>Arrival Time: {flight.arrival}</p>
                                         <p>Flight Notes: {flight.notes}</p>
+                                        <button
+                                            className="itinerary-delete"
+                                            onClick={e => deleteFlight(e, flight?.id)}>Delete Flight
+                                        </button>
                                     </div>
                                 )
                             })}

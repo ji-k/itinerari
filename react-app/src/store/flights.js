@@ -4,7 +4,7 @@
 // const SET_FLIGHT = 'itinerary/SET_FLIGHT';
 // const EDIT_FLIGHT = 'itinerary/EDIT_FLIGHT';
 const POST_FLIGHT = 'itinerary/POST_FLIGHT';
-// const DELETE_FLIGHT = 'itinerary/DELETE_FLIGHT';
+const DELETE_FLIGHT = 'itinerary/DELETE_FLIGHT';
 
 // action creators
 // const setFlight = (flight) => ({
@@ -14,6 +14,11 @@ const POST_FLIGHT = 'itinerary/POST_FLIGHT';
 
 const createFlight = (flight) => ({
     type: POST_FLIGHT,
+    flight
+})
+
+const deleteFlight = (flight) => ({
+    type: DELETE_FLIGHT,
     flight
 })
 
