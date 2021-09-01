@@ -11,6 +11,7 @@
     background-color: lightblue;
     width: 300px;
     height: 100vh;
+    margin-bottom: 20px;
     border-top-left-radius: 50px;
     float: left;
 }
