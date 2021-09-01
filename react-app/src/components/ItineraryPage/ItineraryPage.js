@@ -20,11 +20,11 @@ export default function Profile({ number }) {
                     <div className="itinerary-page__outer-container">
                         {/* Itinerary */}
                         <div className="general-info__outer-container">
-                            <span className="general-info__title">Tite: {itinerary?.title}</span>
-                            <span className="general-info__sDate">Trip Start: {itinerary?.start_date}</span>
-                            <span className="general-info__eDate">Trip End: {itinerary?.end_date}</span>
-                            <span className="general-info__notes">Notes: {itinerary?.notes}</span>
-                            <span className="">Banner: {itinerary?.image_url}</span>
+                            <p className="general-info__title">Tite: {itinerary?.title}</p>
+                            <p className="general-info__sDate">Trip Start: {itinerary?.start_date}</p>
+                            <p className="general-info__eDate">Trip End: {itinerary?.end_date}</p>
+                            <p className="general-info__notes">Notes: {itinerary?.notes}</p>
+                            <p className="">Banner: {itinerary?.image_url}</p>
                         </div>
                         {/* <p>Airline: {itinerary?.flight_info[0]?.airline}</p> */}
                         {/* Flights */}
