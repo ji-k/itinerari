@@ -17,8 +17,10 @@ const CreateFlightForm = ({ setShowModal }) => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const flight = { date, origin, destination, departure, arrival, airline, flight_no, notes }
+        const flight = { itinerary_id: 1, date, origin, destination, departure, arrival, airline, flight_no, notes }
+        // console.log(flight)
         const success = await dispatch(postFlight(flight));
+
 
         if (success) {
             setShowModal(false)

@@ -28,7 +28,9 @@ export const getFlight = () => async (dispatch) => {
 
 // thunk creator for POST request
 export const postFlight = (flight) => async (dispatch) => {
-    const res = await fetch(`/api/itineraries/`, {
+    console.log(flight)
+    console.log("************8")
+    const res = await fetch(`/api/flights/`, {
         method: "POST",
         headers: {
             'Content-Type': 'application/json'
@@ -36,7 +38,7 @@ export const postFlight = (flight) => async (dispatch) => {
         body: JSON.stringify(flight)
     });
     if (res.ok) {
-        const { flight } = await res.json();
+        const flight = await res.json();
         dispatch(createFlight(flight));
         return 'success';
     }
@@ -52,7 +54,7 @@ export default function reducer(state = initialState, action) {
             return { ...state, ...action.flight }
         case POST_FLIGHT:
             return {
-                ...state, [action.flight]: action.flight
+                ...state, [action.flight.id]: action.flight
             };
         default: return state;
     }

@@ -3,6 +3,7 @@ from wtforms import StringField, DateField, IntegerField, TextField, SubmitField
 from wtforms.validators import DataRequired
 
 class CreateFlightForm(FlaskForm):
+    itinerary_id = IntegerField("itinerary_id", validators=[DataRequired()])
     date = DateField("start_date", validators=[DataRequired()])
     origin = StringField("origin", validators=[DataRequired()])
     destination = StringField("destination", validators=[DataRequired()])

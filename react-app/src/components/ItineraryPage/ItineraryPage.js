@@ -11,6 +11,13 @@ export default function Profile({ number }) {
     // const itinerary = itineraries.filter(itinerary => (
     //     itinerary?.id == number
     // ))
+    const flight = itinerary.flight_info[0]
+
+    // const flights = useSelector(state => state.itineraries.id)
+    // console.log("*******************")
+    // console.log(flights)
+    // console.log(itinerary.flight_info[0])
+    // console.log(itineraries.id)
 
 
     return (
@@ -18,7 +25,7 @@ export default function Profile({ number }) {
             {itinerary &&
                 <div>
                     < EditItineraryModal itinerary={itinerary} />
-                    {/* < CreateFlightModal flight={flight} /> */}
+                    < CreateFlightModal flight={flight} />
                     <div className="itinerary-page__outer-container">
                         {/* ************* Itinerary ************* */}
                         <div className="general-info__outer-container">
