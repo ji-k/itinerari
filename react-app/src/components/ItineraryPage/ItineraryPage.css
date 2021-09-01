@@ -4,19 +4,54 @@
     /* border-top-right-radius: 50px; */
 }
 
+
+/* ================================================================= */
+/* general info start */
 .general-info__outer-container {
-    background-color: rgb(255, 183, 157);
+    background-color: rgb(224, 224, 224);
     /* border-top-right-radius: 50px; */
 }
 
+.general-info__title {
+    font-size: 20pt;
+    display: block;
+}
+
+.general-info__sDate {
+    font-size: 18pt;
+}
+
+.general-info__eDate {
+    font-size: 18pt;
+}
+
+.general-info__notes {
+    display: block;
+    font-size: 12pt;
+}
+/* general info end */
+/* ================================================================= */
+
+/* ================================================================= */
+/* flight start */
 .flight-info__outer-container {
     background-color: lavender;
 }
+/* flight end */
+/* ================================================================= */
 
+/* ================================================================= */
+/* hotel start */
 .hotel-info__outer-container {
     background-color: pink;
 }
+/* hotel end */
+/* ================================================================= */
 
+/* ================================================================= */
+/* rental car start */
 .rentalcar-info__outer-container {
-    background-color: rgb(214, 220, 101)
+    background-color: rgb(214, 220, 101);
 }
+/* rental car end */
+/* ================================================================= */
