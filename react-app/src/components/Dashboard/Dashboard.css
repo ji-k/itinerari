@@ -1,33 +1,36 @@
 .dashboard__outer-container {
-    background-image: url('https://raw.githubusercontent.com/ji-k/itinerari/main/assets/images/15.jpg');
+    background-color: lightpink;
+    /* width: 100%;
+    /* background-image: url('https://raw.githubusercontent.com/ji-k/itinerari/main/assets/images/15.jpg');
     background-repeat: no-repeat;
-    background-size:cover;
+    background-size:cover; */
     position: absolute;
     top: 0px;
     /* right: 0px; */
     z-index: -5;
     /* height: 200px; */
-    /* width: 100%; */
-    width: 100vw;
-    right: 0px;
+    width: 100%;
+    /* width: 100vw; */
+    /* right: 0px; */
     left: 0px;
     display: grid;
     place-content: center;
+    /* margin-left: 20px; */
 }
 
 .welcome-msg {
     color: white;
-    margin-left: 30px;
+    /* margin-left: 30px;
     font-weight: 500;
-    letter-spacing: 2px;
+    letter-spacing: 2px; */
 }
 
 .dashboard__sidebar-outer-container {
     background-color: lightblue;
     width: 300px;
     height: 100vh;
-    margin-bottom: 20px;
-    /* border-top-left-radius: 50px; */
+    /* margin-bottom: 20px; */
+    border-top-left-radius: 50px;
     float: left;
 }
 
@@ -45,8 +48,8 @@
     background-color: lightyellow;
     height: 100vh;
     width: 100vw;
-    /* border-top-left-radius: 50px; */
-    /* border-top-right-radius: 50px; */
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
 }
 
 .dashboard__sidebar-header-container {

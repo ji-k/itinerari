@@ -1,18 +1,18 @@
 .itinerary-page__outer-container {
     background-color: lightgreen;
-    /* border-top-left-radius: 50px; */
-    /* border-top-right-radius: 50px; */
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
 }
 
 
 /* ================================================================= */
 /* general info start */
 .general-info__outer-container {
-    background-color: rgb(224, 224, 224);
-    /* border-top-right-radius: 50px; */
+    background-color: rgb(255, 183, 157);
+    border-top-right-radius: 50px;
 }
 
-.general-info__title {
+/* .general-info__title {
     font-size: 20pt;
     display: block;
 }
@@ -28,7 +28,7 @@
 .general-info__notes {
     display: block;
     font-size: 12pt;
-}
+} */
 /* general info end */
 /* ================================================================= */
 

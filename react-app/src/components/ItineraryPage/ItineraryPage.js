@@ -20,7 +20,7 @@ export default function Profile({ number }) {
                     <div className="itinerary-page__outer-container">
                         {/* Itinerary */}
                         <div className="general-info__outer-container">
-                            <span className="general-info__title">{itinerary?.title}</span>
+                            <span className="general-info__title">Tite: {itinerary?.title}</span>
                             <span className="general-info__sDate">Trip Start: {itinerary?.start_date}</span>
                             <span className="general-info__eDate">Trip End: {itinerary?.end_date}</span>
                             <span className="general-info__notes">Notes: {itinerary?.notes}</span>
