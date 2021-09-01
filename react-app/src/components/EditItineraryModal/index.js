@@ -10,7 +10,7 @@ function EditItineraryModal({ itinerary }) {
 
     return (
         <>
-            <button onClick={() => setShowModal(true)}>Edit</button>
+            <button onClick={() => setShowModal(true)}>Edit General Information</button>
             {showModal && (
                 <Modal onClose={() => setShowModal(false)}>
                     <EditItineraryForm itinerary={itinerary} setShowModal={setShowModal} />
