@@ -6,16 +6,16 @@ html, body, div, span, nav, ul, li, fieldset {
 }
 
 * {
-    color: black
+    color: black;
 }
 
 a:link {
-    color: black;
+    color: white;
     text-decoration: none;
 }
 
 a:visited {
-    color: black;
+    color: white;
     text-decoration: none;
 }
 /* end - reset css */

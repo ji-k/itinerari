@@ -10,12 +10,16 @@
     /* width: 100%; */
     width: 100vw;
     right: 0px;
+    left: 0px;
     display: grid;
     place-content: center;
 }
 
 .welcome-msg {
     color: white;
+    margin-left: 30px;
+    font-weight: 500;
+    letter-spacing: 2px;
 }
 
 .dashboard__sidebar-outer-container {
@@ -23,7 +27,7 @@
     width: 300px;
     height: 100vh;
     margin-bottom: 20px;
-    border-top-left-radius: 50px;
+    /* border-top-left-radius: 50px; */
     float: left;
 }
 
@@ -32,12 +36,17 @@
     top: 50px;
 }
 
+.itineraries-link a {
+    color: white;
+}
+
+
 .dashboard__main-body-container {
     background-color: lightyellow;
     height: 100vh;
     width: 100vw;
-    border-top-left-radius: 50px;
-    border-top-right-radius: 50px;
+    /* border-top-left-radius: 50px; */
+    /* border-top-right-radius: 50px; */
 }
 
 .dashboard__sidebar-header-container {
