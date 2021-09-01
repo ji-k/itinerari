@@ -4,7 +4,10 @@ import { postFlight } from '../../store/flights';
 
 
 const CreateFlightForm = ({ setShowModal }) => {
+    const itinerary_id = useSelector(state => state.itineraries[0])
     const dispatch = useDispatch();
+    console.log("******************")
+    console.log(itinerary_id)
 
     const [date, setDate] = useState('');
     const [origin, setOrigin] = useState('');
@@ -17,7 +20,7 @@ const CreateFlightForm = ({ setShowModal }) => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const flight = { itinerary_id: 1, date, origin, destination, departure, arrival, airline, flight_no, notes }
+        const flight = { itinerary_id, date, origin, destination, departure, arrival, airline, flight_no, notes }
         // console.log(flight)
         const success = await dispatch(postFlight(flight));
 
