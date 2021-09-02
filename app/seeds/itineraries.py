@@ -5,7 +5,7 @@ from datetime import datetime
 def seed_itineraries():
     seedArray = []
 
-    seedArray.append(Itinerary(title="Family Reunion", start_date="2021, 2, 18", end_date="2021, 2, 24", owner_id=1, image_url="https://itinerari.s3.amazonaws.com/7.jpg",
+    seedArray.append(Itinerary(title="Family Reunion", start_date="2021, 2, 18", end_date="2021, 2, 24", owner_id=1, image_url="https://itinerari.s3.amazonaws.com/8.jpg",
                      notes="The other half of the group who are not on this itinerary are staying at an airbnb.", created_at=datetime.now(), updated_at=datetime.now()))
     seedArray.append(Itinerary(title="Girl's Trip", start_date="2021, 5, 18", end_date="2021, 5, 25", owner_id=2, image_url="https://itinerari.s3.amazonaws.com/6.jpg",
                      notes="Don't forget to pack for the beach! We are also going hiking on Monday.", created_at=datetime.now(), updated_at=datetime.now()))
