@@ -69,7 +69,7 @@ const Dashboard = () => {
                                                 </div>
                                                 <div>
                                                     {itinerary?.owner_id === user.id && <button
-                                                        className="itinerary-delete"
+                                                        className="itinerary-delete dashboard-button"
                                                         onClick={() => {
                                                             dispatch(removeItinerary(itinerary?.id));
                                                         }}

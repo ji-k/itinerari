@@ -8,7 +8,7 @@ function CreateItineraryModal() {
 
     return (
         <>
-            <button onClick={() => setShowModal(true)} >Create New Itinerary</button>
+            <button onClick={() => setShowModal(true)} className="dashboard-button">Create New Itinerary</button>
             {showModal && (
                 <Modal onClose={() => setShowModal(false)}>
                     <CreateItineraryForm setShowModal={setShowModal} />

@@ -18,6 +18,18 @@
     /* margin-left: 20px; */
 }
 
+.dashboard-button {
+    border-radius: 5px;
+    border: none;
+    transition: 0.5s;
+    color: #282828;
+}
+
+.dashboard-button:hover {
+    background: rgb(144, 218, 243);
+    color: #282828;
+  }
+
 .welcome-msg {
     color: #282828;
     margin-left: 10px;
