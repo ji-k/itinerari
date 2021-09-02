@@ -95,19 +95,13 @@ export const postItinerary = (itinerary) => async (dispatch) => {
     });
     if (res.ok) {
         const { itineraries } = await res.json();
-        // console.log(data)
-        // if (data.errors) {
-        //     return data;
-        // }
         dispatch(createItinerary(itineraries));
-        // // return res;
         return 'success';
     }
 }
 
 // define thunk creator for DELETE request
 export const removeItinerary = (id) => async (dispatch) => {
-    console.log(id)
     const res = await fetch(`/api/itineraries/${id}`, {
         method: 'DELETE'
     });
