@@ -72,11 +72,29 @@
 /* ================================================================= */
 /* flight start */
 .flight-info__outer-container {
-    background-color: lavender;
-    padding-right: 15px;
+    background-color: rgba(255, 255, 255, 0.2);
     margin-top: 40px;
+    width: 90%;
+    margin-left: 4%;
+    border-bottom: 1px solid white;
     /* border-radius: 5px; */
     /* margin-left: 300px; */
+}
+
+.flight-header-button-flex {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(255, 255, 255, 0.3);
+    height: 20px;
+}
+
+.feature-header {
+    font-weight: bold;
+    font-size: 13pt;
+}
+
+.feature-content__container {
+    margin: 15px;
 }
 /* flight end */
 /* ================================================================= */

@@ -62,19 +62,23 @@ export default function ItineraryPage({ number }) {
                             {itinerary?.flight_info?.map((flight, i) => {
                                 return (
                                     <div key={i}>
-                                        <button
-                                            className="itinerary-delete"
-                                            onClick={e => deleteFlight(e, flight?.id)}>Delete Flight
-                                        </button>
-                                        <p>Flight Information</p>
-                                        <p>Date of Travel: {flight.date}</p>
-                                        <p>Airline: {flight.airline}</p>
-                                        <p>Flight #: {flight.flight_no}</p>
-                                        <p>Origin: {flight.origin}</p>
-                                        <p>Departure Time: {flight.departure}</p>
-                                        <p>Destination: {flight.destination}</p>
-                                        <p>Arrival Time: {flight.arrival}</p>
-                                        <p>Flight Notes: {flight.notes}</p>
+                                        <div className="flight-header-button-flex">
+                                            <span className="feature-header">Flight Information</span>
+                                            <button
+                                                className="itinerary-delete dashboard-button"
+                                                onClick={e => deleteFlight(e, flight?.id)}>Delete Flight
+                                            </button>
+                                        </div>
+                                        <div className="feature-content__container">
+                                            <p>Date of Travel: {flight.date}</p>
+                                            <p>Airline: {flight.airline}</p>
+                                            <p>Flight #: {flight.flight_no}</p>
+                                            <p>Origin: {flight.origin}</p>
+                                            <p>Departure Time: {flight.departure}</p>
+                                            <p>Destination: {flight.destination}</p>
+                                            <p>Arrival Time: {flight.arrival}</p>
+                                            <p>Flight Notes: {flight.notes}</p>
+                                        </div>
                                     </div>
                                 )
                             })}
