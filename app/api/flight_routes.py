@@ -23,10 +23,8 @@ def get_flight(id):
 def create_flight():
     form = CreateFlightForm()
     form['csrf_token'].data = request.cookies['csrf_token']
-    print("******** before validation ***")
     if form.validate_on_submit():
         data = form.data
-        print("******", data)
         flight = Flight(
             itinerary_id=data['itinerary_id'],
             date=data['date'],
@@ -42,7 +40,6 @@ def create_flight():
         db.session.commit()
         return flight.to_dict()
     else:
-        print("*******", form.errors)
         return form.errors
 
 # delete a flight
