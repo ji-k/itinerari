@@ -59,10 +59,9 @@
 }
 
 .dashboard__sidebar-header-container {
-    position: relative;
-    top: 10px;
-    float: right;
+    text-align: right;
     margin-right: 10px;
+    margin-top: 10px;
 }
 
 .dashboard__sidebar-list-container {

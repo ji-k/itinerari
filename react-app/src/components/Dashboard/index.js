@@ -59,19 +59,24 @@ const Dashboard = () => {
                                         return (
                                             <div key={itinerary.id}
                                                 className="itineraries-link" >
-                                                <span
-                                                    id={itinerary.id}
-                                                    onClick={showItinerary}>
-                                                    {itinerary.title}
-                                                </span>
-                                                {itinerary?.owner_id === user.id && <button
-                                                    className="itinerary-delete"
-                                                    onClick={() => {
-                                                        dispatch(removeItinerary(itinerary?.id));
-                                                    }}
-                                                >
-                                                    Delete
-                                                </button>}
+                                                <div>
+                                                    <span
+                                                        id={itinerary.id}
+                                                        className="itineraries-title-link"
+                                                        onClick={showItinerary}>
+                                                        {itinerary.title}
+                                                    </span>
+                                                </div>
+                                                <div>
+                                                    {itinerary?.owner_id === user.id && <button
+                                                        className="itinerary-delete"
+                                                        onClick={() => {
+                                                            dispatch(removeItinerary(itinerary?.id));
+                                                        }}
+                                                    >
+                                                        Delete
+                                                    </button>}
+                                                </div>
                                             </div>
                                         )
                                 })}
