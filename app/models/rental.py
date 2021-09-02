@@ -10,6 +10,7 @@ class Rental(db.Model):
     company = db.Column(db.String, nullable=False)
     address = db.Column(db.String, nullable=False)
     city = db.Column(db.String, nullable=False)
+    state = db.Column(db.String, nullable=False)
     zipcode = db.Column(db.Integer, nullable=False)
     pickup_date = db.Column(db.DateTime, nullable=False)
     dropoff_date = db.Column(db.DateTime, nullable=False)
@@ -27,6 +28,7 @@ class Rental(db.Model):
             'company': self.company,
             'address': self.address,
             'city': self.city,
+            'state': self.state,
             'zipcode': self.zipcode,
             'pickup_date': self.pickup_date,
             'dropoff_date': self.dropoff_date,
