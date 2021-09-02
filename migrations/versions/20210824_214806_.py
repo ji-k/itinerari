@@ -51,6 +51,7 @@ def upgrade():
     sa.Column('company', sa.String(), nullable=False),
     sa.Column('address', sa.String(), nullable=False),
     sa.Column('city', sa.String(), nullable=False),
+    sa.Column('state', sa.String(), nullable=False),
     sa.Column('zipcode', sa.Integer(), nullable=False),
     sa.Column('pickup_date', sa.DateTime(), nullable=False),
     sa.Column('dropoff_date', sa.DateTime(), nullable=False),

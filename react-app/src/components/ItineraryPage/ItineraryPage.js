@@ -94,6 +94,7 @@ export default function ItineraryPage({ number }) {
                                         <p>Rental Company: {car.company}</p>
                                         <p>Address: {car.address}</p>
                                         <p>City: {car.city}</p>
+                                        <p>State: {car.state}</p>
                                         <p>Zipcode: {car.zipcode}</p>
                                         <p>Confirmation: {car.confirmation}</p>
                                         <p>Pick Up: {car.pickup_date}</p>
