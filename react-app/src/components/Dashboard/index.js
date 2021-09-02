@@ -14,7 +14,6 @@ const Dashboard = () => {
     const itineraries = useSelector((state) => Object.values(state.itineraries));
     // const itineraries = useSelector(state => state.itineraries)
 
-    // const [submittedForm, setSubmittedForm] = useState(false)
     const [itineraryOn, setItineraryOn] = useState(false)
     const [number, setNumber] = useState('')
     // const [reloader, setReloader] = useState(true)
@@ -27,11 +26,6 @@ const Dashboard = () => {
     useEffect(() => {
         dispatch(getItineraries());
     }, [dispatch]);
-    // }, [dispatch, formSubmitted]);
-
-    // const submittedForm = () => {
-    //     setFormSubmitted(!formSubmitted)
-    // }
 
     const showItinerary = (e) => {
         setNumber(e.target.id)
@@ -76,10 +70,9 @@ const Dashboard = () => {
                                                         dispatch(removeItinerary(itinerary?.id));
                                                     }}
                                                 >
-                                                    delete
+                                                    Delete
                                                 </button>}
                                             </div>
-
                                         )
                                 })}
                             </div>
@@ -95,7 +88,6 @@ const Dashboard = () => {
                     </div>
                 </div>
             </div>
-
         </>
     )
 }

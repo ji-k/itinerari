@@ -10,6 +10,7 @@
 .general-info__outer-container {
     background-color: rgb(255, 183, 157);
     border-top-right-radius: 50px;
+    padding-right: 15px;
 }
 
 /* .general-info__title {
@@ -36,6 +37,7 @@
 /* flight start */
 .flight-info__outer-container {
     background-color: lavender;
+    padding-right: 15px;
 }
 /* flight end */
 /* ================================================================= */
@@ -44,6 +46,7 @@
 /* hotel start */
 .hotel-info__outer-container {
     background-color: pink;
+    padding-right: 15px;
 }
 /* hotel end */
 /* ================================================================= */
@@ -52,6 +55,7 @@
 /* rental car start */
 .rentalcar-info__outer-container {
     background-color: rgb(214, 220, 101);
+    padding-right: 15px;
 }
 /* rental car end */
 /* ================================================================= */

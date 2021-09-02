@@ -5,13 +5,13 @@ from datetime import datetime
 def seed_itineraries():
     seedArray = []
 
-    seedArray.append(Itinerary(title="Family Reunion", start_date="2021, 2, 18", end_date="2021, 2, 24", owner_id=1, image_url="https://github.com/ji-k/itinerari/blob/main/assets/images/1.jpg",
+    seedArray.append(Itinerary(title="Family Reunion", start_date="2021, 2, 18", end_date="2021, 2, 24", owner_id=1, image_url="https://itinerari.s3.amazonaws.com/7.jpg",
                      notes="The other half of the group who are not on this itinerary are staying at an airbnb.", created_at=datetime.now(), updated_at=datetime.now()))
-    seedArray.append(Itinerary(title="Girl's Trip", start_date="2021, 5, 18", end_date="2021, 5, 25", owner_id=2, image_url="https://github.com/ji-k/itinerari/blob/main/assets/images/2.jpg",
+    seedArray.append(Itinerary(title="Girl's Trip", start_date="2021, 5, 18", end_date="2021, 5, 25", owner_id=2, image_url="https://itinerari.s3.amazonaws.com/6.jpg",
                      notes="Don't forget to pack for the beach! We are also going hiking on Monday.", created_at=datetime.now(), updated_at=datetime.now()))
     seedArray.append(Itinerary(title="A Weekend in Vegas!", start_date="2021, 6, 20", end_date="2021, 6, 24", owner_id=1,
-                     image_url="https://github.com/ji-k/itinerari/blob/main/assets/images/3.jpg", notes="Be prepared.", created_at=datetime.now(), updated_at=datetime.now()))
-    seedArray.append(Itinerary(title="Miami Girl's Trip", start_date="2021, 8, 2", end_date="2021, 8, 6", owner_id=1, image_url="https://github.com/ji-k/itinerari/blob/main/assets/images/4.jpg",
+                     image_url="https://itinerari.s3.amazonaws.com/11.jpg", notes="Be prepared.", created_at=datetime.now(), updated_at=datetime.now()))
+    seedArray.append(Itinerary(title="Miami Girl's Trip", start_date="2021, 8, 2", end_date="2021, 8, 6", owner_id=1, image_url="https://itinerari.s3.amazonaws.com/12.jpg",
                      notes="We have reservations at Barton G on Friday night!", created_at=datetime.now(), updated_at=datetime.now()))
 
     for item in seedArray:

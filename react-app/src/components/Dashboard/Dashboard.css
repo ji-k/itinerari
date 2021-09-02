@@ -9,10 +9,10 @@
     /* right: 0px; */
     z-index: -5;
     /* height: 200px; */
-    width: 100%;
+    /* width: 100%; */
     /* width: 100vw; */
     /* right: 0px; */
-    left: 0px;
+    /* left: 0px; */
     display: grid;
     place-content: center;
     /* margin-left: 20px; */
@@ -20,8 +20,8 @@
 
 .welcome-msg {
     color: white;
-    /* margin-left: 30px;
-    font-weight: 500;
+    margin-left: 10px;
+    /* font-weight: 500;
     letter-spacing: 2px; */
 }
 
