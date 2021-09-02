@@ -57,6 +57,10 @@ export default function ItineraryPage({ number }) {
                             {itinerary?.flight_info?.map((flight, i) => {
                                 return (
                                     <div key={i}>
+                                        <button
+                                            className="itinerary-delete"
+                                            onClick={e => deleteFlight(e, flight?.id)}>Delete Flight
+                                        </button>
                                         <p>Flight Information</p>
                                         <p>Date of Travel: {flight.date}</p>
                                         <p>Airline: {flight.airline}</p>
@@ -66,10 +70,6 @@ export default function ItineraryPage({ number }) {
                                         <p>Destination: {flight.destination}</p>
                                         <p>Arrival Time: {flight.arrival}</p>
                                         <p>Flight Notes: {flight.notes}</p>
-                                        <button
-                                            className="itinerary-delete"
-                                            onClick={e => deleteFlight(e, flight?.id)}>Delete Flight
-                                        </button>
                                     </div>
                                 )
                             })}
