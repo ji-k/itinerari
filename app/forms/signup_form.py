@@ -27,11 +27,12 @@ def strong_password(form, field):
     if re.match(r"^(?=.*[\d])(?=.*[A-Z])(?=.*[a-z])(?=.*[!@#$])[\w\d!@#$]", password):
         return
     else:
-        raise ValidationError('Password must be at least 6 characters long, contain at least one number and have a mixture of uppercase and lowercase letters')
+        raise ValidationError('Password must contain at least one number and have a mixture of uppercase and lowercase letters')
 
 
 class SignUpForm(FlaskForm):
     username = StringField(
         'username', validators=[DataRequired('Username is required'), Length(min=2, max=40, message='Username must be between 2 and 40 characters'), username_exists])
     email = StringField('email', validators=[DataRequired('Email is required'), Email(message='Email is invalid'), Length(max=255, message='Email must be between 1 and 255 characters'), user_exists])
-    password = StringField('password', validators=[DataRequired('Password is required'), Length(min=6, message='Password must be at least 6 characters'), EqualTo('password', message='Passwords do not match')])
+    password = StringField('password', validators=[DataRequired('Password is required'), Length(min=6, message='Password must be at least 6 characters'), strong_password])
+    confirm = StringField('confirm', validators=[DataRequired(), EqualTo('password', message='Passwords do not match')])
