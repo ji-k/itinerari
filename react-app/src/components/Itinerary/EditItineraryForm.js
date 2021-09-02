@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { updateItinerary } from '../../store/itineraries';
-// import { useParams } from "react-router-dom";
 import './ItineraryForm.css'
 
 const EditItineraryForm = ({ itinerary, setShowModal }) => {
@@ -17,14 +16,10 @@ const EditItineraryForm = ({ itinerary, setShowModal }) => {
     // let eDay = ((new Date(Date.parse(itinerary.end_date))).getDate() + 1).toString()
     let eDay = ((new Date(Date.parse(itinerary.end_date))).getUTCDate()).toString()
     const dispatch = useDispatch();
-    // const { id } = useParams;
-    // console.log(sMonth)
-    // console.log("****", itinerary.start_date)
-    // console.log("---------", sMonth.toString())
+
     const [title, setTitle] = useState('');
     const [start_date, setStart_date] = useState(`${sYear}-${sMonth.length < 2 ? `0${sMonth}` : sMonth}-${sDay.length < 2 ? `0${sDay}` : sDay}`);
     const [end_date, setEnd_date] = useState(`${eYear}-${eMonth.length < 2 ? `0${eMonth}` : eMonth}-${eDay.length < 2 ? `0${eDay}` : eDay}`);
-    // const [end_date, setEnd_date] = useState(`${eYear}-${eMonth}-${eDay}`);
     const [image_url, setImage_url] = useState('');
     const [notes, setNotes] = useState('');
 
@@ -33,40 +28,18 @@ const EditItineraryForm = ({ itinerary, setShowModal }) => {
     // var step3 = new Date(step2);
     // var step4 = step3.getMonth()
 
-    // console.log(step1);
-    // console.log(step2);
-    // console.log(step3);
-    // console.log(step4);
 
     const itineraryId = itinerary.id
 
-    // const itineraryIdToEdit = itineraries.filter(itinerary => (
-    //     itinerary?.id == number
-    // ))
-
-
-    // const submittedForm = () => {
-    //     setSubmittedForm(!submittedForm)
-    // }
-
     useEffect(() => {
         setTitle(itinerary.title)
-        //setStart_date(itinerary.start_date)
-        //setEnd_date(itinerary.end_date)
+
         setImage_url(itinerary.image_url)
         setNotes(itinerary.notes)
-        //console.log(itinerary.start_date)
-        //console.log(typeof start_date)
-        //console.log(Date.parse(itinerary.start_date))
-        //console.log(new Date(Date.parse(itinerary.start_date)))
-
 
         setStart_date(`${sYear}-${sMonth.length < 2 ? `0${sMonth}` : sMonth}-${sDay.length < 2 ? `0${sDay}` : sDay}`)
         setEnd_date(`${eYear}-${eMonth.length < 2 ? `0${eMonth}` : eMonth}-${eDay.length < 2 ? `0${eDay}` : eDay}`)
-        // setEnd_date(`${eYear}-${eMonth}-${eDay}`)
     }, [itinerary])
-
-
 
 
     const handleSubmit = async (e) => {
@@ -77,12 +50,7 @@ const EditItineraryForm = ({ itinerary, setShowModal }) => {
         // itinerary.image_url = image_url
         // itinerary.notes = notes
 
-        // setSubmittedForm(!submittedForm)
-        // window.location.reload();
-
         const success = await dispatch(updateItinerary(itineraryId, title, start_date, end_date, image_url, notes));
-        // reloader()
-        // history.push('/');
 
         if (success) {
             setShowModal(false)

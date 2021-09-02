@@ -16,30 +16,14 @@ const CreateItineraryForm = ({ setShowModal }) => {
     const [image_url, setImage_url] = useState('');
     const [notes, setNotes] = useState('');
 
-
-    // const submittedForm = () => {
-    //     setSubmittedForm(!submittedForm)
-    // }
-
     const handleSubmit = async (e) => {
         e.preventDefault();
-        // console.log('BEFORE')
         const itinerary = { title, start_date, end_date, owner_id, image_url, notes }
         const success = await dispatch(postItinerary(itinerary));
-        // const clearForm = () => {
-        //     setTitle('');
-        //     setStart_date('');
-        //     setEnd_date('');
-        //     setImage_url('');
-        //     setNotes('');
-        // }
-        // setSubmittedForm(!submittedForm)
+
         if (success) {
             setShowModal(false)
-            // clearForm()
         }
-        // window.location.reload();
-        // console.log('AFTER')
     };
 
     return (

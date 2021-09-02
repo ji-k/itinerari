@@ -4,10 +4,7 @@ import { getItinerary } from '../../store/itineraries';
 
 
 const CreateFlightForm = ({ setShowModal, itinerary_id }) => {
-    // const itinerary_id = useSelector(state => state.itineraries[0])
     const dispatch = useDispatch();
-    console.log("******************")
-    console.log(itinerary_id, "this is from the create flight form")
 
     const [date, setDate] = useState('');
     const [origin, setOrigin] = useState('');
@@ -21,7 +18,6 @@ const CreateFlightForm = ({ setShowModal, itinerary_id }) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         const flight = { itinerary_id, date, origin, destination, departure, arrival, airline, flight_no, notes }
-        // console.log(flight)
 
         const res = await fetch(`/api/flights/`, {
             method: "POST",
@@ -31,19 +27,13 @@ const CreateFlightForm = ({ setShowModal, itinerary_id }) => {
             body: JSON.stringify(flight)
         });
         if (res.ok) {
-            console.log("RES IS OOKAYDAOKAYYYY", res.ok)
             const data = await res.json();
-            console.log("AWAIT RES.JSONNNN OKAYYYYYDOKAYYY ", data)
 
             await dispatch(getItinerary(itinerary_id));
-            // dispatch(createFlight(data));
+
             setShowModal(false)
             return 'success';
         }
-
-        // if (success) {
-        //     setShowModal(false)
-        // }
     };
 
     return (
