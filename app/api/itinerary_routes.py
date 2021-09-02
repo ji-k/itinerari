@@ -44,6 +44,8 @@ def create_itinerary():
         db.session.add(itinerary)
         db.session.commit()
         return {'itineraries': itinerary.to_dict(), 'itinerary': {}}
+    else:
+        return form.errors, 500
 
 # edit an itinerary
 @itinerary_routes.route('/<int:id>/edit/', methods=['POST'])
@@ -62,6 +64,7 @@ def edit_itinerary(id):
     itinerary.notes = notes
     db.session.commit()
     return itinerary.to_dict()
+
 
 # delete an itinerary
 @itinerary_routes.route('<int:id>',methods=['DELETE'])
