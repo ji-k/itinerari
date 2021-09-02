@@ -32,23 +32,25 @@ export default function ItineraryPage({ number }) {
         }
     }
 
+
+
     return (
         <>
             {itinerary &&
                 <div>
-                    < EditItineraryModal itinerary={itinerary} />
-                    < CreateFlightModal itinerary_id={itinerary_id} />
+                    <div className="itinerary-banner-container">
+                        <img src={itinerary?.image_url} className="itinerary-banner" />
+                    </div>
                     <div className="itinerary-page__outer-container">
+                        < EditItineraryModal itinerary={itinerary} />
+                        < CreateFlightModal itinerary_id={itinerary_id} />
                         {/* ************* Itinerary ************* */}
                         <div className="general-info__outer-container">
-                            <div className="itinerary-banner-container">
-                                <img src={itinerary?.image_url} className="itinerary-banner" />
-                            </div>
-                            <p className="general-info__title">Title: {itinerary?.title}</p>
-                            <p className="general-info__sDate">Trip Start: {itinerary?.start_date}</p>
-                            <p className="general-info__eDate">Trip End: {itinerary?.end_date}</p>
-                            <p className="general-info__notes">Notes: {itinerary?.notes}</p>
-                            <p className="">Banner: {itinerary?.image_url}</p>
+                            <div className="general-info__title">{itinerary?.title}</div>
+                            <div className="general-info__sDate">Trip Start: {itinerary?.start_date}</div>
+                            <div className="general-info__eDate">Trip End: {itinerary?.end_date}</div>
+                            <div className="general-info__notes">Notes: {itinerary?.notes}</div>
+                            {/* <p className="">Banner: {itinerary?.image_url}</p> */}
                         </div>
                         {/* ************* Flights ************* */}
                         <div className="flight-info__outer-container">
