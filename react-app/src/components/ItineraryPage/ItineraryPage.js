@@ -49,7 +49,7 @@ export default function ItineraryPage({ number }) {
                         {/* ************* Itinerary ************* */}
                         <div className="general-info__title">{itinerary?.title}</div>
                         <div className="general-info__outer-container">
-                            <div className="general-info__Date">
+                            <div className="general-info__date">
                                 Trip Dates: {(new Date(itinerary?.start_date).toDateString())} - {(new Date(itinerary?.end_date).toDateString())}
                             </div>
                             {/* <div className="general-info__sDate">Trip Start: {itinerary?.start_date}</div>

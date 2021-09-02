@@ -23,7 +23,7 @@
 /* ================================================================= */
 /* general info start */
 .general-info__outer-container {
-    background-color: rgb(255, 183, 157);
+    /* background-color: rgb(255, 183, 157); */
     /* border-top-right-radius: 50px; */
     padding-right: 15px;
     /* border-radius: 5px; */
@@ -54,19 +54,18 @@
     background-color: rgba(255, 255, 255, 0.5);
     backdrop-filter: blur(5px);
 }
-/*
-.general-info__sDate {
-    font-size: 18pt;
-}
 
-.general-info__eDate {
-    font-size: 18pt;
+.general-info__date {
+    font-size: 16pt;
+    font-weight: bold;
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(5px);
 }
 
 .general-info__notes {
-    display: block;
-    font-size: 12pt;
-} */
+    margin-top: 5px;
+    font-size: 10pt;
+}
 /* general info end */
 /* ================================================================= */
 
@@ -75,6 +74,7 @@
 .flight-info__outer-container {
     background-color: lavender;
     padding-right: 15px;
+    margin-top: 40px;
     /* border-radius: 5px; */
     /* margin-left: 300px; */
 }
