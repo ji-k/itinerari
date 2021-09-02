@@ -1,9 +1,22 @@
 .itinerary-page__outer-container {
-    background-color: lightgreen;
+    /* background-color: lightgreen; */
     /* border-top-left-radius: 50px; */
     /* border-top-right-radius: 50px; */
     /* border-radius: 5px; */
     margin-left: 300px;
+}
+
+.itinerary-button-div {
+    text-align: right;
+    padding-right: 15px;
+}
+
+.dashboard-button {
+    border-radius: 5px;
+    border: none;
+    transition: 0.5s;
+    color: #282828;
+    margin-left: 5px;
 }
 
 

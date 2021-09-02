@@ -42,13 +42,18 @@ export default function ItineraryPage({ number }) {
                         <img src={itinerary?.image_url} className="itinerary-banner" />
                     </div>
                     <div className="itinerary-page__outer-container">
-                        < EditItineraryModal itinerary={itinerary} />
-                        < CreateFlightModal itinerary_id={itinerary_id} />
+                        <div className="itinerary-button-div">
+                            < EditItineraryModal itinerary={itinerary} />
+                            < CreateFlightModal itinerary_id={itinerary_id} />
+                        </div>
                         {/* ************* Itinerary ************* */}
+                        <div className="general-info__title">{itinerary?.title}</div>
                         <div className="general-info__outer-container">
-                            <div className="general-info__title">{itinerary?.title}</div>
-                            <div className="general-info__sDate">Trip Start: {itinerary?.start_date}</div>
-                            <div className="general-info__eDate">Trip End: {itinerary?.end_date}</div>
+                            <div className="general-info__sDate">
+                                Trip Dates: {(new Date(itinerary?.start_date).toDateString())} - {(new Date(itinerary?.end_date).toDateString())}
+                            </div>
+                            {/* <div className="general-info__sDate">Trip Start: {itinerary?.start_date}</div>
+                            <div className="general-info__eDate">Trip End: {itinerary?.end_date}</div> */}
                             <div className="general-info__notes">Notes: {itinerary?.notes}</div>
                             {/* <p className="">Banner: {itinerary?.image_url}</p> */}
                         </div>

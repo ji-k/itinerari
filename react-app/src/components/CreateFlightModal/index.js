@@ -8,7 +8,7 @@ function CreateFlightModal({ itinerary_id }) {
 
     return (
         <>
-            <button onClick={() => setShowModal(true)} >Add Flight</button>
+            <button onClick={() => setShowModal(true)} className="dashboard-button" >Add Flight</button>
             {showModal && (
                 <Modal onClose={() => setShowModal(false)}>
                     <CreateFlightForm setShowModal={setShowModal} itinerary_id={itinerary_id} />
