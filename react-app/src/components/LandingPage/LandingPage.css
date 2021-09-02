@@ -1,5 +1,5 @@
 .landing-page__header-container {
-    background-image: url('https://raw.githubusercontent.com/ji-k/itinerari/main/assets/images/6.jpg');
+    background-image: url('https://itinerari.s3.amazonaws.com/6.jpg');
     background-repeat: no-repeat;
     background-size:cover;
     height: 800px;
@@ -115,7 +115,7 @@
 }
 
 .landing-page__mid-banner-container {
-    background-image: url('https://github.com/ji-k/itinerari/blob/main/assets/images/4.jpg?raw=true');
+    background-image: url('https://itinerari.s3.amazonaws.com/4.jpg');
     background-repeat: no-repeat;
     background-size:cover;
     width: 100%;

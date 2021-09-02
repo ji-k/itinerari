@@ -23,22 +23,22 @@ const LandingPage = () => {
                     <p className="features-details">itinerari is a travel management app that allows users to create a single-page itinerary to organize and plan their travel logistics. itinerari hopes travelers can benefit from having their travel information conveniently all in one place, or to help with communication within a group of travelers.</p>
                     <div className="flex-center-me">
                         <div className="feature-1-container feature-points">
-                            <img src="https://github.com/ji-k/itinerari/blob/main/assets/images/1.jpg?raw=true" className="feature-image" alt="man at waterfall" />
+                            <img src="https://itinerari.s3.amazonaws.com/1.jpg" className="feature-image" alt="man at waterfall" />
                             <div className="feature-point-header">Customizable</div>
                             <p className="feature-points-details">Itineraries are fully customizable for a single traveler, or for small or large groups. </p>
                         </div>
                         <div className="feature-2-container feature-points">
-                            <img src="https://github.com/ji-k/itinerari/blob/main/assets/images/2.jpg?raw=true" className="feature-image" alt="clouds outside of an airplane window" />
+                            <img src="https://itinerari.s3.amazonaws.com/2.jpg" className="feature-image" alt="clouds outside of an airplane window" />
                             <div className="feature-point-header">Flight Details</div>
                             <p className="feature-points-details">Know when you will be in the air. Add a passenger list for your inbound and outbound flights.</p>
                         </div>
                         <div className="feature-3-container feature-points">
-                            <img src="https://github.com/ji-k/itinerari/blob/main/assets/images/11.jpg?raw=true" className="feature-image" alt="black car at night" />
+                            <img src="https://itinerari.s3.amazonaws.com/11.jpg" className="feature-image" alt="black car at night" />
                             <div className="feature-point-header">Rental Car Details</div>
                             <p className="feature-points-details">Know exactly where to go to pick up your rental car after leaving a hectic airport.</p>
                         </div>
                         <div className="feature-4-container feature-points">
-                            <img src="https://github.com/ji-k/itinerari/blob/main/assets/images/9.jpg?raw=true" className="feature-image" alt="ocean view hotel balcony" />
+                            <img src="https://itinerari.s3.amazonaws.com/9.jpg" className="feature-image" alt="ocean view hotel balcony" />
                             <div className="feature-point-header">Hotel Details</div>
                             <p className="feature-points-details">Know where you'll be staying. Add a rooming list if your group is staying in multiple properties.</p>
                         </div>

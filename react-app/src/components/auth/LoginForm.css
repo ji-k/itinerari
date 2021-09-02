@@ -1,5 +1,5 @@
 .login-form__outer-container {
-    background-image: url('https://raw.githubusercontent.com/ji-k/itinerari/main/assets/images/5.jpg');
+    background-image: url('https://itinerari.s3.amazonaws.com/5.jpg');
     background-repeat: no-repeat;
     background-size:cover;
     height: 100vh;
