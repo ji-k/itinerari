@@ -13,7 +13,7 @@ const CreateItineraryForm = ({ setShowModal }) => {
     const [title, setTitle] = useState('');
     const [start_date, setStart_date] = useState('');
     const [end_date, setEnd_date] = useState('');
-    const [image_url, setImage_url] = useState('');
+    const [image_url, setImage_url] = useState('https://itinerari.s3.amazonaws.com/6.jpg');
     const [notes, setNotes] = useState('');
 
     const handleSubmit = async (e) => {
