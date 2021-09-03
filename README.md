@@ -35,3 +35,6 @@ Logged in users are able to add and edit general features on their itinerary. Lo
 * Features also include the ability to add or delete rental car, and hotel information.
 * Logged in users are also able to add a flight passenger list and a hotel rooming/guest list to better organize travel information for large travel groups.
 * Optimized for mobile view
+
+### Special Thanks
+#### Thank you for the support and community [Michelle](https://github.com/michellekontoff/), [Johnathan](https://github.com/jyih), [Brandon](https://github.com/Omstachu), [Mark](https://github.com/mark-Vasquez/), and [Stef](https://github.com/steffano2021/)
