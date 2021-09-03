@@ -99,7 +99,7 @@ export default function ItineraryPage({ number }) {
                             })}
                         </div>
                         {/* ************* Hotels ************* */}
-                        <div className="hotel-info__outer-container">
+                        {/* <div className="hotel-info__outer-container">
                             {itinerary?.hotel_info?.map((hotel, i) => {
                                 return (
                                     <div key={i}>
@@ -113,9 +113,9 @@ export default function ItineraryPage({ number }) {
                                     </div>
                                 )
                             })}
-                        </div>
+                        </div> */}
                         {/* ************* Rental Cars ************* */}
-                        <div className="rentalcar-info__outer-container">
+                        {/* <div className="rentalcar-info__outer-container">
                             {itinerary?.rental_info?.map((car, i) => {
                                 return (
                                     <div key={i}>
@@ -134,7 +134,7 @@ export default function ItineraryPage({ number }) {
                                     </div>
                                 )
                             })}
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             }
