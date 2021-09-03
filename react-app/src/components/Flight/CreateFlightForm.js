@@ -125,7 +125,7 @@ const CreateFlightForm = ({ setShowModal, itinerary_id }) => {
                             onChange={(e) => setFlight_no(e.target.value)}
                         />
                     </div>
-                    <div className="flexy">
+                    {/* <div className="flexy">
                         <label className="form-label">
                             Notes
                         </label>
@@ -136,7 +136,7 @@ const CreateFlightForm = ({ setShowModal, itinerary_id }) => {
                             className="itinerary-form-input"
                             onChange={(e) => setNotes(e.target.value)}
                         />
-                    </div>
+                    </div> */}
                     <div className="form-button-div">
                         <button type="submit" className="form-button">New Flight</button>
                     </div>

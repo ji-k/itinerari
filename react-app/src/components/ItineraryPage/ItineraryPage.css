@@ -69,6 +69,11 @@
 /* general info end */
 /* ================================================================= */
 
+.feature-content__container {
+    padding-bottom: 10px;
+    margin: 15px;
+}
+
 /* ================================================================= */
 /* flight start */
 .flight-info__outer-container {
@@ -76,6 +81,7 @@
     margin-top: 40px;
     width: 90%;
     margin-left: 4%;
+    /* margin-bottom: 10px; */
     /* border-radius: 5px; */
     /* margin-left: 300px; */
 }
@@ -90,10 +96,6 @@
 .feature-header {
     font-weight: bold;
     font-size: 14pt;
-}
-
-.feature-content__container {
-    margin: 15px;
 }
 
 .flight-date {
