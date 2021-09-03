@@ -122,7 +122,7 @@ const EditItineraryForm = ({ itinerary, setShowModal }) => {
                         />
                     </div>
                     <div className="form-button-div">
-                        <button type="submit">Edit</button>
+                        <button type="submit" className="form-button">Edit</button>
                     </div>
                 </form>
             </div>
