@@ -63,6 +63,7 @@ const CreateItineraryForm = ({ setShowModal }) => {
                         <input type="date"
                             value={end_date}
                             className="itinerary-form-input"
+                            min={(start_date)}
                             required
                             onChange={(e) => setEnd_date(e.target.value)}
                         />
