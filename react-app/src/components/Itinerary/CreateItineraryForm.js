@@ -30,7 +30,7 @@ const CreateItineraryForm = ({ setShowModal }) => {
         <>
             <div className="itinerary-form__container">
                 <form className="itinerary-form" onSubmit={handleSubmit}>
-                    <div className="modal-title">Create New Itinerary</div>
+                    <div className="modal-title">New Itinerary</div>
                     <div className="flexy">
                         <label className="form-label">
                             Title
@@ -89,7 +89,7 @@ const CreateItineraryForm = ({ setShowModal }) => {
                         />
                     </div>
                     <div className="form-button-div">
-                        <button type="submit" className="form-button">New Itinerary</button>
+                        <button type="submit" className="form-button">Create</button>
                     </div>
                 </form>
             </div>
