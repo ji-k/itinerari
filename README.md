@@ -5,17 +5,17 @@ itinerari is a travel management web application that allows users to create a s
 
 ## Technologies Used
 ### Backend
-* Flask
 * Python
-* JavaScript
+* Flask
 * PostgresSQL
 * SQLAlchemy
 * WTForms
 
 ### Frontend
+* JavaScript
+* Node.js
 * React
 * Redux
-* JavaScript
 * CSS3
 * HTML5
 
