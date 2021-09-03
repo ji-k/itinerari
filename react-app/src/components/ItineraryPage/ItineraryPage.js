@@ -86,7 +86,7 @@ export default function ItineraryPage({ number }) {
                                                 </div>
                                                 <div className="flight-arrival__container">
                                                     <div className="flight-time">{flight.arrival}</div>
-                                                    <div className="flight-time-label">Departure Time</div>
+                                                    <div className="flight-time-label">Arrival Time</div>
                                                 </div>
                                             </div>
                                             {/* <p>Departure Time: {flight.departure}</p> */}
