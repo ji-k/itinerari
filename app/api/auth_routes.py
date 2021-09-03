@@ -28,17 +28,17 @@ def authenticate():
         return current_user.to_dict()
     return {'errors': ['Unauthorized']}
 
-# @auth_routes.route('/authorizing', methods=['POST'])
-# def authorizing():
-#     """
-#     Checks to see if the given email or username is valid
-#     """
-#     data = request.get_json()
-#     user = User.query.filter((User.email == data) | (User.username == data)).first()
-#     if user:
-#         return user.to_dict()
-#     else:
-#         return {'errors': ['Email or Username does not exist.']}, 401
+@auth_routes.route('/authorizing', methods=['POST'])
+def authorizing():
+    """
+    Checks to see if the given email or username is valid
+    """
+    data = request.get_json()
+    user = User.query.filter((User.email == data) | (User.username == data)).first()
+    if user:
+        return user.to_dict()
+    else:
+        return {'errors': ['Email or Username does not exist.']}, 401
 
 @auth_routes.route('/login', methods=['POST'])
 def login():
@@ -84,6 +84,7 @@ def sign_up():
         db.session.commit()
         login_user(user)
         return user.to_dict()
+    print(form.errors)
     return {'errors': validation_errors_to_error_messages(form.errors)}, 401
     return form.errors, 401
 

@@ -16,18 +16,18 @@ const SignUpForm = () => {
 
   const onSignUp = async (e) => {
     e.preventDefault();
-    if (password === confirmPassword) {
-      const data = await dispatch(signUp(username, email, password));
-      if (data) {
-        setValidationErrors(data)
-      }
+    const data = await dispatch(signUp(username, email, password, confirmPassword));
+    if (data) {
+      setValidationErrors(data)
     }
-    if (password !== confirmPassword) {
-      setValidationErrors(['Passwords do not match.']);
-      return;
-    } else {
-      return
-    }
+
+    // if (password !== confirmPassword) {
+    //   setValidationErrors(['Passwords do not match.']);
+    //   return;
+    // } else {
+    //   return
+    // }
+    return
   };
 
   // TODO: Email Validation (form currently submits without '@')
