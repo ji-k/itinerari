@@ -1,0 +1,57 @@
+.itinerary-form__container {
+    margin: 20px;
+    text-align: center;
+}
+
+.itinerary-form {
+    height: 100%;
+    text-align: center;
+}
+
+.modal-title {
+    margin-bottom: 20px;
+    padding-top: 10px;
+}
+
+.form-label {
+    font-size: 11pt;
+    margin-right: 10px;
+}
+
+.itinerary-form-input {
+    width: 300px;
+    box-sizing: border-box;
+    border-top: none;
+    border-right: none;
+    border-lefT: none;
+    border-bottom: 1px solid black;
+    margin-bottom: 10px;
+    box-shadow: 0 13px 21px rgba(0, 0, 0, 0.05);
+}
+
+.flexy {
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-button {
+    display: block;
+    color: white;
+    /* border: 1px solid white; */
+    border: none;
+    background-color: #282828;
+    width: 100%;
+    border-radius: 5px;
+    height: 35px;
+    transition: 0.5s;
+    margin: 15px auto;
+}
+
+.form-button:hover {
+    background: rgb(144, 218, 243);
+    color: #282828;
+}
+
+.form-button-div {
+    text-align: center;
+}

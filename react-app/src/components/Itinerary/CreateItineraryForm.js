@@ -30,27 +30,67 @@ const CreateItineraryForm = ({ setShowModal }) => {
         <>
             <div className="itinerary-form__container">
                 <form className="itinerary-form" onSubmit={handleSubmit}>
-                    <label>
-                        Title
-                    </label>
-                    <input type="text" value={title} placeholder="Bon Voyage!" onChange={(e) => setTitle(e.target.value)} />
-                    <label>
-                        Start Date
-                    </label>
-                    <input type="date" value={start_date} onChange={(e) => setStart_date(e.target.value)} />
-                    <label>
-                        End Date
-                    </label>
-                    <input type="date" value={end_date} onChange={(e) => setEnd_date(e.target.value)} />
-                    <label>
-                        Upload an Cover
-                    </label>
-                    <input type="text" value={image_url} placeholder="Change cover" onChange={(e) => setImage_url(e.target.value)} />
-                    <label>
-                        Itinerary Notes
-                    </label>
-                    <input type="text" value={notes} placeholder="Notes..." onChange={(e) => setNotes(e.target.value)} />
-                    <button type="submit">New Itinerary</button>
+                    <div className="modal-title">Create New Itinerary</div>
+                    <div className="flexy">
+                        <label className="form-label">
+                            Title
+                        </label>
+                        <input
+                            type="text"
+                            value={title}
+                            placeholder="Bon Voyage!"
+                            className="itinerary-form-input"
+                            onChange={(e) => setTitle(e.target.value)}
+                        />
+                    </div>
+                    <div className="flexy">
+                        <label className="form-label">
+                            Start Date
+                        </label>
+                        <input
+                            type="date"
+                            value={start_date}
+                            className="itinerary-form-input"
+                            onChange={(e) => setStart_date(e.target.value)}
+                        />
+                    </div>
+                    <div className="flexy">
+                        <label className="form-label">
+                            End Date
+                        </label>
+                        <input type="date"
+                            value={end_date}
+                            className="itinerary-form-input"
+                            onChange={(e) => setEnd_date(e.target.value)}
+                        />
+                    </div>
+                    <div className="flexy">
+                        <label className="form-label">
+                            Upload an Cover
+                        </label>
+                        <input
+                            type="text"
+                            value={image_url}
+                            className="itinerary-form-input"
+                            placeholder="Change cover"
+                            onChange={(e) => setImage_url(e.target.value)}
+                        />
+                    </div>
+                    <div className="flexy">
+                        <label className="form-label">
+                            Itinerary Notes
+                        </label>
+                        <input
+                            type="text"
+                            value={notes}
+                            className="itinerary-form-input"
+                            placeholder="Notes..."
+                            onChange={(e) => setNotes(e.target.value)}
+                        />
+                    </div>
+                    <div className="form-button-div">
+                        <button type="submit" className="form-button">New Itinerary</button>
+                    </div>
                 </form>
             </div>
         </>
