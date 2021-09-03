@@ -23,7 +23,7 @@ itinerari is a travel management web application that allows users to create a s
 * Heroku
 
 ## Landing Page
-![](https://itinerari.s3.amazonaws.com/sc-landing.png)
+![](https://itinerari.s3.amazonaws.com/sc-landingpage.png)
 
 ## Dashboard
 ![](https://itinerari.s3.amazonaws.com/sc-dash.png)
