@@ -40,6 +40,7 @@ const CreateItineraryForm = ({ setShowModal }) => {
                             value={title}
                             placeholder="Bon Voyage!"
                             className="itinerary-form-input"
+                            required
                             onChange={(e) => setTitle(e.target.value)}
                         />
                     </div>
@@ -51,6 +52,7 @@ const CreateItineraryForm = ({ setShowModal }) => {
                             type="date"
                             value={start_date}
                             className="itinerary-form-input"
+                            required
                             onChange={(e) => setStart_date(e.target.value)}
                         />
                     </div>
@@ -61,6 +63,7 @@ const CreateItineraryForm = ({ setShowModal }) => {
                         <input type="date"
                             value={end_date}
                             className="itinerary-form-input"
+                            required
                             onChange={(e) => setEnd_date(e.target.value)}
                         />
                     </div>
@@ -73,6 +76,7 @@ const CreateItineraryForm = ({ setShowModal }) => {
                             value={image_url}
                             className="itinerary-form-input"
                             placeholder="Change cover"
+                            required
                             onChange={(e) => setImage_url(e.target.value)}
                         />
                     </div>
@@ -85,6 +89,7 @@ const CreateItineraryForm = ({ setShowModal }) => {
                             value={notes}
                             className="itinerary-form-input"
                             placeholder="Notes..."
+                            required
                             onChange={(e) => setNotes(e.target.value)}
                         />
                     </div>

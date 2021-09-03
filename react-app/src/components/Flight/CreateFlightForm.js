@@ -51,6 +51,7 @@ const CreateFlightForm = ({ setShowModal, itinerary_id }) => {
                             value={date}
                             placeholder="Trip Date"
                             className="itinerary-form-input"
+                            required
                             onChange={(e) => setDate(e.target.value)}
                         />
                     </div>
@@ -63,6 +64,7 @@ const CreateFlightForm = ({ setShowModal, itinerary_id }) => {
                             value={origin}
                             placeholder="Origin"
                             className="itinerary-form-input"
+                            required
                             onChange={(e) => setOrigin(e.target.value)}
                         />
                     </div>
@@ -75,6 +77,7 @@ const CreateFlightForm = ({ setShowModal, itinerary_id }) => {
                             value={destination}
                             placeholder="Destination"
                             className="itinerary-form-input"
+                            required
                             onChange={(e) => setDestination(e.target.value)}
                         />
                     </div>
@@ -87,6 +90,7 @@ const CreateFlightForm = ({ setShowModal, itinerary_id }) => {
                             value={departure}
                             placeholder="Departure"
                             className="itinerary-form-input"
+                            required
                             onChange={(e) => setDeparture(e.target.value)}
                         />
                     </div>
@@ -99,6 +103,7 @@ const CreateFlightForm = ({ setShowModal, itinerary_id }) => {
                             value={arrival}
                             placeholder="Arrival"
                             className="itinerary-form-input"
+                            required
                             onChange={(e) => setArrival(e.target.value)}
                         />
                     </div>
@@ -111,6 +116,7 @@ const CreateFlightForm = ({ setShowModal, itinerary_id }) => {
                             value={airline}
                             placeholder="Airline"
                             className="itinerary-form-input"
+                            required
                             onChange={(e) => setAirline(e.target.value)}
                         />
                     </div>
@@ -123,6 +129,7 @@ const CreateFlightForm = ({ setShowModal, itinerary_id }) => {
                             value={flight_no}
                             placeholder="Flight No."
                             className="itinerary-form-input"
+                            required
                             onChange={(e) => setFlight_no(e.target.value)}
                         />
                     </div>
@@ -135,6 +142,7 @@ const CreateFlightForm = ({ setShowModal, itinerary_id }) => {
                             value={notes}
                             placeholder="Notes"
                             className="itinerary-form-input"
+                            required
                             onChange={(e) => setNotes(e.target.value)}
                         />
                     </div>
