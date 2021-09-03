@@ -32,6 +32,13 @@ export default function ItineraryPage({ number }) {
         }
     }
 
+    // const convertTime = (time) => {
+    //     time = time.slice(1);  // Remove full string match value
+    //     time[5] = +time[0] < 12 ? 'AM' : 'PM'; // Set AM/PM
+    //     time[0] = +time[0] % 12 || 12; // Adjust hours
+    //     return time.join('');
+    // }
+
 
 
     return (
@@ -82,6 +89,7 @@ export default function ItineraryPage({ number }) {
                                             <div className="flight-time__container">
                                                 <div className="flight-departure__container">
                                                     <div className="flight-time">{flight.departure}</div>
+                                                    {/* <div className="flight-time">{((flight.departure).toString().convertTime())}</div> */}
                                                     <div className="flight-time-label">Departure Time</div>
                                                 </div>
                                                 <div className="flight-arrival__container">

@@ -4,6 +4,7 @@ import { getItinerary } from '../../store/itineraries';
 
 
 const CreateFlightForm = ({ setShowModal, itinerary_id }) => {
+
     const dispatch = useDispatch();
 
     const [date, setDate] = useState('');
@@ -82,7 +83,7 @@ const CreateFlightForm = ({ setShowModal, itinerary_id }) => {
                             Departure Time
                         </label>
                         <input
-                            type="string"
+                            type="time"
                             value={departure}
                             placeholder="Departure"
                             className="itinerary-form-input"
@@ -94,7 +95,7 @@ const CreateFlightForm = ({ setShowModal, itinerary_id }) => {
                             Arrival Time
                         </label>
                         <input
-                            type="string"
+                            type="time"
                             value={arrival}
                             placeholder="Arrival"
                             className="itinerary-form-input"
