@@ -39,7 +39,7 @@ const EditItineraryForm = ({ itinerary, setShowModal }) => {
 
         setStart_date(`${sYear}-${sMonth.length < 2 ? `0${sMonth}` : sMonth}-${sDay.length < 2 ? `0${sDay}` : sDay}`)
         setEnd_date(`${eYear}-${eMonth.length < 2 ? `0${eMonth}` : eMonth}-${eDay.length < 2 ? `0${eDay}` : eDay}`)
-    }, [itinerary])
+    }, [itinerary, eDay, eMonth, eYear, sDay, sMonth, sYear])
 
 
     const handleSubmit = async (e) => {

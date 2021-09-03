@@ -25,7 +25,7 @@ export default function ItineraryPage({ number }) {
             },
         });
         if (res.ok) {
-            const data = await res.json();
+            await res.json();
             await dispatch(ItineraryActions.getItinerary(itinerary_id));
             // setShowModal(false)
             return 'success';
@@ -46,7 +46,7 @@ export default function ItineraryPage({ number }) {
             {itinerary &&
                 <div>
                     <div className="itinerary-banner-container">
-                        <img src={itinerary?.image_url} className="itinerary-banner" />
+                        <img src={itinerary?.image_url} className="itinerary-banner" alt="user selects a banner for their itinerary" />
                     </div>
                     <div className="itinerary-page__outer-container">
                         <div className="itinerary-button-div">

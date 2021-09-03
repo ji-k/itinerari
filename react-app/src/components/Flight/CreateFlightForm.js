@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { getItinerary } from '../../store/itineraries';
 
 
@@ -28,7 +28,7 @@ const CreateFlightForm = ({ setShowModal, itinerary_id }) => {
             body: JSON.stringify(flight)
         });
         if (res.ok) {
-            const data = await res.json();
+            await res.json();
 
             await dispatch(getItinerary(itinerary_id));
 
@@ -126,7 +126,7 @@ const CreateFlightForm = ({ setShowModal, itinerary_id }) => {
                             onChange={(e) => setFlight_no(e.target.value)}
                         />
                     </div>
-                    {/* <div className="flexy">
+                    <div className="flexy">
                         <label className="form-label">
                             Notes
                         </label>
@@ -137,7 +137,7 @@ const CreateFlightForm = ({ setShowModal, itinerary_id }) => {
                             className="itinerary-form-input"
                             onChange={(e) => setNotes(e.target.value)}
                         />
-                    </div> */}
+                    </div>
                     <div className="form-button-div">
                         <button type="submit" className="form-button">New Flight</button>
                     </div>

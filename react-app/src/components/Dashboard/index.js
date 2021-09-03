@@ -54,6 +54,7 @@ const Dashboard = () => {
                             {/* <Itineraries /> */}
                             <div className="dashboard__sidebar-itinerary-button">
                                 {/* {Object.values(itineraries).map(itinerary => { */}
+
                                 {itineraries.map(itinerary => {
                                     if (user.id === itinerary?.owner_id)
                                         return (
@@ -79,6 +80,7 @@ const Dashboard = () => {
                                                 </div>
                                             </div>
                                         )
+                                    return null
                                 })}
                             </div>
                         </div>

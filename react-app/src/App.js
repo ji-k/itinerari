@@ -27,6 +27,10 @@ function App() {
     return null;
   }
 
+  if (false && ItineraryPage) {
+    return
+  }
+
   return (
     <BrowserRouter>
       <NavBar />
@@ -46,7 +50,7 @@ function App() {
         <ProtectedRoute path='/dashboard' exact={true} >
           <Dashboard />
         </ProtectedRoute>
-        {/* <ProtectedRoute path='/itineraries/:userId' exact={true} >
+        {/* <ProtectedRoute path='/itineraries/:userId' exact={false} >
           <ItineraryPage />
         </ProtectedRoute> */}
         <Route path='/' exact={true} >
