@@ -70,14 +70,29 @@ export default function ItineraryPage({ number }) {
                                             </button>
                                         </div>
                                         <div className="feature-content__container">
-                                            <p>Date of Travel: {flight.date}</p>
-                                            <p>Airline: {flight.airline}</p>
-                                            <p>Flight #: {flight.flight_no}</p>
-                                            <p>Origin: {flight.origin}</p>
-                                            <p>Departure Time: {flight.departure}</p>
-                                            <p>Destination: {flight.destination}</p>
-                                            <p>Arrival Time: {flight.arrival}</p>
-                                            <p>Flight Notes: {flight.notes}</p>
+                                            <div className="flight-row-1">
+                                                <div className="flight-airport">{flight.origin} ➤ {flight.destination}</div>
+                                                <div className="flight-date">Date of Travel: {(new Date(flight.date).toDateString())}</div>
+                                            </div>
+                                            <div className="flight-row-2">
+                                                <div>{flight.airline}</div>
+                                                <div className="flight-no">{flight.flight_no}</div>
+                                            </div>
+                                            {/* <p>Origin: {flight.origin}</p> */}
+                                            <div className="flight-time__container">
+                                                <div className="flight-departure__container">
+                                                    <div className="flight-time">{flight.departure}</div>
+                                                    <div className="flight-time-label">Departure Time</div>
+                                                </div>
+                                                <div className="flight-arrival__container">
+                                                    <div className="flight-time">{flight.arrival}</div>
+                                                    <div className="flight-time-label">Departure Time</div>
+                                                </div>
+                                            </div>
+                                            {/* <p>Departure Time: {flight.departure}</p> */}
+                                            {/* <p>Destination: {flight.destination}</p> */}
+                                            {/* <p>Arrival Time: {flight.arrival}</p> */}
+                                            <div className="flight-notes">Flight Notes: {flight.notes}</div>
                                         </div>
                                     </div>
                                 )
