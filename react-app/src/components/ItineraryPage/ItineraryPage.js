@@ -100,7 +100,7 @@ export default function ItineraryPage({ number }) {
                                             {/* <p>Departure Time: {flight.departure}</p> */}
                                             {/* <p>Destination: {flight.destination}</p> */}
                                             {/* <p>Arrival Time: {flight.arrival}</p> */}
-                                            {/* <div className="flight-notes">Flight Notes: {flight.notes}</div> */}
+                                            <div className="flight-notes">Flight Notes: {flight.notes}</div>
                                         </div>
                                     </div>
                                 )
