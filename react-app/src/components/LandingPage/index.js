@@ -60,8 +60,8 @@ const LandingPage = () => {
                         <div className="landing-page__about-me-right-container">
                             <p className="about">Created by <strong>Ji Kyung</strong></p>
                             <p className="about">jikyung@gmail.com</p>
-                            <p><a href="https://www.linkedin.com/in/jikyung" className="about">LinkedIn</a></p>
-                            <p><a href="https://www.github.com/ji-k" className="about">GitHub</a></p>
+                            <p><a href="https://www.linkedin.com/in/jikyung" target="_blank" rel="noopener noreferrer" className="about">LinkedIn</a></p>
+                            <p><a href="https://www.github.com/ji-k" target="_blank" rel="noopener noreferrer" className="about">GitHub</a></p>
                         </div>
                     </div>
                 </div>
