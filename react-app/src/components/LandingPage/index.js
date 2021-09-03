@@ -20,7 +20,7 @@ const LandingPage = () => {
                 </div>
                 <div className="landing-page__features-container">
                     <p className="features">Features</p>
-                    <p className="features-details">itinerari is a travel management app that allows users to create a single-page itinerary to organize and plan their travel logistics. itinerari hopes travelers can benefit from having their travel information conveniently all in one place, or to help with communication within a group of travelers.</p>
+                    <p className="features-details">itinerari is a travel management app that allows users to create a single-page itinerary to organize and plan their travel logistics. itinerari hopes travelers can benefit from having their travel information conveniently all in one place, or to help with communication within a group of travelers. Users can also create itineraries for past trips in order to document and share travel tips.</p>
                     <div className="flex-center-me">
                         <div className="feature-1-container feature-points">
                             <img src="https://itinerari.s3.amazonaws.com/1.jpg" className="feature-image" alt="man at waterfall" />
