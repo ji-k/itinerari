@@ -30,17 +30,18 @@ const LandingPage = () => {
                         <div className="feature-2-container feature-points">
                             <img src="https://itinerari.s3.amazonaws.com/2.jpg" className="feature-image" alt="clouds outside of an airplane window" />
                             <div className="feature-point-header">Flight Details</div>
-                            <p className="feature-points-details">Know when you will be in the air. Add a passenger list for your inbound and outbound flights.</p>
+                            <p className="feature-points-details">Add flight details to your itinerary. Know exactly when you will be in the air.</p>
+                            {/* Add a passenger list for your inbound and outbound flights.  */}
                         </div>
                         <div className="feature-3-container feature-points">
                             <img src="https://itinerari.s3.amazonaws.com/11.jpg" className="feature-image" alt="black car at night" />
                             <div className="feature-point-header">Rental Car Details</div>
-                            <p className="feature-points-details">Know exactly where to go to pick up your rental car after leaving a hectic airport.</p>
+                            <p className="feature-points-details">Know exactly where to go to pick up your rental car after leaving a hectic airport. (Coming Soon)</p>
                         </div>
                         <div className="feature-4-container feature-points">
                             <img src="https://itinerari.s3.amazonaws.com/9.jpg" className="feature-image" alt="ocean view hotel balcony" />
                             <div className="feature-point-header">Hotel Details</div>
-                            <p className="feature-points-details">Know where you'll be staying. Add a rooming list if your group is staying in multiple properties.</p>
+                            <p className="feature-points-details">Know where you'll be staying. Add a rooming list if your group is staying in multiple properties. (Coming Soon)</p>
                         </div>
                     </div>
                 </div>
