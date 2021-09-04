@@ -41,6 +41,7 @@ const CreateItineraryForm = ({ setShowModal }) => {
                             placeholder="Bon Voyage!"
                             className="itinerary-form-input"
                             required
+                            maxLength="50"
                             onChange={(e) => setTitle(e.target.value)}
                         />
                     </div>
@@ -70,7 +71,7 @@ const CreateItineraryForm = ({ setShowModal }) => {
                     </div>
                     <div className="flexy">
                         <label className="form-label">
-                            Upload an Cover
+                            Cover Image URL
                         </label>
                         <input
                             type="text"
@@ -90,7 +91,7 @@ const CreateItineraryForm = ({ setShowModal }) => {
                             value={notes}
                             className="itinerary-form-input"
                             placeholder="Notes..."
-                            required
+                            maxLength="250"
                             onChange={(e) => setNotes(e.target.value)}
                         />
                     </div>

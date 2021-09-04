@@ -68,7 +68,7 @@ const Dashboard = () => {
                                                         {itinerary.title}
                                                     </span>
                                                 </div>
-                                                <div>
+                                                <div className="align-me">
                                                     {itinerary?.owner_id === user.id && <button
                                                         className="itinerary-delete dashboard-button"
                                                         onClick={() => {

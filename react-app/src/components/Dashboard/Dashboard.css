@@ -25,6 +25,10 @@
     color: #282828;
 }
 
+/* .align-me {
+    align-self: center;
+} */
+
 .dashboard-button:hover {
     background: rgb(144, 218, 243);
     color: #282828;
@@ -57,9 +61,10 @@
     top: 50px;
 }
 
-/* .itineraries-link a {
-    color: white;
-} */
+.itineraries-title-link {
+    width: 280px;
+    overflow-wrap: anywhere;
+}
 
 .itineraries-title-link:hover {
     border-bottom: 3px solid white;
