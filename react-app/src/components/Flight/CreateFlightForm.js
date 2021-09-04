@@ -60,11 +60,12 @@ const CreateFlightForm = ({ setShowModal, itinerary_id }) => {
                             Origin (Airport)
                         </label>
                         <input
-                            type="string"
+                            type="text"
                             value={origin}
                             placeholder="Origin"
                             className="itinerary-form-input"
                             required
+                            maxLength="75"
                             onChange={(e) => setOrigin(e.target.value)}
                         />
                     </div>
@@ -73,11 +74,12 @@ const CreateFlightForm = ({ setShowModal, itinerary_id }) => {
                             Destination (Airport)
                         </label>
                         <input
-                            type="string"
+                            type="text"
                             value={destination}
                             placeholder="Destination"
                             className="itinerary-form-input"
                             required
+                            maxLength="100"
                             onChange={(e) => setDestination(e.target.value)}
                         />
                     </div>
@@ -112,11 +114,12 @@ const CreateFlightForm = ({ setShowModal, itinerary_id }) => {
                             Airline
                         </label>
                         <input
-                            type="string"
+                            type="text"
                             value={airline}
                             placeholder="Airline"
                             className="itinerary-form-input"
                             required
+                            maxLength="50"
                             onChange={(e) => setAirline(e.target.value)}
                         />
                     </div>
@@ -125,11 +128,12 @@ const CreateFlightForm = ({ setShowModal, itinerary_id }) => {
                             Flight Number
                         </label>
                         <input
-                            type="string"
+                            type="text"
                             value={flight_no}
                             placeholder="Flight No."
                             className="itinerary-form-input"
                             required
+                            maxLength="25"
                             onChange={(e) => setFlight_no(e.target.value)}
                         />
                     </div>
@@ -142,7 +146,7 @@ const CreateFlightForm = ({ setShowModal, itinerary_id }) => {
                             value={notes}
                             placeholder="Notes"
                             className="itinerary-form-input"
-                            required
+                            maxLength="250"
                             onChange={(e) => setNotes(e.target.value)}
                         />
                     </div>

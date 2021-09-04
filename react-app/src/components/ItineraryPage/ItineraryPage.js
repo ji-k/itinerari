@@ -61,7 +61,7 @@ export default function ItineraryPage({ number }) {
                             </div>
                             {/* <div className="general-info__sDate">Trip Start: {itinerary?.start_date}</div>
                             <div className="general-info__eDate">Trip End: {itinerary?.end_date}</div> */}
-                            <div className="general-info__notes">Notes: {itinerary?.notes}</div>
+                            {itinerary?.notes && <div className="general-info__notes">Notes: {itinerary?.notes}</div>}
                             {/* <p className="">Banner: {itinerary?.image_url}</p> */}
                         </div>
                         {/* ************* Flights ************* */}
@@ -100,7 +100,7 @@ export default function ItineraryPage({ number }) {
                                             {/* <p>Departure Time: {flight.departure}</p> */}
                                             {/* <p>Destination: {flight.destination}</p> */}
                                             {/* <p>Arrival Time: {flight.arrival}</p> */}
-                                            <div className="flight-notes">Flight Notes: {flight.notes}</div>
+                                            {flight?.notes && <div className="flight-notes">Flight Notes: {flight.notes}</div>}
                                         </div>
                                     </div>
                                 )

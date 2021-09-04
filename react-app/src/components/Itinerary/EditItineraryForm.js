@@ -71,9 +71,11 @@ const EditItineraryForm = ({ itinerary, setShowModal }) => {
                         <input
                             type="text"
                             value={title}
+                            minLength="1"
                             placeholder="Bon Voyage!"
                             className="itinerary-form-input"
                             onChange={(e) => setTitle(e.target.value)}
+                            required
                         />
                     </div>
                     <div className="flexy">
@@ -85,6 +87,7 @@ const EditItineraryForm = ({ itinerary, setShowModal }) => {
                             value={start_date}
                             className="itinerary-form-input"
                             onChange={(e) => setStart_date(e.target.value)}
+                            required
                         />
                     </div>
                     <div className="flexy">
@@ -95,6 +98,7 @@ const EditItineraryForm = ({ itinerary, setShowModal }) => {
                             value={end_date}
                             className="itinerary-form-input"
                             onChange={(e) => setEnd_date(e.target.value)}
+                            required
                         />
                     </div>
                     <div className="flexy">
@@ -107,6 +111,7 @@ const EditItineraryForm = ({ itinerary, setShowModal }) => {
                             className="itinerary-form-input"
                             placeholder="Change cover"
                             onChange={(e) => setImage_url(e.target.value)}
+                            required
                         />
                     </div>
                     <div className="flexy">
