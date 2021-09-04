@@ -61,6 +61,13 @@
     color: white;
 } */
 
+.itineraries-title-link:hover {
+    border-bottom: 3px solid white;
+    transition: 0.5s;
+    cursor: pointer;
+    /* background-color: rgb(144, 218, 243); */
+}
+
 
 .dashboard__main-body-container {
     background-color: #a7a9b6;
