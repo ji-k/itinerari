@@ -70,7 +70,7 @@ export default function ItineraryPage({ number }) {
                                 return (
                                     <div key={i}>
                                         <div className="flight-header-button-flex">
-                                            <span className="feature-header">Flight Information</span>
+                                            <span className="feature-header">✈️ Flight Information</span>
                                             <button
                                                 className="itinerary-delete dashboard-button"
                                                 onClick={e => deleteFlight(e, flight?.id)}>Delete Flight
@@ -100,49 +100,69 @@ export default function ItineraryPage({ number }) {
                                             {/* <p>Departure Time: {flight.departure}</p> */}
                                             {/* <p>Destination: {flight.destination}</p> */}
                                             {/* <p>Arrival Time: {flight.arrival}</p> */}
-                                            {flight?.notes && <div className="flight-notes">Flight Notes: {flight.notes}</div>}
+                                            {flight?.notes && <div className="flight-notes">Notes: {flight.notes}</div>}
+                                        </div>
+                                    </div>
+                                )
+                            })}
+                        </div>
+                        {/* ************* Rental Cars ************* */}
+                        <div className="rentalcar-info__outer-container">
+                            {itinerary?.rental_info?.map((car, i) => {
+                                return (
+                                    <div key={i}>
+                                        <div className="rental-header-button-flex">
+                                            <span className="feature-header">🚗 Rental Car Information</span>
+                                        </div>
+                                        <div className="feature-content__container">
+                                            <div className="rental-row-1">
+                                                <div className="rental-company">{car.company}</div>
+                                                <div className="rental-confirmation">Confirmation: {car.confirmation}</div>
+                                            </div>
+                                            <div className="rental-address">
+                                                {car.address}<br />
+                                                {car.city}, {car.state} {car.zipcode}
+                                            </div>
+                                            <div className="box-me">
+                                                <div className="flex-rental rental-times">
+                                                    {/* <p>Pick Up: {car.pickup_date}</p> */}
+                                                    <div className="rental-pickup-date"><b>Pick Up:</b> {(new Date(car.pickup_date).toDateString())}</div>
+                                                    <div><b>Pick Up Time:</b> {car.pickup_time}</div>
+                                                </div>
+                                                <div className="flex-rental rental-times">
+                                                    {/* <p>Drop Off: {car.dropoff_date}</p> */}
+                                                    <div className="rental-dropoff-date"><b>Drop Up:</b> {(new Date(car.dropoff_date).toDateString())}</div>
+                                                    <div><b>Drop Off Time:</b> {car.dropoff_time}</div>
+                                                </div>
+                                            </div>
+                                            <div className="flight-notes">Notes: {car.notes}</div>
+
                                         </div>
                                     </div>
                                 )
                             })}
                         </div>
                         {/* ************* Hotels ************* */}
-                        {/* <div className="hotel-info__outer-container">
+                        <div className="hotel-info__outer-container">
                             {itinerary?.hotel_info?.map((hotel, i) => {
                                 return (
                                     <div key={i}>
-                                        <p>Hotel Information</p>
-                                        <p>Property: {hotel.property}</p>
-                                        <p>Address: {hotel.address}</p>
-                                        <p>City: {hotel.city}</p>
-                                        <p>State: {hotel.state}</p>
-                                        <p>Zipcode: {hotel.zipcode}</p>
-                                        <p>notes: {hotel.notes}</p>
+                                        <div className="rental-header-button-flex">
+                                            <span className="feature-header">🏨 Hotel Information</span>
+                                        </div>
+                                        <div className="feature-content__container">
+                                            <div className="hotel-property">{hotel.property}</div>
+                                            <div className="hotel-address">
+                                                {hotel.address}<br />
+                                                {hotel.city}, {hotel.state} {hotel.zipcode}
+                                            </div>
+                                            <div className="flight-notes">Notes: {hotel.notes}</div>
+                                        </div>
                                     </div>
                                 )
                             })}
-                        </div> */}
-                        {/* ************* Rental Cars ************* */}
-                        {/* <div className="rentalcar-info__outer-container">
-                            {itinerary?.rental_info?.map((car, i) => {
-                                return (
-                                    <div key={i}>
-                                        <p>Rental Car Information</p>
-                                        <p>Rental Company: {car.company}</p>
-                                        <p>Address: {car.address}</p>
-                                        <p>City: {car.city}</p>
-                                        <p>State: {car.state}</p>
-                                        <p>Zipcode: {car.zipcode}</p>
-                                        <p>Confirmation: {car.confirmation}</p>
-                                        <p>Pick Up: {car.pickup_date}</p>
-                                        <p>Pick Up Time: {car.pickup_time}</p>
-                                        <p>Drop Off: {car.dropoff_date}</p>
-                                        <p>Drop Off Time: {car.dropoff_time}</p>
-                                        <p>Notes: {car.notes}</p>
-                                    </div>
-                                )
-                            })}
-                        </div> */}
+                        </div>
+
                     </div>
                 </div>
             }

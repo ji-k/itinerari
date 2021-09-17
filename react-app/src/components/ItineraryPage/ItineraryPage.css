@@ -54,6 +54,7 @@
     background-color: rgba(255, 255, 255, 0.5);
     backdrop-filter: blur(5px);
     overflow-wrap: anywhere;
+    padding-left: 10px;
 }
 
 .general-info__date {
@@ -61,12 +62,15 @@
     font-weight: bold;
     background-color: rgba(255, 255, 255, 0.5);
     backdrop-filter: blur(5px);
+    padding-left: 10px;
+    width: 100.5%;
 }
 
 .general-info__notes {
     margin-top: 5px;
     font-size: 10pt;
     overflow-wrap: anywhere;
+    padding-left: 10px;
 }
 /* general info end */
 /* ================================================================= */
@@ -79,9 +83,9 @@
 /* ================================================================= */
 /* flight start */
 .flight-info__outer-container {
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgb(255, 255, 255, 0.2);
     margin-top: 40px;
-    width: 90%;
+    width: 92%;
     margin-left: 4%;
     /* margin-bottom: 10px; */
     /* border-radius: 5px; */
@@ -91,7 +95,7 @@
 .flight-header-button-flex {
     display: flex;
     justify-content: space-between;
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: rgba(149, 196, 228, 0.3);
     height: 20px;
 }
 
@@ -113,6 +117,7 @@
 
 .flight-airport {
     font-weight: bold;
+    font-size: 20pt;
     color: rgb(0, 72, 148);
 }
 
@@ -143,7 +148,7 @@
 .flight-time {
     font-weight: bold;
     color: rgb(0, 72, 148);
-    font-size: 20pt;
+    font-size: 23pt;
 }
 
 .flight-time-label {
@@ -158,23 +163,84 @@
 /* ================================================================= */
 
 /* ================================================================= */
-/* hotel start */
-.hotel-info__outer-container {
-    background-color: pink;
-    padding-right: 15px;
+/* rental car start */
+.rentalcar-info__outer-container {
+    /* background-color: rgb(214, 220, 101); */
+    /* padding-right: 15px; */
     /* border-radius: 5px; */
     /* margin-left: 300px; */
+    background-color: rgba(255, 255, 255, 0.2);
+    /* margin-top: 40px; */
+    width: 92%;
+    margin-left: 4%;
 }
-/* hotel end */
+
+.rental-header-button-flex {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(149, 196, 228, 0.3);
+    height: 20px;
+}
+
+.rental-row-1 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.rental-company {
+    font-weight: bold;
+    font-size: 18pt;
+    color: rgb(0, 72, 148);
+}
+
+.rental-confirmation {
+    font-weight: bold;
+}
+
+.rental-address {
+    margin-top: 5px;
+    padding-left: 20px;
+}
+
+.rental-times {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.flex-rental {
+    display: flex;
+    justify-content: space-around;
+}
+
+.box-me {
+    border: 1px solid rgb(225, 243, 255);
+    margin: 20px;
+}
+/* rental car end */
 /* ================================================================= */
 
 /* ================================================================= */
-/* rental car start */
-.rentalcar-info__outer-container {
-    background-color: rgb(214, 220, 101);
-    padding-right: 15px;
+/* hotel start */
+.hotel-info__outer-container {
+    /* background-color: pink; */
+    background-color: rgba(255, 255, 255, 0.2);
+    /* padding-right: 15px; */
     /* border-radius: 5px; */
     /* margin-left: 300px; */
+    width: 92%;
+    margin-left: 4%;
 }
-/* rental car end */
+
+.hotel-property {
+    font-weight: bold;
+    font-size: 18pt;
+    color: rgb(0, 72, 148);
+}
+
+.hotel-address {
+    margin-top: 5px;
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+/* hotel end */
 /* ================================================================= */
