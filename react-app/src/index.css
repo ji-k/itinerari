@@ -24,3 +24,7 @@ body {
     font-family: 'Roboto', sans-serif;
     background-color:#a7a9b6;
 }
+
+a {
+    cursor: pointer;
+}

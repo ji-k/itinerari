@@ -82,9 +82,9 @@ const LoginForm = () => {
               </div>
 
               <div className="login-form-flex-me">
-                <span className="demo-login-page" onClick={demoLogin}>Demo User</span>
+                <a className="demo-login-page" onClick={demoLogin}>Demo User</a>
 
-                <span className="account-prompt" onClick={signUp}>Sign Up</span>
+                <a className="account-prompt" onClick={signUp}>Sign Up</a>
               </div>
             </div>
           </form>

@@ -116,7 +116,7 @@ const SignUpForm = () => {
             <button type='submit' className="signup-form-signup-button">Sign Up</button>
 
             <div>
-              <span className="signup-form-already">Already have an account?  </span><span className="account-prompt" onClick={login}>Login</span>
+              <span className="signup-form-already">Already have an account?  </span><a className="account-prompt" onClick={login}>Login</a>
             </div>
           </form>
         </div>
