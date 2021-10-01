@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import EditItineraryModal from '../EditItineraryModal';
 import CreateFlightModal from '../CreateFlightModal';
 import CreateRentalModal from '../CreateRentalModal'
+import CreateHotelModal from '../CreateHotelModal'
 import './ItineraryPage.css'
 import * as ItineraryActions from '../../store/itineraries'
 
@@ -49,6 +50,22 @@ export default function ItineraryPage({ number }) {
         }
     }
 
+    const deleteHotel = async (e, hotelId) => {
+        e.preventDefault();
+        const res = await fetch(`/api/hotels/${hotelId}`, {
+            method: "DELETE",
+            headers: {
+                'Content-Type': 'application/json'
+            },
+        });
+        if (res.ok) {
+            await res.json();
+            await dispatch(ItineraryActions.getItinerary(itinerary_id));
+            // setShowModal(false)
+            return 'success';
+        }
+    }
+
     // const convertTime = (time) => {
     //     time = time.slice(1);  // Remove full string match value
     //     time[5] = +time[0] < 12 ? 'AM' : 'PM'; // Set AM/PM
@@ -70,6 +87,7 @@ export default function ItineraryPage({ number }) {
                             < EditItineraryModal itinerary={itinerary} />
                             < CreateFlightModal itinerary_id={itinerary_id} />
                             < CreateRentalModal itinerary_id={itinerary_id} />
+                            < CreateHotelModal itinerary_id={itinerary_id} />
                         </div>
                         {/* ************* Itinerary ************* */}
                         <div className="general-info__title">{itinerary?.title}</div>
@@ -171,6 +189,10 @@ export default function ItineraryPage({ number }) {
                                     <div key={i}>
                                         <div className="rental-header-button-flex">
                                             <span className="feature-header">🏨 Hotel Information</span>
+                                            <button
+                                                className="itinerary-delete dashboard-button"
+                                                onClick={e => deleteHotel(e, hotel?.id)}>Delete Hotel
+                                            </button>
                                         </div>
                                         <div className="feature-content__container">
                                             <div className="hotel-property">{hotel.property}</div>
