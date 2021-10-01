@@ -2,6 +2,7 @@ import React from 'react'
 import { useSelector, useDispatch } from "react-redux";
 import EditItineraryModal from '../EditItineraryModal';
 import CreateFlightModal from '../CreateFlightModal';
+import CreateRentalModal from '../CreateRentalModal'
 import './ItineraryPage.css'
 import * as ItineraryActions from '../../store/itineraries'
 
@@ -19,6 +20,22 @@ export default function ItineraryPage({ number }) {
     const deleteFlight = async (e, flightId) => {
         e.preventDefault();
         const res = await fetch(`/api/flights/${flightId}`, {
+            method: "DELETE",
+            headers: {
+                'Content-Type': 'application/json'
+            },
+        });
+        if (res.ok) {
+            await res.json();
+            await dispatch(ItineraryActions.getItinerary(itinerary_id));
+            // setShowModal(false)
+            return 'success';
+        }
+    }
+
+    const deleteRental = async (e, rentalId) => {
+        e.preventDefault();
+        const res = await fetch(`/api/rentals/${rentalId}`, {
             method: "DELETE",
             headers: {
                 'Content-Type': 'application/json'
@@ -52,6 +69,7 @@ export default function ItineraryPage({ number }) {
                         <div className="itinerary-button-div">
                             < EditItineraryModal itinerary={itinerary} />
                             < CreateFlightModal itinerary_id={itinerary_id} />
+                            < CreateRentalModal itinerary_id={itinerary_id} />
                         </div>
                         {/* ************* Itinerary ************* */}
                         <div className="general-info__title">{itinerary?.title}</div>
@@ -113,6 +131,10 @@ export default function ItineraryPage({ number }) {
                                     <div key={i}>
                                         <div className="rental-header-button-flex">
                                             <span className="feature-header">🚗 Rental Car Information</span>
+                                            <button
+                                                className="itinerary-delete dashboard-button"
+                                                onClick={e => deleteRental(e, car?.id)}>Delete Rental
+                                            </button>
                                         </div>
                                         <div className="feature-content__container">
                                             <div className="rental-row-1">
